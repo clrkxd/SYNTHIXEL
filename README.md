@@ -121,7 +121,7 @@ Main.java
 
 ## 👨‍💻 Author
 
-Made by John Clark Melitar
+Made by John Clark Melitar <br>
 Project: Synthixel 🎹
 
 ---
