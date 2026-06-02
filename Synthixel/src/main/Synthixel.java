@@ -22,4 +22,8 @@ public class Synthixel {
         windowPiano.setResizable(false);
         windowPiano.setVisible(true);
     }
+    
+    public static void main(String[] args) {
+    	new Synthixel();
+    }
 }

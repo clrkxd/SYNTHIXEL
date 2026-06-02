@@ -53,13 +53,42 @@ public class SoundManager {
         }
     }
 
+//    public void play(String key) {
+//        Clip clip = sounds.get(key);
+//
+//        if (clip == null) return;
+//
+//        clip.stop();
+//        clip.setFramePosition(0);
+//        clip.start();
+//    }
+    
     public void play(String key) {
         Clip clip = sounds.get(key);
 
         if (clip == null) return;
 
+        try {
+            FloatControl gain =
+                (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+
+            gain.setValue(-5.0f); // volume in dB
+        } catch (Exception e) {
+            // Some systems/clips don't support MASTER_GAIN
+        }
+        
+//        System.out.println("PLAYING: " + key);
+
         clip.stop();
         clip.setFramePosition(0);
         clip.start();
+    }
+    
+    public void stop(String key) {
+        Clip clip = sounds.get(key);
+
+        if (clip == null) return;
+
+        clip.stop();
     }
 }

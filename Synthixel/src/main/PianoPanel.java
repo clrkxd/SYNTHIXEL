@@ -5,8 +5,8 @@ import java.awt.*;
 
 public class PianoPanel extends JPanel {
 
-    public static final int FIN_WIDTH = 1024;
-    public static final int FIN_HEIGHT = 768; // 4:3 ratio
+    public static final int FIN_WIDTH = 512;
+    public static final int FIN_HEIGHT = 384; // 4:3 ratio
 
     private PianoKeys keyPanel;
 
