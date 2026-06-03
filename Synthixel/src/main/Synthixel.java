@@ -13,7 +13,7 @@ public class Synthixel {
         windowPiano = new JFrame("Synthixel 🎹 --Clark");
         
         ImageIcon icon = new ImageIcon(
-                Synthixel.class.getResource("/sprite/app_icon.png"));
+                Synthixel.class.getResource("/sprite/synthixel_appicon.png"));
 
         windowPiano.setIconImage(icon.getImage());
 
