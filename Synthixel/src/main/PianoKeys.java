@@ -24,8 +24,15 @@ public class PianoKeys extends JPanel {
         setFocusable(true);
 
         // 🎨 LOAD SPRITES
-        whiteKey = new ImageIcon("res/sprite/white_key.png").getImage();
-        blackKey = new ImageIcon("res/sprite/black_key.png").getImage();
+//        whiteKey = new ImageIcon("res/sprite/white_key.png").getImage();
+//        blackKey = new ImageIcon("res/sprite/black_key.png").getImage();
+        whiteKey = new ImageIcon(
+                getClass().getResource("/sprite/white_key.png"))
+                .getImage();
+
+        blackKey = new ImageIcon(
+                getClass().getResource("/sprite/black_key.png"))
+                .getImage();
 
         // 🔊 SOUND SYSTEM (LIKE YOUR 2D GAME STYLE)
         sound = new SoundManager();
