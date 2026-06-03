@@ -34,20 +34,20 @@ public class PianoKeys extends JPanel {
                 getClass().getResource("/sprite/black_key.png"))
                 .getImage();
 
-        // 🔊 SOUND SYSTEM (LIKE YOUR 2D GAME STYLE)
+        // SOUND SYSTEM (LIKE YOUR 2D GAME STYLE)
         sound = new SoundManager();
 
-        // 🎹 INPUT (PASS SOUND)
+        // INPUT (PASS SOUND)
         input = new PianoInput(sound);
         addKeyListener(input);
 
-        // 🎯 FOCUS FIX
+        // FOCUS FIX
         SwingUtilities.invokeLater(this::requestFocusInWindow);
 
-        // 🔁 repaint loop
+        // repaint loop
         new Timer(16, e -> repaint()).start();
 
-        // 🖱 regain focus on click
+        // regain focus on click
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent e) {
                 requestFocusInWindow();
@@ -64,7 +64,7 @@ public class PianoKeys extends JPanel {
 
         int whiteCount = 10;
 
-        // 🎹 WHITE KEYS
+        // WHITE KEYS
         for (int i = 0; i < whiteCount; i++) {
             int x = startX + i * WHITE_W;
 
@@ -76,7 +76,7 @@ public class PianoKeys extends JPanel {
             }
         }
 
-        // 🎹 BLACK KEYS
+        // BLACK KEYS
         int[] blackIndex = {0, 1, 3, 4, 5, 7, 8};
 
         for (int i = 0; i < blackIndex.length; i++) {

@@ -20,7 +20,7 @@ public class PianoInput extends KeyAdapter {
     public void keyPressed(KeyEvent e) {
         int key = e.getKeyCode();
 
-        // 🚫 BLOCK AUTO REPEAT
+        // BLOCK AUTO REPEAT
         if (keyHeld[key]) return;
 
         keyHeld[key] = true;
@@ -42,7 +42,7 @@ public class PianoInput extends KeyAdapter {
 
         switch (key) {
 
-            // 🎹 WHITE KEYS
+            // WHITE KEYS
             case KeyEvent.VK_A -> {
                 whitePressed[0] = pressed;
                 if (pressed) sound.play("C");
@@ -94,7 +94,7 @@ public class PianoInput extends KeyAdapter {
                 else sound.stop("E2");
             }
 
-            // 🎹 BLACK KEYS
+            // BLACK KEYS
             case KeyEvent.VK_W -> {
                 blackPressed[0] = pressed;
                 if (pressed) sound.play("C#");

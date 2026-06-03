@@ -1,5 +1,6 @@
 package main;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 public class Synthixel {
@@ -9,13 +10,18 @@ public class Synthixel {
 
     public Synthixel() {
 
-        windowPiano = new JFrame("Synthixel --Clark");
+        windowPiano = new JFrame("Synthixel 🎹 --Clark");
+        
+        ImageIcon icon = new ImageIcon(
+                Synthixel.class.getResource("/sprite/app_icon.png"));
+
+        windowPiano.setIconImage(icon.getImage());
 
         panel = new PianoPanel();
 
         windowPiano.add(panel);
 
-        windowPiano.pack(); // uses 1024x768 from panel
+        windowPiano.pack(); 
 
         windowPiano.setLocationRelativeTo(null);
         windowPiano.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
