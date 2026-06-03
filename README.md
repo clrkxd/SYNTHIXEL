@@ -8,6 +8,7 @@ It allows users to play piano notes using their keyboard with real-time visual f
 ## ✨ Features
 
 - 🎹 Full playable piano (white + black keys)
+- 💻 Fully customizable open-source project
 - ⌨️ Keyboard mapping support
 - 🔊 Real-time sound playback using WAV files
 - 🖼️ Custom piano key sprites
@@ -50,8 +51,7 @@ It allows users to play piano notes using their keyboard with real-time visual f
 ```
 
 src/
-└── main/
-├── Main.java
+└── main/
 ├── Synthixel.java
 ├── PianoPanel.java
 ├── PianoKeys.java
@@ -99,7 +99,7 @@ git clone https://github.com/your-username/synthixel.git
 4. Run:
 
 ```
-Main.java
+Synthixel.java
 ```
 
 ---
@@ -116,6 +116,8 @@ Main.java
 * Sound files must be inside `/res/sounds/`
 * Sprite images must be inside `/res/sprite/`
 * Uses Java Swing (no external libraries)
+
+* THIS PROJECT IS STILL ON DEVELOPMENT. SUGGESTIONS AND CORRECTION ARE HIGHLY RECOMMENDED FOR THIS PROJECT TO WORK. PLEASE SUPPORT MY PROJECT AND GIVE IT A TRY.
 
 ---
 
