@@ -52,7 +52,6 @@ Inspired by many virtual piano music software, Synthixel allows users to play pi
 
 src/
 └── main/
-
 ├── Synthixel.java
 ├── PianoPanel.java
 ├── PianoKeys.java
@@ -63,6 +62,7 @@ res/
 ├── sprite/
 │    ├── white_key.png
 │    └── black_key.png
+│    └── synthixel_appicon.png
 └── sounds/
 ├── c1.wav
 ├── d1.wav
