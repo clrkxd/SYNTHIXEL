@@ -25,5 +25,8 @@ public class Synthixel {
     
     public static void main(String[] args) {
     	new Synthixel();
+    	
+    	//new main method
+    	
     }
 }
