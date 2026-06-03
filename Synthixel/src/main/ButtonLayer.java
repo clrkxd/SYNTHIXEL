@@ -11,13 +11,13 @@ public class ButtonLayer {
 
         buttons = new ArrayList<>();
 
-        buttons.add(
-                new PianoButton(
-                        40,
-                        40,
-                        30,
-                        20,
-                        "INST1"));
+//        buttons.add(
+//                new PianoButton(
+//                        40,
+//                        40,
+//                        30,
+//                        20,
+//                        "INST1"));
 
 //        buttons.add(
 //                new PianoButton(

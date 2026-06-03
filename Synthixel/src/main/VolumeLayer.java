@@ -50,7 +50,7 @@ public class VolumeLayer {
 //        int bars = volume / 10;
     	int bars = sound.getVolumeLevel();
     	
-    	System.out.println("volume: " + bars);
+//    	System.out.println("volume: " + bars);
 
         for (int i = 0; i < bars; i++) {
 

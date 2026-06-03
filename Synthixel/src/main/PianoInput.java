@@ -50,9 +50,9 @@ public class PianoInput extends KeyAdapter {
             sound.decreaseVolume();
 //            System.out.println("vol: " + sound.getVolumeLevel());
             
-            System.out.println(
-                    "After UP = "
-                    + sound.getVolumeLevel());
+//            System.out.println(
+//                    "After UP = "
+//                    + sound.getVolumeLevel());
             break;
 
         case KeyEvent.VK_UP:
@@ -60,9 +60,9 @@ public class PianoInput extends KeyAdapter {
             sound.increaseVolume();
 //            System.out.println("vol: " + sound.getVolumeLevel());
             
-            System.out.println(
-                    "After DOWN = "
-                    + sound.getVolumeLevel());
+//            System.out.println(
+//                    "After DOWN = "
+//                    + sound.getVolumeLevel());
             break;
             
         }   
