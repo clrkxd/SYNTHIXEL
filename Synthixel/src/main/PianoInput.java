@@ -28,6 +28,46 @@ public class PianoInput extends KeyAdapter {
         
 //        System.out.println(e.getKeyChar());
         
+        //volume
+        int vol = e.getKeyCode();
+//        if(vol >= KeyEvent.VK_1 &&
+//        		   vol <= KeyEvent.VK_9) {
+//
+//        		    int level =
+//        		        vol - KeyEvent.VK_0;
+//
+//        		    sound.setVolume(level);
+//        		}
+//        
+//        if(vol == KeyEvent.VK_0) {
+//
+//            sound.setVolume(10);
+//        }
+            
+        switch (vol) {    
+        case KeyEvent.VK_DOWN:
+//        	System.out.println("DOWN pressed");
+            sound.decreaseVolume();
+//            System.out.println("vol: " + sound.getVolumeLevel());
+            
+            System.out.println(
+                    "After UP = "
+                    + sound.getVolumeLevel());
+            break;
+
+        case KeyEvent.VK_UP:
+//        	System.out.println("UP pressed");
+            sound.increaseVolume();
+//            System.out.println("vol: " + sound.getVolumeLevel());
+            
+            System.out.println(
+                    "After DOWN = "
+                    + sound.getVolumeLevel());
+            break;
+            
+        }   
+        
+        
     }
 
     @Override
