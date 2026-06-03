@@ -1,7 +1,7 @@
 # 🎹 Synthixel
 
-Synthixel is a simple Java-based piano application built using Swing.  
-It allows users to play piano notes using their keyboard with real-time visual feedback and sound playback.
+Synthixel is a simple Java-based piano application built using Swing. <br>
+Inspired by many virtual piano music software, Synthixel allows users to play piano notes using their keyboard with real-time visual feedback and sound playback.
 
 ---
 
@@ -51,7 +51,7 @@ It allows users to play piano notes using their keyboard with real-time visual f
 ```
 
 src/
-└── main/
+└── main/
 ├── Synthixel.java
 ├── PianoPanel.java
 ├── PianoKeys.java
@@ -62,6 +62,7 @@ res/
 ├── sprite/
 │    ├── white_key.png
 │    └── black_key.png
+│    └── synthixel_appicon.png
 └── sounds/
 ├── c1.wav
 ├── d1.wav
@@ -117,7 +118,7 @@ Synthixel.java
 * Sprite images must be inside `/res/sprite/`
 * Uses Java Swing (no external libraries)
 
-* THIS PROJECT IS STILL ON DEVELOPMENT. SUGGESTIONS AND CORRECTION ARE HIGHLY RECOMMENDED FOR THIS PROJECT TO WORK. PLEASE SUPPORT MY PROJECT AND GIVE IT A TRY.
+* THIS PROJECT IS STILL UNDER DEVELOPMENT. SUGGESTIONS AND CORRECTION ARE HIGHLY RECOMMENDED FOR THIS PROJECT TO WORK. PLEASE SUPPORT MY PROJECT AND GIVE IT A TRY.
 
 ---
 
