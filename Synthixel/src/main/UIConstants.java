@@ -4,29 +4,21 @@ public final class UIConstants {
 
     private UIConstants() {}
 
-    // ==========================
     // WINDOW
-    // ==========================
     public static final int WINDOW_W = 512;
     public static final int WINDOW_H = 384;
 
-    // ==========================
     // SCALE
-    // ==========================
     public static final int SCALE = 4;
 
-    // ==========================
     // FRAME
-    // ==========================
     public static final int FRAME_X = 0;
     public static final int FRAME_Y = 0;
 
     public static final int FRAME_W = 512;
     public static final int FRAME_H = 384;
 
-    // ==========================
     // PIANO KEYS
-    // ==========================
     public static final int PIANO_X = 41;
     public static final int PIANO_Y = 198;
 
@@ -36,20 +28,14 @@ public final class UIConstants {
     public static final int BLACK_W = 6 * SCALE;
     public static final int BLACK_H = 24 * SCALE;
 
-    // ==========================
     // PIANO LINES
-    // ==========================
     public static final int LINES_X = 0;
     public static final int LINES_Y = 0;
 
     public static final int LINES_W = 512;
     public static final int LINES_H = 384;
     
-    
-    // ==========================
     // BUTTONS
-    // ==========================
-
     public static final int BUTTON_W = 9 * SCALE;
     public static final int BUTTON_H = 6 * SCALE;
 
@@ -78,7 +64,6 @@ public final class UIConstants {
     public static final int REC_Y = 75;
     
     // VOLUME
-    
     public static final int VOLUME_X = 134;
     public static final int VOLUME_Y = 141;
 
