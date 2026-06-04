@@ -17,7 +17,7 @@ Inspired by many virtual piano music software, Synthixel allows users to play pi
 
 ---
 
-## 🎮 Controls
+## 🎮 How to Play
 
 ### White Keys
 | Key | Note |
@@ -46,6 +46,14 @@ Inspired by many virtual piano music software, Synthixel allows users to play pi
 
 ---
 
+## 🎮 How to Adjust Volume
+
+### Black Keys
+| Control | KeyCode | Function |
+|-----|------|------|
+| ↑ | VK.UP | Volume Up |
+| ↓ | VK.DOWN | Voulme Down |
+
 ## 📁 Project Structure
 
 ```
@@ -57,12 +65,30 @@ src/
 ├── PianoKeys.java
 ├── PianoInput.java
 ├── SoundManager.java
+├── ButtonLayer.java
+├── PianoButton.java
+├── PianoFrameLayer.java
+├── PianoLinesLayer.java
+├── UIConstants.java
+└── VolumeLayer.java
 
 res/
 ├── sprite/
 │    ├── white_key.png
-│    └── black_key.png
-│    └── synthixel_appicon.png
+│    ├── black_key.png
+│    ├── synthixel_appicon.png
+│    ├── darkmode.png
+│    ├── left.png
+│    ├── monitor.png
+│    ├── piano-frame.png
+│    ├── piano-lines.png
+│    ├── play.png
+│    ├── record.png
+│    ├── right.png
+│    ├── save.png
+│    ├── stop.png
+│    ├── sustain.png
+│    ├── vol.png
 └── sounds/
 ├── c1.wav
 ├── d1.wav
@@ -103,11 +129,18 @@ git clone https://github.com/your-username/synthixel.git
 Synthixel.java
 ```
 
+or
+
+```
+Get a copy of the release of the current alpha version.
+Synthixel_(version)-alpha.jar
+```
+
 ---
 
 ## 🛠️ Requirements
 
-* Java 8 or higher
+* Java 17 or higher
 * Any Java IDE (Eclipse, IntelliJ, VS Code)
 
 ---
@@ -117,8 +150,13 @@ Synthixel.java
 * Sound files must be inside `/res/sounds/`
 * Sprite images must be inside `/res/sprite/`
 * Uses Java Swing (no external libraries)
+* Alpha releases are still going on
 
-* THIS PROJECT IS STILL UNDER DEVELOPMENT. SUGGESTIONS AND CORRECTION ARE HIGHLY RECOMMENDED FOR THIS PROJECT TO WORK. PLEASE SUPPORT MY PROJECT AND GIVE IT A TRY.
+<br>
+
+> THIS PROJECT IS STILL UNDER DEVELOPMENT. <br>
+> SUGGESTIONS ARE HIGHLY RECOMMENDED. <br>
+> PLEASE SUPPORT MY PROJECT AND GIVE IT A TRY.
 
 ---
 
