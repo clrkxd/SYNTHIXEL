@@ -43,11 +43,7 @@ public class PianoKeys {
         return input;
     }
 
-    public void draw(Graphics2D g) {
-
-//        int startX = 43;
-//        int y = 199;
-    	
+    public void draw(Graphics2D g) {    	
     	int startX = UIConstants.PIANO_X;
     	int y = UIConstants.PIANO_Y;
 
@@ -92,7 +88,6 @@ public class PianoKeys {
                     null);
 
             if (input.blackPressed[i]) {
-
                 g.setColor(new Color(255, 255, 255, 80));
                 g.fillRect(
                         x,

@@ -45,18 +45,13 @@ public class PianoPanel extends JPanel {
             @Override
             public void mousePressed(
                     MouseEvent e) {
-            	
 //            	requestFocusInWindow();
-
                 buttonLayer.handleClick(
                         e.getX(),
                         e.getY());
             }
         });
-
         new Timer(16, e -> repaint()).start();
-        
-
     }
 
     @Override
@@ -69,7 +64,7 @@ public class PianoPanel extends JPanel {
         // Bottom Layer
         frameLayer.draw(g2);
 
-//        // Piano Keys
+        // Piano Keys
         keyLayer.draw(g2);
         
         // button layer
@@ -78,7 +73,6 @@ public class PianoPanel extends JPanel {
         // volume layer
         volumeLayer.draw(g2);
         
-
         // Top Layer
         linesLayer.draw(g2);
 

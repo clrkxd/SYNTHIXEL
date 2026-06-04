@@ -14,15 +14,6 @@ public class PianoLinesLayer {
     }
 
     public void draw(Graphics2D g2) {
-
-//        g2.drawImage(
-//                lines,
-//                100,   // X
-//                70,    // Y
-//                600,   // W
-//                330,   // H
-//                null
-//        );
     	
     	g2.drawImage(
     	        lines,

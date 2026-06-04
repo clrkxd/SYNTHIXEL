@@ -110,10 +110,8 @@ public class SoundManager {
         clip.stop();
     }
 
-    // ==========================
-    // VOLUME
-    // ==========================
 
+    // VOLUME
     public void setVolume(int level) {
 
         if (level < 0) level = 0;

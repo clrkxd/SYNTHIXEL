@@ -26,8 +26,6 @@ public class PianoInput extends KeyAdapter {
         keyHeld[key] = true;
         setKey(key, true);
         
-//        System.out.println(e.getKeyChar());
-        
         //volume
         int vol = e.getKeyCode();
 //        if(vol >= KeyEvent.VK_1 &&
@@ -46,28 +44,13 @@ public class PianoInput extends KeyAdapter {
             
         switch (vol) {    
         case KeyEvent.VK_DOWN:
-//        	System.out.println("DOWN pressed");
             sound.decreaseVolume();
-//            System.out.println("vol: " + sound.getVolumeLevel());
-            
-//            System.out.println(
-//                    "After UP = "
-//                    + sound.getVolumeLevel());
             break;
 
         case KeyEvent.VK_UP:
-//        	System.out.println("UP pressed");
             sound.increaseVolume();
-//            System.out.println("vol: " + sound.getVolumeLevel());
-            
-//            System.out.println(
-//                    "After DOWN = "
-//                    + sound.getVolumeLevel());
             break;
-            
-        }   
-        
-        
+        }      
     }
 
     @Override

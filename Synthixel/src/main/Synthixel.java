@@ -10,7 +10,7 @@ public class Synthixel {
 
     public Synthixel() {
 
-        windowPiano = new JFrame("Synthixel v0.3.4-alpha  --Clark ");
+        windowPiano = new JFrame("Synthixel  --Clark ");
         
         ImageIcon icon = new ImageIcon(
                 Synthixel.class.getResource("/sprite/synthixel_appicon.png"));

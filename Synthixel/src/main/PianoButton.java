@@ -7,15 +7,15 @@ public class PianoButton {
 
     private Rectangle bounds;
     private String id;
-
-    private Image volume;
+	private Image image;
 
     public PianoButton(
             int x,
             int y,
             int width,
             int height,
-            String id) {
+            String id,
+            Image image) {
 
         bounds = new Rectangle(
                 x,
@@ -24,16 +24,13 @@ public class PianoButton {
                 height);
 
         this.id = id;
-
-        volume = new ImageIcon(
-                getClass().getResource("/sprite/left.png"))
-                .getImage();
+        this.image = image;
     }
 
     public void draw(Graphics2D g2) {
 
         g2.drawImage(
-                volume,
+                image,
                 bounds.x,
                 bounds.y,
                 bounds.width,

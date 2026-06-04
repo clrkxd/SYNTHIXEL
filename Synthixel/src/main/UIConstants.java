@@ -50,17 +50,32 @@ public final class UIConstants {
     // BUTTONS
     // ==========================
 
-    public static final int BUTTON_W = 32;
-    public static final int BUTTON_H = 16;
+    public static final int BUTTON_W = 9 * SCALE;
+    public static final int BUTTON_H = 6 * SCALE;
 
-    public static final int INST1_X = 40;
-    public static final int INST1_Y = 40;
+    public static final int LEFT_X = 32;
+    public static final int LEFT_Y = 140;
 
-    public static final int INST2_X = 80;
-    public static final int INST2_Y = 40;
+    public static final int RIGHT_X = 80;
+    public static final int RIGHT_Y = 140;
 
-    public static final int INST3_X = 120;
-    public static final int INST3_Y = 40;
+    public static final int SUST_X = 435;
+    public static final int SUST_Y = 75;
+    
+    public static final int PLAY_X = 382;
+    public static final int PLAY_Y = 75;
+
+    public static final int STOP_X = 329;
+    public static final int STOP_Y = 107;
+
+    public static final int MODE_X = 435;
+    public static final int MODE_Y = 107;
+    
+    public static final int SAVE_X = 382;
+    public static final int SAVE_Y = 107;
+
+    public static final int REC_X = 329;
+    public static final int REC_Y = 75;
     
     // VOLUME
     
