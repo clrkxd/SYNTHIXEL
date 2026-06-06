@@ -28,7 +28,7 @@ public class PianoPanel extends JPanel {
         frameLayer = new PianoFrameLayer();
         keyLayer = new PianoKeys(sound);
         linesLayer = new PianoLinesLayer();
-        buttonLayer = new ButtonLayer();
+        buttonLayer = new ButtonLayer(sound);
         volumeLayer = new VolumeLayer(sound);
         
         setFocusable(true);
@@ -46,12 +46,18 @@ public class PianoPanel extends JPanel {
             public void mousePressed(
                     MouseEvent e) {
 //            	requestFocusInWindow();
+            	
+            	
                 buttonLayer.handleClick(
                         e.getX(),
                         e.getY());
+                
+                
+                
             }
         });
         new Timer(16, e -> repaint()).start();
+//        repaint();
     }
 
     @Override

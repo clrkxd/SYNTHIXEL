@@ -41,6 +41,10 @@ public class PianoInput extends KeyAdapter {
 //
 //            sound.setVolume(10);
 //        }
+        if(e.getKeyCode() == KeyEvent.VK_SPACE) {
+            sound.setSustain(true);
+        }
+
             
         switch (vol) {    
         case KeyEvent.VK_DOWN:
@@ -59,6 +63,10 @@ public class PianoInput extends KeyAdapter {
 
         keyHeld[key] = false;
         setKey(key, false);
+        
+        if(e.getKeyCode() == KeyEvent.VK_SPACE) {
+            sound.setSustain(false);
+        }
     }
 
     private void setKey(int key, boolean pressed) {

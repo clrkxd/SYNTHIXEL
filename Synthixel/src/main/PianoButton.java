@@ -17,7 +17,7 @@ public class PianoButton {
             String id,
             Image image) {
 
-        bounds = new Rectangle(
+        this.bounds = new Rectangle(
                 x,
                 y,
                 width,
@@ -44,5 +44,30 @@ public class PianoButton {
 
     public String getId() {
         return id;
+    }
+    
+    public int getX() {
+
+        return bounds.x;
+    }
+
+    public int getY() {
+
+        return bounds.y;
+    }
+
+    public int getWidth() {
+
+        return bounds.width;
+    }
+
+    public int getHeight() {
+
+        return bounds.height;
+    }
+
+    public Rectangle getBounds() {
+
+        return bounds;
     }
 }

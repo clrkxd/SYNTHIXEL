@@ -8,10 +8,15 @@ import javax.swing.ImageIcon;
 public class ButtonLayer {
 
     private ArrayList<PianoButton> buttons;
+    private boolean sustainEnabled;
+    private SoundManager sound;
     
     private Image left, right, sust, play, stop, mode, record, save;
 
-    public ButtonLayer() {
+    public ButtonLayer(SoundManager sound) {
+    	
+
+        this.sound = sound;
     	
     	left = new ImageIcon(
     	        getClass().getResource("/sprite/left.png"))
@@ -124,21 +129,48 @@ public class ButtonLayer {
 
     public void draw(Graphics2D g2) {
 
-        for (PianoButton button : buttons) {
+//        for (PianoButton button : buttons) {
+//
+//            button.draw(g2);
+//            
+//        }
+    	for (PianoButton button : buttons) {
 
             button.draw(g2);
+
+            if (button.getId().equals("sust") && sound.isSustainEnabled()) {
+
+                g2.setColor(new Color(0, 0, 0, 100));
+
+                g2.fillRect(
+                        button.getX(),
+                        button.getY(),
+                        button.getWidth(),
+                        button.getHeight());
+            }
         }
     }
 
     public void handleClick(
             int mouseX,
             int mouseY) {
+    	
+    	System.out.println("HANDLE CLICK CALLED");
 
         for (PianoButton button : buttons) {
 
             if (button.contains(
                     mouseX,
                     mouseY)) {
+            	
+            	if(button.getId().equals("sust")) {
+                    sustainEnabled = !sustainEnabled;
+                    
+                    sound.toggleSustain();
+                    
+                    System.out.println(
+                            "Sustain: " + sustainEnabled);
+                }
 
                 System.out.println(
                         "Clicked: "

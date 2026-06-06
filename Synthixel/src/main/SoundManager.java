@@ -1,19 +1,26 @@
 package main;
 
 import javax.sound.sampled.*;
+
 import java.net.URL;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class SoundManager {
 
     private Map<String, Clip> sounds = new HashMap<>();
+    private Set<String> sustainedNotes = new HashSet<>();
 
     // 0-10 volume level
     private int volumeLevel = 5;
 
     // dB value applied to clips
     private float volumeDb;
+    
+    private boolean sustain = false;
+    private boolean sustainEnabled = false;
 
     public SoundManager() {
 
@@ -101,11 +108,31 @@ public class SoundManager {
 
     public void stop(String key) {
 
-        Clip clip = sounds.get(key);
+//        Clip clip = sounds.get(key);
+//
+//        if (clip == null) {
+//            return;
+//        }
+//    	if (sustain) {
+//            return;
+//        }
+//
+//        Clip clip = sounds.get(key);
+//
+//        if (clip == null) {
+//            return;
+//        }
+    	Clip clip = sounds.get(key);
 
         if (clip == null) {
             return;
         }
+
+        if (sustain) {
+            sustainedNotes.add(key);
+            return;
+        }
+
 
         clip.stop();
     }
@@ -152,5 +179,31 @@ public class SoundManager {
     public float getVolumeDb() {
 
         return volumeDb;
+    }
+    
+    public void setSustain(boolean sustain) {
+        this.sustain = sustain;
+        
+        if (!sustain) {
+
+            for (String key : sustainedNotes) {
+
+                Clip clip = sounds.get(key);
+
+                if (clip != null) {
+                    clip.stop();
+                }
+            }
+
+            sustainedNotes.clear();
+        }
+    }
+    
+    public boolean isSustainEnabled() {
+        return sustainEnabled;
+    }
+
+    public void toggleSustain() {
+        sustainEnabled = !sustainEnabled;
     }
 }
