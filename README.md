@@ -11,7 +11,7 @@ Inspired by many virtual piano music software, Synthixel allows users to play pi
 - 💻 Fully customizable open-source project
 - ⌨️ Keyboard mapping support
 - 🔊 Real-time sound playback using WAV files
-- 🖼️ Custom piano key sprites
+- 🖼️ Custom piano key sprites made using Aseprite
 - 🖥️ Simple GUI built with Java Swing
 - ⚡ Lightweight and fast (no external libraries)
 
