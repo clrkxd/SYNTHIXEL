@@ -8,7 +8,7 @@ import javax.swing.ImageIcon;
 public class ButtonLayer {
 
     private ArrayList<PianoButton> buttons;
-    private boolean sustainEnabled;
+//    private boolean sustainEnabled;
     private SoundManager sound;
     
     private Image left, right, sust, play, stop, mode, record, save;
@@ -138,7 +138,7 @@ public class ButtonLayer {
 
             button.draw(g2);
 
-            if (button.getId().equals("sust") && sound.isSustainEnabled()) {
+            if (button.getId().equals("sust") && !sound.isSustainEnabled()) {
 
                 g2.setColor(new Color(0, 0, 0, 100));
 
@@ -164,12 +164,12 @@ public class ButtonLayer {
                     mouseY)) {
             	
             	if(button.getId().equals("sust")) {
-                    sustainEnabled = !sustainEnabled;
+//                    sustainEnabled = !sustainEnabled;
                     
                     sound.toggleSustain();
                     
                     System.out.println(
-                            "Sustain: " + sustainEnabled);
+                            "Sustain: " + sound.isSustainEnabled());
                 }
 
                 System.out.println(

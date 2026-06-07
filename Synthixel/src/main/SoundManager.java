@@ -20,7 +20,7 @@ public class SoundManager {
     private float volumeDb;
     
     private boolean sustain = false;
-    private boolean sustainEnabled = false;
+//    private boolean sustainEnabled = false;
 
     public SoundManager() {
 
@@ -200,10 +200,15 @@ public class SoundManager {
     }
     
     public boolean isSustainEnabled() {
-        return sustainEnabled;
+//        return sustainEnabled;
+        return sustain;
     }
 
     public void toggleSustain() {
-        sustainEnabled = !sustainEnabled;
+//        sustainEnabled = !sustainEnabled;
+//        System.out.println("Sustain = " + sustainEnabled);
+        
+        sustain = !sustain;
+        System.out.println("Sustain = " + sustain);
     }
 }
