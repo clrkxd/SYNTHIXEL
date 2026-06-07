@@ -46,13 +46,14 @@ Inspired by many virtual piano music software, Synthixel allows users to play pi
 
 ---
 
-## 🎮 How to Adjust Volume
+## 🎮 How to make the buttons function
 
 ### Black Keys
 | Control | KeyCode | Function |
 |-----|------|------|
 | ↑ | VK.UP | Volume Up |
 | ↓ | VK.DOWN | Voulme Down |
+| S | VK.SPACE | Sustain |
 
 ## 📁 Project Structure
 
