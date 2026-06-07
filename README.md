@@ -46,13 +46,16 @@ Inspired by many virtual piano music software, Synthixel allows users to play pi
 
 ---
 
-## 🎮 How to Adjust Volume
+## 🎮 How to make the buttons function
 
 ### Black Keys
 | Control | KeyCode | Function |
 |-----|------|------|
 | ↑ | VK.UP | Volume Up |
 | ↓ | VK.DOWN | Voulme Down |
+| S | VK.SPACE | Sustain |
+
+---
 
 ## 📁 Project Structure
 
@@ -88,25 +91,25 @@ res/
 │    ├── save.png
 │    ├── stop.png
 │    ├── sustain.png
-│    ├── vol.png
+│    └── vol.png
 └── sounds/
-├── c1.wav
-├── d1.wav
-├── e1.wav
-├── f1.wav
-├── g1.wav
-├── a1.wav
-├── b1.wav
-├── c2.wav
-├── d2.wav
-├── e2.wav
-├── c-sharp1.wav
-├── d-sharp1.wav
-├── f-sharp1.wav
-├── g-sharp1.wav
-├── a-sharp1.wav
-├── c-sharp2.wav
-└── d-sharp2.wav
+      ├── c1.wav
+      ├── d1.wav
+      ├── e1.wav
+      ├── f1.wav
+      ├── g1.wav
+      ├── a1.wav
+      ├── b1.wav
+      ├── c2.wav
+      ├── d2.wav
+      ├── e2.wav
+      ├── c-sharp1.wav
+      ├── d-sharp1.wav
+      ├── f-sharp1.wav
+      ├── g-sharp1.wav
+      ├── a-sharp1.wav
+      ├── c-sharp2.wav
+      └── d-sharp2.wav
 
 ````
 
