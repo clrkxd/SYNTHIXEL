@@ -54,8 +54,8 @@ public final class UIConstants {
     public static final int STOP_X = 329;
     public static final int STOP_Y = 107;
 
-    public static final int MODE_X = 435;
-    public static final int MODE_Y = 107;
+    public static final int IMP_X = 435;
+    public static final int IMP_Y = 107;
     
     public static final int SAVE_X = 382;
     public static final int SAVE_Y = 107;

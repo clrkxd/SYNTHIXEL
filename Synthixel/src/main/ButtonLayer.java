@@ -11,7 +11,7 @@ public class ButtonLayer {
 //    private boolean sustainEnabled;
     private SoundManager sound;
     
-    private Image left, right, sust, play, stop, mode, record, save;
+    private Image left, right, sust, play, stop, imprt, record, save;
 
     public ButtonLayer(SoundManager sound) {
     	
@@ -38,8 +38,8 @@ public class ButtonLayer {
     	        getClass().getResource("/sprite/stop.png"))
     	        .getImage();
 
-    	mode = new ImageIcon(
-    	        getClass().getResource("/sprite/darkmode.png"))
+    	imprt = new ImageIcon(
+    	        getClass().getResource("/sprite/import.png"))
     	        .getImage();
     	
     	record = new ImageIcon(
@@ -110,12 +110,12 @@ public class ButtonLayer {
         
         buttons.add(
                 new PianoButton(
-                		UIConstants.MODE_X,
-            	        UIConstants.MODE_Y,
+                		UIConstants.IMP_X,
+            	        UIConstants.IMP_Y,
             	        UIConstants.BUTTON_W,
             	        UIConstants.BUTTON_H,
-                        "mode",
-                        mode));
+                        "imprt",
+                        imprt));
         
         buttons.add(
                 new PianoButton(
