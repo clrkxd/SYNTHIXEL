@@ -42,14 +42,164 @@ public class PianoKeys {
     public PianoInput getInput() {
         return input;
     }
+    
+    private final String[] whiteLabels = {
+            "A", "S", "D", "F", "G",
+            "H", "J", "K", "L", ";"
+    };
 
-    public void draw(Graphics2D g) {    	
-    	int startX = UIConstants.PIANO_X;
-    	int y = UIConstants.PIANO_Y;
+    private final String[] blackLabels = {
+            "W", "E", "T", "Y",
+            "U", "O", "P"
+    };
+
+//    public void draw(Graphics2D g) {    	
+//    	int startX = UIConstants.PIANO_X;
+//    	int y = UIConstants.PIANO_Y;
+//
+//        int whiteCount = 10;
+
+        // WHITE KEYS
+//        for (int i = 0; i < whiteCount; i++) {
+//
+//            int x = startX + i * WHITE_W;
+//
+//            g.drawImage(
+//                    whiteKey,
+//                    x,
+//                    y,
+//                    WHITE_W,
+//                    WHITE_H,
+//                    null);
+//
+//            if (input.whitePressed[i]) {
+//
+//                g.setColor(new Color(0, 0, 0, 80));
+//                g.fillRect(x, y, WHITE_W, WHITE_H);
+//            }
+//        }
+        
+//     // WHITE KEYS
+//        g.setFont(new Font("Arial", Font.BOLD, 18));
+//
+//        for (int i = 0; i < whiteCount; i++) {
+//
+//            int x = startX + i * WHITE_W;
+//
+//            g.drawImage(
+//                    whiteKey,
+//                    x,
+//                    y,
+//                    WHITE_W,
+//                    WHITE_H,
+//                    null);
+//
+//            if (input.whitePressed[i]) {
+//
+//                g.setColor(new Color(0, 0, 0, 80));
+//                g.fillRect(x, y, WHITE_W, WHITE_H);
+//            }
+//
+//            g.setColor(Color.BLACK);
+//
+//            FontMetrics fm = g.getFontMetrics();
+//
+//            int textX =
+//                    x +
+//                    (WHITE_W - fm.stringWidth(whiteLabels[i])) / 2;
+//
+//            int textY = y + WHITE_H - 15;
+//
+//            g.drawString(
+//                    whiteLabels[i],
+//                    textX,
+//                    textY);
+//
+//        // BLACK KEYS
+////        int[] blackIndex = {0, 1, 3, 4, 5, 7, 8};
+////
+////        for (int i = 0; i < blackIndex.length; i++) {
+////
+////            int x =
+////                    startX +
+////                    (blackIndex[i] * WHITE_W) +
+////                    (WHITE_W - BLACK_W / 2);
+////
+////            g.drawImage(
+////                    blackKey,
+////                    x,
+////                    y,
+////                    BLACK_W,
+////                    BLACK_H,
+////                    null);
+////
+////            if (input.blackPressed[i]) {
+////                g.setColor(new Color(255, 255, 255, 80));
+////                g.fillRect(
+////                        x,
+////                        y,
+////                        BLACK_W,
+////                        BLACK_H);
+////            }
+////        }
+//         // BLACK KEYS
+//            g.setFont(new Font("Arial", Font.BOLD, 14));
+//
+//            int[] blackIndex = {0, 1, 3, 4, 5, 7, 8};
+//
+//            for (int i = 0; i < blackIndex.length; i++) {
+//
+//                int x =
+//                        startX +
+//                        (blackIndex[i] * WHITE_W) +
+//                        (WHITE_W - BLACK_W / 2);
+//
+//                g.drawImage(
+//                        blackKey,
+//                        x,
+//                        y,
+//                        BLACK_W,
+//                        BLACK_H,
+//                        null);
+//
+//                if (input.blackPressed[i]) {
+//
+//                    g.setColor(new Color(255, 255, 255, 80));
+//                    g.fillRect(
+//                            x,
+//                            y,
+//                            BLACK_W,
+//                            BLACK_H);
+//                }
+//
+//                g.setColor(Color.WHITE);
+//
+//                FontMetrics fm = g.getFontMetrics();
+//
+//                int textX =
+//                        x +
+//                        (BLACK_W - fm.stringWidth(blackLabels[i])) / 2;
+//
+//                int textY = y + BLACK_H - 10;
+//
+//                g.drawString(
+//                        blackLabels[i],
+//                        textX,
+//                        textY);
+//            }
+//    }
+    public void draw(Graphics2D g) {
+
+        int startX = UIConstants.PIANO_X;
+        int y = UIConstants.PIANO_Y;
 
         int whiteCount = 10;
 
+        // =========================
         // WHITE KEYS
+        // =========================
+        g.setFont(new Font("Arial", Font.BOLD, 18));
+
         for (int i = 0; i < whiteCount; i++) {
 
             int x = startX + i * WHITE_W;
@@ -65,11 +215,34 @@ public class PianoKeys {
             if (input.whitePressed[i]) {
 
                 g.setColor(new Color(0, 0, 0, 80));
-                g.fillRect(x, y, WHITE_W, WHITE_H);
+                g.fillRect(
+                        x,
+                        y,
+                        WHITE_W,
+                        WHITE_H);
             }
+
+            g.setColor(Color.BLACK);
+
+            FontMetrics whiteFm = g.getFontMetrics();
+
+            int textX =
+                    x +
+                    (WHITE_W - whiteFm.stringWidth(whiteLabels[i])) / 2;
+
+            int textY = y + WHITE_H - 15;
+
+            g.drawString(
+                    whiteLabels[i],
+                    textX,
+                    textY);
         }
 
+        // =========================
         // BLACK KEYS
+        // =========================
+        g.setFont(new Font("Arial", Font.BOLD, 14));
+
         int[] blackIndex = {0, 1, 3, 4, 5, 7, 8};
 
         for (int i = 0; i < blackIndex.length; i++) {
@@ -88,6 +261,7 @@ public class PianoKeys {
                     null);
 
             if (input.blackPressed[i]) {
+
                 g.setColor(new Color(255, 255, 255, 80));
                 g.fillRect(
                         x,
@@ -95,6 +269,21 @@ public class PianoKeys {
                         BLACK_W,
                         BLACK_H);
             }
+
+            g.setColor(Color.WHITE);
+
+            FontMetrics blackFm = g.getFontMetrics();
+
+            int textX =
+                    x +
+                    (BLACK_W - blackFm.stringWidth(blackLabels[i])) / 2;
+
+            int textY = y + BLACK_H - 10;
+
+            g.drawString(
+                    blackLabels[i],
+                    textX,
+                    textY);
         }
     }
 }
