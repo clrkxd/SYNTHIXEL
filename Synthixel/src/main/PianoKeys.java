@@ -198,7 +198,8 @@ public class PianoKeys {
         // =========================
         // WHITE KEYS
         // =========================
-        g.setFont(new Font("Arial", Font.BOLD, 18));
+//        g.setFont(new Font("Arial", Font.BOLD, 18));
+        g.setFont(FontManager.pixel32);
 
         for (int i = 0; i < whiteCount; i++) {
 
@@ -241,7 +242,8 @@ public class PianoKeys {
         // =========================
         // BLACK KEYS
         // =========================
-        g.setFont(new Font("Arial", Font.BOLD, 14));
+//        g.setFont(new Font("Arial", Font.BOLD, 14));
+        g.setFont(FontManager.pixel24);
 
         int[] blackIndex = {0, 1, 3, 4, 5, 7, 8};
 

@@ -18,6 +18,8 @@ public class PianoPanel extends JPanel {
     private SoundManager sound;
 
     public PianoPanel() {
+    	
+    	
 
         setPreferredSize(new Dimension(FIN_WIDTH, FIN_HEIGHT));
         setBackground(new Color(228, 157, 110));
@@ -30,6 +32,8 @@ public class PianoPanel extends JPanel {
         linesLayer = new PianoLinesLayer();
         buttonLayer = new ButtonLayer(sound);
         volumeLayer = new VolumeLayer(sound);
+        
+        FontManager.loadFonts();
         
         setFocusable(true);
 
