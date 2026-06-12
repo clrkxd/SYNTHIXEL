@@ -13,8 +13,8 @@ public class InstrumentManager {
 
         instruments.add(new Instruments("Piano", "/piano/"));
         instruments.add(new Instruments("Organ", "/organ/"));
-        instruments.add(new Instruments("Strings", "/guitar/"));
-        instruments.add(new Instruments("Music Box", "/sounds/musicbox/"));
+        instruments.add(new Instruments("Strings", "/strngs/"));
+        instruments.add(new Instruments("Guitar", "/guitar/"));
 
         currentIndex = 0;
     }
