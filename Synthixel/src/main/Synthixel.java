@@ -3,6 +3,8 @@ package main;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
+import ui.PianoPanel;
+
 public class Synthixel {
 
     public JFrame windowPiano;

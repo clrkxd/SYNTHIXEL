@@ -1,6 +1,8 @@
-package main;
+package record;
 
 import java.util.ArrayList;
+
+import audio.SoundManager;
 
 //import main.SoundManager;
 

@@ -1,9 +1,12 @@
-package main;
+package ui;
 
+import main.UIConstants;
 import java.awt.*;
 import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
+
+import audio.SoundManager;
 
 public class ButtonLayer {
 

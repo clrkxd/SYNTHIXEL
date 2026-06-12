@@ -1,6 +1,10 @@
-package main;
+package ui;
 
+import main.UIConstants;
 import javax.swing.*;
+
+import audio.SoundManager;
+
 import java.awt.*;
 
 public class VolumeLayer {

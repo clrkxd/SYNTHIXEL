@@ -1,4 +1,4 @@
-package main;
+package record;
 
 public class NoteEvent {
 

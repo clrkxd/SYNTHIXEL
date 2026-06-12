@@ -1,7 +1,9 @@
-package main;
+package input;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+
+import audio.SoundManager;
 
 public class PianoInput extends KeyAdapter {
 
