@@ -35,11 +35,11 @@ public class PianoPanel extends JPanel {
         sound = new SoundManager(instrumentManager);
 
         frameLayer = new PianoFrameLayer();
-        keyLayer = new PianoKeys(sound);
+        keyLayer = new PianoKeys(sound, instrumentManager);
         linesLayer = new PianoLinesLayer();
         buttonLayer = new ButtonLayer(sound);
         volumeLayer = new VolumeLayer(sound);
-        instrumentManager = new InstrumentManager();
+//        instrumentManager = new InstrumentManager();
         
         FontManager.loadFonts();
         

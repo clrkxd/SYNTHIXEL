@@ -30,9 +30,10 @@ public class PianoKeys {
     private SoundManager sound;
     private InstrumentManager instrumentManager;
 
-    public PianoKeys(SoundManager sound) {
+    public PianoKeys(SoundManager sound, InstrumentManager instrumentManager) {
     	
     	this.sound = sound;
+    	this.instrumentManager = instrumentManager;
     	
         whiteKey = new ImageIcon(
                 getClass().getResource("/sprite/white_key.png"))

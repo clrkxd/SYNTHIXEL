@@ -55,10 +55,12 @@ public class PianoInput extends KeyAdapter {
         
         if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
             instrumentManager.nextInstrument();
+            sound.loadCurrentInstrument();
         }
 
         if(e.getKeyCode() == KeyEvent.VK_LEFT) {
             instrumentManager.previousInstrument();
+            sound.loadCurrentInstrument();
         }
         
             
