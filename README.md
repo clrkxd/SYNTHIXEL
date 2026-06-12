@@ -8,6 +8,7 @@ Inspired by many virtual piano music software, Synthixel allows users to play pi
 ## ✨ Features
 
 - 🎹 Full playable piano (white + black keys)
+- 🎵 Different Instruments (Piano, Organ, Strings, Guitar)
 - 💻 Fully customizable open-source project
 - ⌨️ Keyboard mapping support
 - 🔊 Real-time sound playback using WAV files
@@ -54,28 +55,42 @@ Inspired by many virtual piano music software, Synthixel allows users to play pi
 | ↑ | VK.UP | Volume Up |
 | ↓ | VK.DOWN | Voulme Down |
 | S | VK.SPACE | Sustain |
+| ← | VK.LEFT | Instrument Switch |
+| → | VK.RIGHT | Instrument Switch |
 
 ---
 
 ## 📁 Project Structure
 
 ```
-
 src/
-└── main/
-├── Synthixel.java
-├── PianoPanel.java
-├── PianoKeys.java
-├── PianoInput.java
-├── SoundManager.java
-├── ButtonLayer.java
-├── PianoButton.java
-├── PianoFrameLayer.java
-├── PianoLinesLayer.java
-├── UIConstants.java
-└── VolumeLayer.java
-
+├── audio/
+│    ├── InstrumentManager.java
+│    ├── Instruments.java
+│    └── SoundManager.java
+├── input/
+│    └── PianoInput.java
+├── main/
+│    └── Synthixel.java
+├── record/
+│    ├── NoteEvent.java
+│    └── Recorder.java
+├── save/
+│    └── SaveManager.java
+└── ui/
+     ├── PianoPanel.java
+     ├── PianoKeys.java
+     ├── ButtonLayer.java
+     ├── PianoButton.java
+     ├── PianoFrameLayer.java
+     ├── PianoLinesLayer.java
+     ├── UIConstants.java
+     └── VolumeLayer.java
+````
+````
 res/
+├── font/
+│    └── VT323-Regular.ttf
 ├── sprite/
 │    ├── white_key.png
 │    ├── black_key.png
@@ -92,25 +107,27 @@ res/
 │    ├── stop.png
 │    ├── sustain.png
 │    └── vol.png
-└── sounds/
-      ├── c1.wav
-      ├── d1.wav
-      ├── e1.wav
-      ├── f1.wav
-      ├── g1.wav
-      ├── a1.wav
-      ├── b1.wav
-      ├── c2.wav
-      ├── d2.wav
-      ├── e2.wav
-      ├── c-sharp1.wav
-      ├── d-sharp1.wav
-      ├── f-sharp1.wav
-      ├── g-sharp1.wav
-      ├── a-sharp1.wav
-      ├── c-sharp2.wav
-      └── d-sharp2.wav
-
+├── piano/
+│    ├── c1.wav
+│    ├── d1.wav
+│    ├── e1.wav
+│    ├── f1.wav
+│    ├── g1.wav
+│    ├── a1.wav
+│    ├── b1.wav
+│    ├── c2.wav
+│    ├── d2.wav
+│    ├── e2.wav
+│    ├── c-sharp1.wav
+│    ├── d-sharp1.wav
+│    ├── f-sharp1.wav
+│    ├── g-sharp1.wav
+│    ├── a-sharp1.wav
+│    ├── c-sharp2.wav
+│    └── d-sharp2.wav
+├── organ/
+├── guitar/
+└── strngs/
 ````
 
 ---
@@ -150,7 +167,7 @@ Synthixel_(version)-alpha.jar
 
 ## 💡 Notes
 
-* Sound files must be inside `/res/sounds/`
+* Sound files must be inside `/res/(name of instrument)/`
 * Sprite images must be inside `/res/sprite/`
 * Uses Java Swing (no external libraries)
 * Alpha releases are still going on
