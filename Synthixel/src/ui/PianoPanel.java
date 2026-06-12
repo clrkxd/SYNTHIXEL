@@ -2,6 +2,7 @@ package ui;
 
 import javax.swing.*;
 
+import audio.InstrumentManager;
 import audio.SoundManager;
 
 import java.awt.*;
@@ -19,6 +20,7 @@ public class PianoPanel extends JPanel {
     private ButtonLayer buttonLayer;
     private VolumeLayer volumeLayer;
     private SoundManager sound;
+    public InstrumentManager instrumentManager;
 
     public PianoPanel() {
     	
@@ -28,13 +30,16 @@ public class PianoPanel extends JPanel {
         setBackground(new Color(228, 157, 110));
         setLayout(null);
         
-        sound = new SoundManager();
+        
+        instrumentManager = new InstrumentManager();
+        sound = new SoundManager(instrumentManager);
 
         frameLayer = new PianoFrameLayer();
         keyLayer = new PianoKeys(sound);
         linesLayer = new PianoLinesLayer();
         buttonLayer = new ButtonLayer(sound);
         volumeLayer = new VolumeLayer(sound);
+        instrumentManager = new InstrumentManager();
         
         FontManager.loadFonts();
         

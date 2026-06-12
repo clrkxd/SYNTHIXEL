@@ -2,6 +2,7 @@ package ui;
 
 import javax.swing.*;
 
+import audio.InstrumentManager;
 import audio.SoundManager;
 import input.PianoInput;
 import main.UIConstants;
@@ -27,6 +28,7 @@ public class PianoKeys {
 
     private PianoInput input;
     private SoundManager sound;
+    private InstrumentManager instrumentManager;
 
     public PianoKeys(SoundManager sound) {
     	
@@ -41,7 +43,7 @@ public class PianoKeys {
                 .getImage();
 
 //        sound = new SoundManager();
-        input = new PianoInput(sound);
+        input = new PianoInput(sound, instrumentManager);
     }
 
     public PianoInput getInput() {

@@ -3,6 +3,7 @@ package audio;
 import javax.sound.sampled.*;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -12,6 +13,10 @@ public class SoundManager {
 
     private Map<String, Clip> sounds = new HashMap<>();
     private Set<String> sustainedNotes = new HashSet<>();
+    
+    private ArrayList<Instruments> instruments;
+    private int currentInstrument;
+    private InstrumentManager instrumentManager;
 
     // 0-10 volume level
     private int volumeLevel = 5;
@@ -22,32 +27,67 @@ public class SoundManager {
     private boolean sustain = false;
 //    private boolean sustainEnabled = false;
 
-    public SoundManager() {
-
+//    public SoundManager() {
+//
+//        setVolume(volumeLevel);
+//
+//        // White Keys
+//        load("C", "/piano/c1.wav");
+//        load("D", "/piano/d1.wav");
+//        load("E", "/piano/e1.wav");
+//        load("F", "/piano/f1.wav");
+//        load("G", "/piano/g1.wav");
+//        load("A", "/piano/a1.wav");
+//        load("B", "/piano/b1.wav");
+//
+//        load("C2", "/piano/c2.wav");
+//        load("D2", "/piano/d2.wav");
+//        load("E2", "/piano/e2.wav");
+//
+//        // Black Keys
+//        load("C#", "/piano/c-sharp1.wav");
+//        load("D#", "/piano/d-sharp1.wav");
+//        load("F#", "/piano/f-sharp1.wav");
+//        load("G#", "/piano/g-sharp1.wav");
+//        load("A#", "/piano/a-sharp1.wav");
+//
+//        load("C#2", "/piano/c-sharp2.wav");
+//        load("D#2", "/piano/d-sharp2.wav");
+//    }
+    
+    public SoundManager(InstrumentManager instrumentManager) {
+        this.instrumentManager = instrumentManager;
         setVolume(volumeLevel);
+        loadCurrentInstrument();
+    }
+    
+    
+    public void loadCurrentInstrument() {
 
-        // White Keys
-        load("C", "/sounds/c1.wav");
-        load("D", "/sounds/d1.wav");
-        load("E", "/sounds/e1.wav");
-        load("F", "/sounds/f1.wav");
-        load("G", "/sounds/g1.wav");
-        load("A", "/sounds/a1.wav");
-        load("B", "/sounds/b1.wav");
+        sounds.clear();
 
-        load("C2", "/sounds/c2.wav");
-        load("D2", "/sounds/d2.wav");
-        load("E2", "/sounds/e2.wav");
+        String folder = instrumentManager.getCurrentInstrument().getFolder();
 
-        // Black Keys
-        load("C#", "/sounds/c-sharp1.wav");
-        load("D#", "/sounds/d-sharp1.wav");
-        load("F#", "/sounds/f-sharp1.wav");
-        load("G#", "/sounds/g-sharp1.wav");
-        load("A#", "/sounds/a-sharp1.wav");
+        load("C", folder + "c1.wav");
+        load("D", folder + "d1.wav");
+        load("E", folder + "e1.wav");
+        load("F", folder + "f1.wav");
+        load("G", folder + "g1.wav");
+        load("A", folder + "a1.wav");
+        load("B", folder + "b1.wav");
 
-        load("C#2", "/sounds/c-sharp2.wav");
-        load("D#2", "/sounds/d-sharp2.wav");
+        load("C2", folder + "c2.wav");
+        load("D2", folder + "d2.wav");
+        load("E2", folder + "e2.wav");
+
+        load("C#", folder + "c-sharp1.wav");
+        load("D#", folder + "d-sharp1.wav");
+        load("F#", folder + "f-sharp1.wav");
+        load("G#", folder + "g-sharp1.wav");
+        load("A#", folder + "a-sharp1.wav");
+
+        load("C#2", folder + "c-sharp2.wav");
+        load("D#2", folder + "d-sharp2.wav");
     }
 
     private void load(String key, String path) {

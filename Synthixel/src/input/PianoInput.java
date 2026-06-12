@@ -3,6 +3,7 @@ package input;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
+import audio.InstrumentManager;
 import audio.SoundManager;
 
 public class PianoInput extends KeyAdapter {
@@ -13,9 +14,11 @@ public class PianoInput extends KeyAdapter {
     private boolean[] keyHeld = new boolean[256];
 
     private SoundManager sound;
+    private InstrumentManager instrumentManager;
 
-    public PianoInput(SoundManager sound) {
+    public PianoInput(SoundManager sound, InstrumentManager instrumentManager) {
         this.sound = sound;
+        this.instrumentManager = instrumentManager;
     }
 
     @Override
@@ -49,6 +52,14 @@ public class PianoInput extends KeyAdapter {
 //
 //            sound.setVolume(10);
 //        }
+        
+        if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
+            instrumentManager.nextInstrument();
+        }
+
+        if(e.getKeyCode() == KeyEvent.VK_LEFT) {
+            instrumentManager.previousInstrument();
+        }
         
             
         switch (vol) {    
