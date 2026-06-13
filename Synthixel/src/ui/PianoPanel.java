@@ -30,16 +30,17 @@ public class PianoPanel extends JPanel {
         setBackground(new Color(228, 157, 110));
         setLayout(null);
         
-        
+
         instrumentManager = new InstrumentManager();
         sound = new SoundManager(instrumentManager);
 
         frameLayer = new PianoFrameLayer();
-        keyLayer = new PianoKeys(sound, instrumentManager);
-        linesLayer = new PianoLinesLayer();
+        
         buttonLayer = new ButtonLayer(sound);
+
+        keyLayer = new PianoKeys(sound, instrumentManager, buttonLayer);
+        linesLayer = new PianoLinesLayer();
         volumeLayer = new VolumeLayer(sound);
-//        instrumentManager = new InstrumentManager();
         
         FontManager.loadFonts();
         

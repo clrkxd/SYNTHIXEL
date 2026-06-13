@@ -29,11 +29,13 @@ public class PianoKeys {
     private PianoInput input;
     private SoundManager sound;
     private InstrumentManager instrumentManager;
+    private ButtonLayer buttonLayer;
 
-    public PianoKeys(SoundManager sound, InstrumentManager instrumentManager) {
+    public PianoKeys(SoundManager sound, InstrumentManager instrumentManager, ButtonLayer buttonLayer) {
     	
     	this.sound = sound;
     	this.instrumentManager = instrumentManager;
+    	this.buttonLayer = buttonLayer;
     	
         whiteKey = new ImageIcon(
                 getClass().getResource("/sprite/white_key.png"))
@@ -44,7 +46,7 @@ public class PianoKeys {
                 .getImage();
 
 //        sound = new SoundManager();
-        input = new PianoInput(sound, instrumentManager);
+        input = new PianoInput(sound, instrumentManager, buttonLayer);
     }
 
     public PianoInput getInput() {

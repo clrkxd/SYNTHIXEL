@@ -5,6 +5,7 @@ import java.awt.event.KeyEvent;
 
 import audio.InstrumentManager;
 import audio.SoundManager;
+import ui.ButtonLayer;
 
 public class PianoInput extends KeyAdapter {
 
@@ -15,10 +16,12 @@ public class PianoInput extends KeyAdapter {
 
     private SoundManager sound;
     private InstrumentManager instrumentManager;
+    private ButtonLayer buttonLayer;
 
-    public PianoInput(SoundManager sound, InstrumentManager instrumentManager) {
+    public PianoInput(SoundManager sound, InstrumentManager instrumentManager, ButtonLayer buttonLayer) {
         this.sound = sound;
         this.instrumentManager = instrumentManager;
+        this.buttonLayer = buttonLayer;
     }
 
     @Override
@@ -56,12 +59,16 @@ public class PianoInput extends KeyAdapter {
         if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
             instrumentManager.nextInstrument();
             sound.loadCurrentInstrument();
+            buttonLayer.setRightPressed(true);
         }
 
         if(e.getKeyCode() == KeyEvent.VK_LEFT) {
             instrumentManager.previousInstrument();
             sound.loadCurrentInstrument();
+            buttonLayer.setLeftPressed(true);
         }
+        
+        
         
             
         switch (vol) {    
@@ -85,6 +92,15 @@ public class PianoInput extends KeyAdapter {
         if(e.getKeyCode() == KeyEvent.VK_SPACE) {
             sound.setSustain(false);
         }
+        
+        if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
+            buttonLayer.setRightPressed(false);
+        }
+        
+        if(e.getKeyCode() == KeyEvent.VK_LEFT) {
+            buttonLayer.setLeftPressed(false);
+        }
+
     }
 
     private void setKey(int key, boolean pressed) {

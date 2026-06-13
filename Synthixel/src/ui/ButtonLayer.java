@@ -15,6 +15,10 @@ public class ButtonLayer {
     private SoundManager sound;
     
     private Image left, right, sust, play, stop, imprt, record, save;
+    
+    private boolean leftP, rightP;
+    private long rightPressedTime;
+    private long leftPressedTime;
 
     public ButtonLayer(SoundManager sound) {
     	
@@ -151,6 +155,58 @@ public class ButtonLayer {
                         button.getWidth(),
                         button.getHeight());
             }
+            
+//            if(button.getId().equals("left") && leftP) {
+//
+//                g2.setColor(new Color(0,0,0,120));
+//                g2.fillRect(
+//                        button.getX(),
+//                        button.getY(),
+//                        button.getWidth(),
+//                        button.getHeight());
+//                
+//                System.out.println("left");
+//                
+//                
+//                
+//            }
+//
+//            if(button.getId().equals("right") && rightP) {
+//
+//                g2.setColor(new Color(0,0,0,120));
+//                g2.fillRect(
+//                        button.getX(),
+//                        button.getY(),
+//                        button.getWidth(),
+//                        button.getHeight());
+//                
+//                System.out.println("right");
+//                
+//    
+//
+//            }
+            
+            if (button.getId().equals("left")
+                    && System.currentTimeMillis() - leftPressedTime < 75) {
+
+                g2.setColor(new Color(0, 0, 0, 120));
+                g2.fillRect(
+                        button.getX(),
+                        button.getY(),
+                        button.getWidth(),
+                        button.getHeight());
+            }
+            
+            if (button.getId().equals("right")
+                    && System.currentTimeMillis() - rightPressedTime < 75) {
+
+                g2.setColor(new Color(0, 0, 0, 120));
+                g2.fillRect(
+                        button.getX(),
+                        button.getY(),
+                        button.getWidth(),
+                        button.getHeight());
+            }
         }
     }
 
@@ -181,4 +237,28 @@ public class ButtonLayer {
             }
         }
     }
+    
+    public void setLeftPressed(boolean pressed) {
+        leftP = pressed;
+        
+        if (pressed) {
+            leftPressedTime = System.currentTimeMillis();
+        }
+        
+        System.out.println("left" + pressed);
+
+    }
+
+    public void setRightPressed(boolean pressed) {
+        rightP = pressed;
+        
+        if (pressed) {
+            rightPressedTime = System.currentTimeMillis();
+        }
+        
+        System.out.println("right" + pressed);
+
+    }
+
+	
 }
