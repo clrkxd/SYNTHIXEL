@@ -52,11 +52,11 @@ Inspired by many virtual piano music software, Synthixel allows users to play pi
 ### Black Keys
 | Control | KeyCode | Function |
 |-----|------|------|
-| ↑ | VK.UP | Volume Up |
-| ↓ | VK.DOWN | Voulme Down |
-| S | VK.SPACE | Sustain |
-| ← | VK.LEFT | Instrument Switch |
-| → | VK.RIGHT | Instrument Switch |
+| ↑ | VK_UP | Volume Up |
+| ↓ | VK_DOWN | Voulme Down |
+| S | VK_SPACE | Sustain |
+| ← | VK_LEFT | Instrument Switch |
+| → | VK_RIGHT | Instrument Switch |
 
 ---
 
