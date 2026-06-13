@@ -21,6 +21,8 @@ public class PianoPanel extends JPanel {
     private VolumeLayer volumeLayer;
     private SoundManager sound;
     public InstrumentManager instrumentManager;
+    private MonitorDisplay monitorLayer;
+    private DisplayManager displayManager;
 
     public PianoPanel() {
     	
@@ -41,6 +43,9 @@ public class PianoPanel extends JPanel {
         keyLayer = new PianoKeys(sound, instrumentManager, buttonLayer);
         linesLayer = new PianoLinesLayer();
         volumeLayer = new VolumeLayer(sound);
+        monitorLayer = new MonitorDisplay();
+        displayManager = new DisplayManager();
+        
         
         FontManager.loadFonts();
         
@@ -91,6 +96,12 @@ public class PianoPanel extends JPanel {
         
         // volume layer
         volumeLayer.draw(g2);
+        
+        // monitor layer
+        monitorLayer.draw(g2);
+        
+        // display
+        displayManager.draw(g2);
         
         // Top Layer
         linesLayer.draw(g2);
