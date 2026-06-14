@@ -245,7 +245,7 @@ public class ButtonLayer {
             leftPressedTime = System.currentTimeMillis();
         }
         
-        System.out.println("left" + pressed);
+//        System.out.println("left" + pressed);
 
     }
 
@@ -256,7 +256,7 @@ public class ButtonLayer {
             rightPressedTime = System.currentTimeMillis();
         }
         
-        System.out.println("right" + pressed);
+//        System.out.println("right" + pressed);
 
     }
 

@@ -46,6 +46,8 @@ public class PianoPanel extends JPanel {
         monitorLayer = new MonitorDisplay();
         displayManager = new DisplayManager();
         
+        displayManager.setIns(instrumentManager);
+        
         
         FontManager.loadFonts();
         

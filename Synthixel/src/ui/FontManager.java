@@ -8,6 +8,8 @@ public class FontManager {
     public static Font pixel14;
     public static Font pixel24;
     public static Font pixel32;
+    
+    public static Font big32, big24;
 
     public static void loadFonts() {
 
@@ -22,6 +24,16 @@ public class FontManager {
             pixel18 = baseFont.deriveFont(18f);
             pixel24 = baseFont.deriveFont(24f);
             pixel32 = baseFont.deriveFont(32f);
+            
+            
+            Font nameFont = Font.createFont(
+                    Font.TRUETYPE_FONT,
+                    FontManager.class.getResourceAsStream(
+                            "/font/PressStart2P-Regular.ttf"));
+            
+            big32 = nameFont.deriveFont(32f);
+            big24 = nameFont.deriveFont(24f);
+
 
         } catch (Exception e) {
             e.printStackTrace();
