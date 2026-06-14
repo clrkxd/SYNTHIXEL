@@ -42,7 +42,7 @@ public class DisplayManager {
 	        
 //	        String insN = String.format();
 	        int intNum = instrumentManager.getCurrentIndex();
-	        String insN = String.valueOf(intNum);
+	        String insN = String.valueOf(intNum + 1);
 	        g2.setFont(FontManager.big24);
 	        g2.drawString(insN, 50, 55);
 	    }
