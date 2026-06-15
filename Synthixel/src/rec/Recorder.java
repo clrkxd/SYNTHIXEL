@@ -1,4 +1,4 @@
-package record;
+package rec;
 
 import java.util.ArrayList;
 
@@ -77,10 +77,10 @@ public class Recorder {
                 }
 
                 if(e.isPressed()) {
-
-                    sound.play(
-                            e.getKey());
-
+                    sound.play(e.getKey());
+                }
+                else {
+                    sound.stop(e.getKey());
                 }
 
                 last = e.getTime();

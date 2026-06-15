@@ -2,8 +2,8 @@ package save;
 
 import java.io.*;
 
-import record.NoteEvent;
-import record.Recorder;
+import rec.NoteEvent;
+import rec.Recorder;
 
 public class SaveManager {
 

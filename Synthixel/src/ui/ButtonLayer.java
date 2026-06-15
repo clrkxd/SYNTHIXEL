@@ -1,7 +1,13 @@
 package ui;
 
 import main.UIConstants;
+import rec.Recorder;
+import save.FilePicker;
+import save.LoadManager;
+import save.SaveManager;
+
 import java.awt.*;
+import java.io.File;
 import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
@@ -13,6 +19,10 @@ public class ButtonLayer {
     private ArrayList<PianoButton> buttons;
 //    private boolean sustainEnabled;
     private SoundManager sound;
+    private Recorder recorder;
+    private FilePicker filePicker;
+    private SaveManager saveManager;
+    private LoadManager loadManager;
     
     private Image left, right, sust, play, stop, imprt, record, save;
     
@@ -20,10 +30,18 @@ public class ButtonLayer {
     private long rightPressedTime;
     private long leftPressedTime;
 
-    public ButtonLayer(SoundManager sound) {
+    public ButtonLayer(SoundManager sound,
+    		Recorder recorder, 
+    		SaveManager saveManager, 
+    		LoadManager loadManager){
     	
-
+ 
+    	filePicker = new FilePicker();
         this.sound = sound;
+        this.recorder = recorder;
+       
+        this.saveManager = saveManager;
+        this.loadManager = loadManager;
     	
     	left = new ImageIcon(
     	        getClass().getResource("/sprite/left.png"))
@@ -207,6 +225,102 @@ public class ButtonLayer {
                         button.getWidth(),
                         button.getHeight());
             }
+            
+            
+//            if(button.getId().equals("record")) {
+//
+//                recorder.startRecording();
+//
+//                System.out.println("Recording started");
+//                
+//                g2.setColor(new Color(0, 0, 0, 120));
+//                g2.fillRect(
+//                        button.getX(),
+//                        button.getY(),
+//                        button.getWidth(),
+//                        button.getHeight());
+//            }
+//
+//            if(button.getId().equals("stop")) {
+//
+//                recorder.stopRecording();
+//                recorder.stopPlayback();
+//                
+//                g2.setColor(new Color(0, 0, 0, 120));
+//                g2.fillRect(
+//                        button.getX(),
+//                        button.getY(),
+//                        button.getWidth(),
+//                        button.getHeight());
+//
+//                System.out.println("Stopped");
+//            }
+//
+//            if(button.getId().equals("play")) {
+//
+//                recorder.playback(sound);
+//                
+//                g2.setColor(new Color(0, 0, 0, 120));
+//                g2.fillRect(
+//                        button.getX(),
+//                        button.getY(),
+//                        button.getWidth(),
+//                        button.getHeight());
+//
+//                System.out.println("Playing");
+//            }
+//            
+//            if(button.getId().equals("imprt")) {
+//
+//                recorder.startRecording();
+//
+//                System.out.println("importing");
+//                
+//                g2.setColor(new Color(0, 0, 0, 120));
+//                g2.fillRect(
+//                        button.getX(),
+//                        button.getY(),
+//                        button.getWidth(),
+//                        button.getHeight());
+//            }
+////            
+////            if(button.getId().equals("save")) {
+////
+////                recorder.startRecording();
+////
+////                System.out.println("save started");
+////                
+////                g2.setColor(new Color(0, 0, 0, 120));
+////                g2.fillRect(
+////                        button.getX(),
+////                        button.getY(),
+////                        button.getWidth(),
+////                        button.getHeight());
+////            }
+////            
+//            if(button.getId().equals("save")) {
+//
+//                try {
+//
+//                    File file =
+//                            filePicker.pickSaveFile();
+//
+//                    if(file != null) {
+//
+//                        saveManager.save(
+//                                file,
+//                                recorder);
+//
+//                        System.out.println(
+//                                "Saved: "
+//                                + file.getName());
+//                    }
+//
+//                } catch(Exception e) {
+//
+//                    e.printStackTrace();
+//                }
+//            }
         }
     }
 
@@ -230,12 +344,114 @@ public class ButtonLayer {
                     System.out.println(
                             "Sustain: " + sound.isSustainEnabled());
                 }
+            	
+            	   if(button.getId().equals("save")) {
+
+                       try {
+
+                           File file =
+                                   filePicker.pickSaveFile();
+
+                           if(file != null) {
+
+                               saveManager.save(
+                                       file,
+                                       recorder);
+
+                               System.out.println(
+                                       "Saved: "
+                                       + file.getName());
+                           }
+
+                       } catch(Exception e) {
+
+                           e.printStackTrace();
+                       }
+                   }
+            	
+
+                   if(button.getId().equals("imprt")) {
+
+                	    try {
+
+                	        File file =
+                	                filePicker.pickOpenFile();
+
+                	        if(file != null) {
+
+                	            loadManager.load(
+                	                    file,
+                	                    recorder);
+
+                	            System.out.println(
+                	                    "Loaded: "
+                	                    + file.getName());
+                	        }
+
+                	    } catch(Exception e) {
+
+                	        e.printStackTrace();
+                	    }
+                	}
+                   
+                   if(button.getId().equals("record")) {
+
+                	    if(!recorder.isRecording()) {
+
+                	        recorder.startRecording();
+
+                	        System.out.println("Recording");
+
+                	    } else {
+
+                	        recorder.stopRecording();
+
+                	        System.out.println("Recording stopped");
+                	    }
+                	}
 
                 System.out.println(
                         "Clicked: "
                         + button.getId());
             }
+//           if(button.getId().equals("save")) {
+//
+//            try {
+//
+//                saveManager.save(
+//                        new File("song.syn"),
+//                        recorder);
+//
+//                System.out.println("Saved");
+//
+//            } catch(Exception e) {
+//
+//                e.printStackTrace();
+//            }
+//        }
+            
+         
+           
+//           if(button.getId().equals("imprt")) {
+//
+//        	    try {
+//
+//        	        loadManager.load(
+//        	                new File("song.syn"),
+//        	                recorder);
+//
+//        	        System.out.println("Loaded");
+//
+//        	    } catch(Exception e) {
+//
+//        	        e.printStackTrace();
+//        	    }
+//        	}
+           
+
         }
+        
+                
     }
     
     public void setLeftPressed(boolean pressed) {

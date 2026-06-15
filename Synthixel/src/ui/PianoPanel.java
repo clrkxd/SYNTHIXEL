@@ -4,10 +4,15 @@ import javax.swing.*;
 
 import audio.InstrumentManager;
 import audio.SoundManager;
+import rec.Recorder;
+import save.LoadManager;
+import save.SaveManager;
 
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
+import java.io.IOException;
 
 public class PianoPanel extends JPanel {
 
@@ -23,7 +28,13 @@ public class PianoPanel extends JPanel {
     public InstrumentManager instrumentManager;
     private MonitorDisplay monitorLayer;
     private DisplayManager displayManager;
-
+    private  LoadManager loadManager;
+    private Recorder recorder;
+    private SaveManager saveManager;
+ 
+    
+    
+    
     public PianoPanel() {
     	
     	
@@ -37,8 +48,13 @@ public class PianoPanel extends JPanel {
         sound = new SoundManager(instrumentManager);
 
         frameLayer = new PianoFrameLayer();
-        
-        buttonLayer = new ButtonLayer(sound);
+        recorder = new Recorder();
+        saveManager = new SaveManager();
+        loadManager = new LoadManager();
+
+        buttonLayer = new ButtonLayer(sound, recorder,
+                saveManager,
+                loadManager);
 
         keyLayer = new PianoKeys(sound, instrumentManager, buttonLayer);
         linesLayer = new PianoLinesLayer();
@@ -47,6 +63,8 @@ public class PianoPanel extends JPanel {
         displayManager = new DisplayManager();
         
         displayManager.setIns(instrumentManager);
+        
+        
         
         
         FontManager.loadFonts();
@@ -78,6 +96,21 @@ public class PianoPanel extends JPanel {
         });
         new Timer(16, e -> repaint()).start();
 //        repaint();
+        
+        
+       
+
+        try {
+
+            loadManager.load(
+                    new File("song.syn"),
+                    recorder);
+
+        }
+        catch(IOException e) {
+
+            e.printStackTrace();
+        }
     }
 
     @Override
