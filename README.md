@@ -146,7 +146,7 @@ git clone https://github.com/your-username/synthixel.git
 4. Run:
 
 ```
-Synthixel.java
+/main/Synthixel.java
 ```
 
 or
