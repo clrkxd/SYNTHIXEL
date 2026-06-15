@@ -20,16 +20,9 @@ public class InstrumentManager {
 
     }
 
-    public Instruments getCurrentInstrument() {
-    	
-    	
-//    	System.out.println("Current Index: " + currentIndex);
-//        System.out.println("Instrument: " + instruments.get(currentIndex).getName());
+    public Instruments getCurrentInstrument() { 	
 
         return instruments.get(currentIndex);
-//        return instruments.get(currentIndex);
-        
-//        System.out.println(currentIndex);
     }
 
     public void nextInstrument() {
@@ -48,18 +41,11 @@ public class InstrumentManager {
 
     public String getCurrentName() {
         return getCurrentInstrument().getName();
-        
-//        String name = getCurrentInstrument().getName();
-//        
-//        System.out.println("Current Name = " + name);
-//
-//        return name;
      
     }
     
     public int getCurrentIndex() {
     	
-//    	System.out.println(currentIndex);
     	return currentIndex;
     }
 }

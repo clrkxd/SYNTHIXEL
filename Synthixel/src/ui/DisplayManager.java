@@ -20,27 +20,17 @@ public class DisplayManager {
 	
 	public void draw(Graphics2D g2) {
 		
-//        System.out.println("natatawag ako");
 
 		g2.setColor(new Color(255, 200, 62));
 		g2.setFont(FontManager.pixel32);
 		g2.drawString(title, 135, 50);
-		
-//		String insD = instrumentManager.getCurrentName();
-//		g2.setColor(new Color(255, 200, 62));
-//		g2.setFont(FontManager.pixel32);
-//		g2.drawString(insD, 50, 200);
-		
-//		System.out.println("instrumentManager = " + instrumentManager);
-		
+
 		if(instrumentManager != null) {
 	        String insD = instrumentManager.getCurrentInstrument().getName();
 			g2.setColor(new Color(255, 200, 62));
 			g2.setFont(FontManager.big32);
 	        g2.drawString(insD, 50, 115);
-//	        System.out.println(insD);
-	        
-//	        String insN = String.format();
+
 	        int intNum = instrumentManager.getCurrentIndex();
 	        String insN = String.valueOf(intNum + 1);
 	        g2.setFont(FontManager.big24);

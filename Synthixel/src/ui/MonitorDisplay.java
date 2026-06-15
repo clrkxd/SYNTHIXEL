@@ -17,11 +17,9 @@ public class MonitorDisplay {
 		mntr = new ImageIcon(
                 getClass().getResource("/sprite/monitor.png"))
                 .getImage();
-		
 	}
 	
 	public void draw(Graphics2D g2) {
 		g2.drawImage(mntr, 32, 14, 267, 118, null);
 	}
-	
 }
