@@ -46,15 +46,15 @@ public class PianoPanel extends JPanel {
         
 
         instrumentManager = new InstrumentManager();
-//        sound = new SoundManager(instrumentManager);
+        sound = new SoundManager(instrumentManager);
         
-        InstrumentManager liveInstrumentManager =
-                new InstrumentManager();
+//        InstrumentManager liveInstrumentManager =
+//                new InstrumentManager();
 
         InstrumentManager playbackInstrumentManager =
                 new InstrumentManager();
-        
-        sound = new SoundManager(liveInstrumentManager);
+//        
+//        sound = new SoundManager(liveInstrumentManager);
 
         playbackSound =
                 new SoundManager(

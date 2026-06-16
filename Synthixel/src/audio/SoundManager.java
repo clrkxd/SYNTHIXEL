@@ -146,7 +146,10 @@ public class SoundManager {
         }
 
 
+//        clip.stop();
+        
         clip.stop();
+        clip.setFramePosition(0);
     }
 
 
