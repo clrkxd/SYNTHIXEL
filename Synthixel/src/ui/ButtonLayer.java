@@ -429,7 +429,8 @@ public class ButtonLayer {
                    
                    if(button.getId().equals("play")) {
 
-                	    recorder.playback(sound);
+//                	    recorder.playback(sound);
+                	   recorder.playback(playbackSound);
 
                 	    System.out.println("Playing");
                 	}

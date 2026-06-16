@@ -90,6 +90,9 @@ public class Recorder {
 
                     ex.printStackTrace();
                 }
+                
+                sound.setInstrument(
+                        e.getInstrument());
 
                 if(e.isPressed()) {
                     sound.play(e.getKey());

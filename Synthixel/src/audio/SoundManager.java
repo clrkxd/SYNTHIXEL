@@ -224,8 +224,11 @@ public class SoundManager {
         System.out.println("Sustain = " + sustain);
     }
     
-    public void loadInstrument(int index) {
+    public void setInstrument(
+            int index) {
+
         currentInstrument = index;
+
         loadCurrentInstrument();
     }
 }

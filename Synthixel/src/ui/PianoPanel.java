@@ -24,7 +24,8 @@ public class PianoPanel extends JPanel {
     private PianoLinesLayer linesLayer;
     private ButtonLayer buttonLayer;
     private VolumeLayer volumeLayer;
-    private SoundManager sound;
+    private SoundManager sound;          // user plays this
+    private SoundManager playbackSound;  // recorder uses this
     public InstrumentManager instrumentManager;
     private MonitorDisplay monitorLayer;
     private DisplayManager displayManager;
@@ -45,7 +46,19 @@ public class PianoPanel extends JPanel {
         
 
         instrumentManager = new InstrumentManager();
-        sound = new SoundManager(instrumentManager);
+//        sound = new SoundManager(instrumentManager);
+        
+        InstrumentManager liveInstrumentManager =
+                new InstrumentManager();
+
+        InstrumentManager playbackInstrumentManager =
+                new InstrumentManager();
+        
+        sound = new SoundManager(liveInstrumentManager);
+
+        playbackSound =
+                new SoundManager(
+                        playbackInstrumentManager);
 
         frameLayer = new PianoFrameLayer();
         recorder = new Recorder();
