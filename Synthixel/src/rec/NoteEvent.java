@@ -33,4 +33,6 @@ public class NoteEvent {
     public int getInstrument() {
         return instrument;
     }
+    
+    
 }

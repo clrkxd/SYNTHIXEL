@@ -26,34 +26,6 @@ public class SoundManager {
     
     private boolean sustain = false;
 //    private boolean sustainEnabled = false;
-
-//    public SoundManager() {
-//
-//        setVolume(volumeLevel);
-//
-//        // White Keys
-//        load("C", "/piano/c1.wav");
-//        load("D", "/piano/d1.wav");
-//        load("E", "/piano/e1.wav");
-//        load("F", "/piano/f1.wav");
-//        load("G", "/piano/g1.wav");
-//        load("A", "/piano/a1.wav");
-//        load("B", "/piano/b1.wav");
-//
-//        load("C2", "/piano/c2.wav");
-//        load("D2", "/piano/d2.wav");
-//        load("E2", "/piano/e2.wav");
-//
-//        // Black Keys
-//        load("C#", "/piano/c-sharp1.wav");
-//        load("D#", "/piano/d-sharp1.wav");
-//        load("F#", "/piano/f-sharp1.wav");
-//        load("G#", "/piano/g-sharp1.wav");
-//        load("A#", "/piano/a-sharp1.wav");
-//
-//        load("C#2", "/piano/c-sharp2.wav");
-//        load("D#2", "/piano/d-sharp2.wav");
-//    }
     
     public SoundManager(InstrumentManager instrumentManager) {
         this.instrumentManager = instrumentManager;
@@ -250,5 +222,10 @@ public class SoundManager {
         
         sustain = !sustain;
         System.out.println("Sustain = " + sustain);
+    }
+    
+    public void loadInstrument(int index) {
+        currentInstrument = index;
+        loadCurrentInstrument();
     }
 }
