@@ -51,11 +51,6 @@ public class Recorder {
                         current,
                         instrument));
         
-//        System.out.println(
-//                "Recorded: "
-//                + key
-//                + " "
-//                + pressed);
         System.out.println(
                 key
                 + " "
@@ -93,17 +88,6 @@ public class Recorder {
                     ex.printStackTrace();
                 }
                 
-//                sound.setInstrument(
-//                        e.getInstrument());
-//
-//                if(e.isPressed()) {
-//                    sound.play(e.getKey());
-//                }
-//                else {
-//                    sound.stop(e.getKey());
-//                }
-                
-                
                 if(e.getInstrument()
                         != currentPlaybackInstrument) {
 
@@ -129,19 +113,6 @@ public class Recorder {
                     sound.stop(e.getKey());
                 }
                
-                
-                
-                
-//                playbackSound.setInstrument(
-//                        e.getInstrument());
-//
-//                if(e.isPressed()) {
-//                    playbackSound.play(e.getKey());
-//                }
-//                else {
-//                    playbackSound.stop(e.getKey());
-//                }
-
                 last = e.getTime();
             }
 
@@ -160,8 +131,7 @@ public class Recorder {
     public boolean isPlaying() {
         return playing;
     }
-    
-    
+
 
     public ArrayList<NoteEvent>
     getEvents() {

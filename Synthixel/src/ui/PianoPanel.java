@@ -33,13 +33,10 @@ public class PianoPanel extends JPanel {
     private Recorder recorder;
     private SaveManager saveManager;
  
-    
-    
+
     
     public PianoPanel() {
     	
-    	
-
         setPreferredSize(new Dimension(FIN_WIDTH, FIN_HEIGHT));
         setBackground(new Color(228, 157, 110));
         setLayout(null);
@@ -47,14 +44,9 @@ public class PianoPanel extends JPanel {
 
         instrumentManager = new InstrumentManager();
         sound = new SoundManager(instrumentManager);
-        
-//        InstrumentManager liveInstrumentManager =
-//                new InstrumentManager();
 
         InstrumentManager playbackInstrumentManager =
                 new InstrumentManager();
-//        
-//        sound = new SoundManager(liveInstrumentManager);
 
         playbackSound =
                 new SoundManager(
@@ -106,28 +98,12 @@ public class PianoPanel extends JPanel {
                 buttonLayer.handleClick(
                         e.getX(),
                         e.getY());
-                
-                
+          
                 
             }
         });
         new Timer(16, e -> repaint()).start();
-//        repaint();
-        
-        
-       
 
-//        try {
-//
-//            loadManager.load(
-//                    new File("song.syn"),
-//                    recorder);
-//
-//        }
-//        catch(IOException e) {
-//
-//            e.printStackTrace();
-//        }
     }
 
     @Override

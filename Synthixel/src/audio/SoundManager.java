@@ -33,7 +33,6 @@ public class SoundManager {
         loadCurrentInstrument();
     }
     
-    
     public void loadCurrentInstrument() {
 
         sounds.clear();
@@ -120,20 +119,6 @@ public class SoundManager {
 
     public void stop(String key) {
 
-//        Clip clip = sounds.get(key);
-//
-//        if (clip == null) {
-//            return;
-//        }
-//    	if (sustain) {
-//            return;
-//        }
-//
-//        Clip clip = sounds.get(key);
-//
-//        if (clip == null) {
-//            return;
-//        }
     	Clip clip = sounds.get(key);
 
         if (clip == null) {
@@ -144,9 +129,6 @@ public class SoundManager {
             sustainedNotes.add(key);
             return;
         }
-
-
-//        clip.stop();
         
         clip.stop();
         clip.setFramePosition(0);
@@ -215,25 +197,14 @@ public class SoundManager {
     }
     
     public boolean isSustainEnabled() {
-//        return sustainEnabled;
         return sustain;
     }
 
     public void toggleSustain() {
-//        sustainEnabled = !sustainEnabled;
-//        System.out.println("Sustain = " + sustainEnabled);
-        
+
         sustain = !sustain;
         System.out.println("Sustain = " + sustain);
     }
-    
-//    public void setInstrument(
-//            int index) {
-//
-//        currentInstrument = index;
-//
-////        loadCurrentInstrument();
-//    }
     
     public void setInstrument(int index) {
 

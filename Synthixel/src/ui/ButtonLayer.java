@@ -160,11 +160,7 @@ public class ButtonLayer {
 
     public void draw(Graphics2D g2) {
 
-//        for (PianoButton button : buttons) {
-//
-//            button.draw(g2);
-//            
-//        }
+
     	for (PianoButton button : buttons) {
 
             button.draw(g2);
