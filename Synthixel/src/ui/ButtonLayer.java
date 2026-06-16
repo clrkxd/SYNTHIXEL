@@ -29,8 +29,13 @@ public class ButtonLayer {
     private boolean leftP, rightP;
     private long rightPressedTime;
     private long leftPressedTime;
+    
+    private SoundManager playbackSound;
+    
+    
 
     public ButtonLayer(SoundManager sound,
+    		SoundManager playbackSound,
     		Recorder recorder, 
     		SaveManager saveManager, 
     		LoadManager loadManager){
@@ -38,6 +43,7 @@ public class ButtonLayer {
  
     	filePicker = new FilePicker();
         this.sound = sound;
+        this.playbackSound = playbackSound;
         this.recorder = recorder;
        
         this.saveManager = saveManager;

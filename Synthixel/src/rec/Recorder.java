@@ -100,6 +100,15 @@ public class Recorder {
                 else {
                     sound.stop(e.getKey());
                 }
+//                playbackSound.setInstrument(
+//                        e.getInstrument());
+//
+//                if(e.isPressed()) {
+//                    playbackSound.play(e.getKey());
+//                }
+//                else {
+//                    playbackSound.stop(e.getKey());
+//                }
 
                 last = e.getTime();
             }

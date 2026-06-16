@@ -59,13 +59,17 @@ public class PianoPanel extends JPanel {
         playbackSound =
                 new SoundManager(
                         playbackInstrumentManager);
+        
+        
 
         frameLayer = new PianoFrameLayer();
         recorder = new Recorder();
         saveManager = new SaveManager();
         loadManager = new LoadManager();
 
-        buttonLayer = new ButtonLayer(sound, recorder,
+        buttonLayer = new ButtonLayer(sound, 
+        		playbackSound,
+        		recorder,
                 saveManager,
                 loadManager);
 
