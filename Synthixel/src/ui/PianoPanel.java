@@ -100,17 +100,17 @@ public class PianoPanel extends JPanel {
         
        
 
-        try {
-
-            loadManager.load(
-                    new File("song.syn"),
-                    recorder);
-
-        }
-        catch(IOException e) {
-
-            e.printStackTrace();
-        }
+//        try {
+//
+//            loadManager.load(
+//                    new File("song.syn"),
+//                    recorder);
+//
+//        }
+//        catch(IOException e) {
+//
+//            e.printStackTrace();
+//        }
     }
 
     @Override

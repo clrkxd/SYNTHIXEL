@@ -19,7 +19,7 @@ public class SoundManager {
     private InstrumentManager instrumentManager;
 
     // 0-10 volume level
-    private int volumeLevel = 5;
+    private int volumeLevel = 9;
 
     // dB value applied to clips
     private float volumeDb;
