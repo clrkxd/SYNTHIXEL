@@ -47,6 +47,12 @@ public class Recorder {
                         key,
                         pressed,
                         current));
+        
+        System.out.println(
+                "Recorded: "
+                + key
+                + " "
+                + pressed);
     }
 
     public void playback(

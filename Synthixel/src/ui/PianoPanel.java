@@ -56,7 +56,7 @@ public class PianoPanel extends JPanel {
                 saveManager,
                 loadManager);
 
-        keyLayer = new PianoKeys(sound, instrumentManager, buttonLayer);
+        keyLayer = new PianoKeys(sound, instrumentManager, buttonLayer, recorder);
         linesLayer = new PianoLinesLayer();
         volumeLayer = new VolumeLayer(sound);
         monitorLayer = new MonitorDisplay();
@@ -85,7 +85,7 @@ public class PianoPanel extends JPanel {
                     MouseEvent e) {
 //            	requestFocusInWindow();
             	
-            	
+            		
                 buttonLayer.handleClick(
                         e.getX(),
                         e.getY());

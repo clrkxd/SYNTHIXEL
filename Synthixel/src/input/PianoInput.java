@@ -5,6 +5,7 @@ import java.awt.event.KeyEvent;
 
 import audio.InstrumentManager;
 import audio.SoundManager;
+import rec.Recorder;
 import ui.ButtonLayer;
 
 public class PianoInput extends KeyAdapter {
@@ -17,11 +18,13 @@ public class PianoInput extends KeyAdapter {
     private SoundManager sound;
     private InstrumentManager instrumentManager;
     private ButtonLayer buttonLayer;
+    private Recorder recorder;
 
-    public PianoInput(SoundManager sound, InstrumentManager instrumentManager, ButtonLayer buttonLayer) {
+    public PianoInput(SoundManager sound, InstrumentManager instrumentManager, ButtonLayer buttonLayer, Recorder recorder) {
         this.sound = sound;
         this.instrumentManager = instrumentManager;
         this.buttonLayer = buttonLayer;
+        this.recorder = recorder;
     }
 
     @Override
@@ -112,51 +115,71 @@ public class PianoInput extends KeyAdapter {
                 whitePressed[0] = pressed;
                 if (pressed) sound.play("C");
                 else sound.stop("C");
+                
+                recorder.record("C", pressed);
             }
             case KeyEvent.VK_S -> {
                 whitePressed[1] = pressed;
                 if (pressed) sound.play("D");
                 else sound.stop("D");
+                
+                recorder.record("D", pressed);
             }
             case KeyEvent.VK_D -> {
                 whitePressed[2] = pressed;
                 if (pressed) sound.play("E");
                 else sound.stop("E");
+                
+                recorder.record("E", pressed);
             }
             case KeyEvent.VK_F -> {
                 whitePressed[3] = pressed;
                 if (pressed) sound.play("F");
                 else sound.stop("F");
+                
+                recorder.record("F", pressed);
             }
             case KeyEvent.VK_G -> {
                 whitePressed[4] = pressed;
                 if (pressed) sound.play("G");
                 else sound.stop("G");
+                
+                recorder.record("G", pressed);
             }
             case KeyEvent.VK_H -> {
                 whitePressed[5] = pressed;
                 if (pressed) sound.play("A");
                 else sound.stop("A");
+                
+                recorder.record("A", pressed);
             }
             case KeyEvent.VK_J -> {
                 whitePressed[6] = pressed;
                 if (pressed) sound.play("B");
                 else sound.stop("B");
+                
+                recorder.record("B", pressed);
             }
             case KeyEvent.VK_K -> {
                 whitePressed[7] = pressed;
                 if (pressed) sound.play("C2");
                 else sound.stop("C2");
+                
+                recorder.record("C2", pressed);
             }
             case KeyEvent.VK_L -> {
                 whitePressed[8] = pressed;
                 if (pressed) sound.play("D2");
                 else sound.stop("D2");
+                
+                recorder.record("D2", pressed);
             }
             case KeyEvent.VK_SEMICOLON -> {
                 whitePressed[9] = pressed;
                 if (pressed) sound.play("E2");
                 else sound.stop("E2");
+                
+                recorder.record("E2", pressed);
             }
 
             // BLACK KEYS
@@ -164,36 +187,50 @@ public class PianoInput extends KeyAdapter {
                 blackPressed[0] = pressed;
                 if (pressed) sound.play("C#");
                 else sound.stop("C#");
+                
+                recorder.record("C#", pressed);
             }
             case KeyEvent.VK_E -> {
                 blackPressed[1] = pressed;
                 if (pressed) sound.play("D#");
                 else sound.stop("D#");
+                
+                recorder.record("D#", pressed);
             }
             case KeyEvent.VK_T -> {
                 blackPressed[2] = pressed;
                 if (pressed) sound.play("F#");
                 else sound.stop("F#");
+                
+                recorder.record("F#", pressed);
             }
             case KeyEvent.VK_Y -> {
                 blackPressed[3] = pressed;
                 if (pressed) sound.play("G#");
                 else sound.stop("G#");
+                
+                recorder.record("G#", pressed);
             }
             case KeyEvent.VK_U -> {
                 blackPressed[4] = pressed;
                 if (pressed) sound.play("A#");
                 else sound.stop("A#");
+                
+                recorder.record("A#", pressed);
             }
             case KeyEvent.VK_O -> {
                 blackPressed[5] = pressed;
                 if (pressed) sound.play("C#2");
                 else sound.stop("C#2");
+                
+                recorder.record("C#2", pressed);
             }
             case KeyEvent.VK_P -> {
                 blackPressed[6] = pressed;
                 if (pressed) sound.play("D#2");
                 else sound.stop("D#2");
+                
+                recorder.record("D#2", pressed);
             }
         }
     }

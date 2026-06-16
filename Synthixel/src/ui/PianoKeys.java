@@ -6,6 +6,7 @@ import audio.InstrumentManager;
 import audio.SoundManager;
 import input.PianoInput;
 import main.UIConstants;
+import rec.Recorder;
 
 import java.awt.*;
 
@@ -30,12 +31,14 @@ public class PianoKeys {
     private SoundManager sound;
     private InstrumentManager instrumentManager;
     private ButtonLayer buttonLayer;
+    private Recorder recorder;
 
-    public PianoKeys(SoundManager sound, InstrumentManager instrumentManager, ButtonLayer buttonLayer) {
+    public PianoKeys(SoundManager sound, InstrumentManager instrumentManager, ButtonLayer buttonLayer, Recorder recorder) {
     	
     	this.sound = sound;
     	this.instrumentManager = instrumentManager;
     	this.buttonLayer = buttonLayer;
+    	this.recorder = recorder;
     	
         whiteKey = new ImageIcon(
                 getClass().getResource("/sprite/white_key.png"))
@@ -46,7 +49,7 @@ public class PianoKeys {
                 .getImage();
 
 //        sound = new SoundManager();
-        input = new PianoInput(sound, instrumentManager, buttonLayer);
+        input = new PianoInput(sound, instrumentManager, buttonLayer, recorder);
     }
 
     public PianoInput getInput() {

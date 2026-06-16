@@ -349,6 +349,23 @@ public class ButtonLayer {
 
                        try {
 
+//                           File file =
+//                                   filePicker.pickSaveFile();
+//
+//                           if(file != null) {
+//
+//                               saveManager.save(
+//                                       file,
+//                                       recorder);
+//
+//                               System.out.println(
+//                                       "Saved: "
+//                                       + file.getName());
+                    	   
+                    	   System.out.println(
+                                   "Events: "
+                                   + recorder.getEvents().size());
+
                            File file =
                                    filePicker.pickSaveFile();
 
@@ -408,6 +425,21 @@ public class ButtonLayer {
 
                 	        System.out.println("Recording stopped");
                 	    }
+                	}
+                   
+                   if(button.getId().equals("play")) {
+
+                	    recorder.playback(sound);
+
+                	    System.out.println("Playing");
+                	}
+                   
+                   if(button.getId().equals("stop")) {
+
+                	    recorder.stopRecording();
+                	    recorder.stopPlayback();
+
+                	    System.out.println("Stopped");
                 	}
 
                 System.out.println(
