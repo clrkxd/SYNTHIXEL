@@ -15,7 +15,7 @@ public class SoundManager {
     private Set<String> sustainedNotes = new HashSet<>();
     
     private ArrayList<Instruments> instruments;
-    private int currentInstrument;
+//    private int currentInstrument;
     private InstrumentManager instrumentManager;
 
     // 0-10 volume level
@@ -227,10 +227,17 @@ public class SoundManager {
         System.out.println("Sustain = " + sustain);
     }
     
-    public void setInstrument(
-            int index) {
+//    public void setInstrument(
+//            int index) {
+//
+//        currentInstrument = index;
+//
+////        loadCurrentInstrument();
+//    }
+    
+    public void setInstrument(int index) {
 
-        currentInstrument = index;
+        instrumentManager.setCurrentIndex(index);
 
         loadCurrentInstrument();
     }

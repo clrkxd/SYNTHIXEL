@@ -48,4 +48,13 @@ public class InstrumentManager {
     	
     	return currentIndex;
     }
+    
+    public void setCurrentIndex(int index) {
+
+        if(index >= 0 &&
+           index < instruments.size()) {
+
+            currentIndex = index;
+        }
+    }
 }

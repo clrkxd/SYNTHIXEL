@@ -75,6 +75,8 @@ public class Recorder {
             playing = true;
 
             long last = 0;
+            
+            int currentPlaybackInstrument = -1;	
 
             for(NoteEvent e : events) {
 
@@ -91,15 +93,45 @@ public class Recorder {
                     ex.printStackTrace();
                 }
                 
-                sound.setInstrument(
-                        e.getInstrument());
+//                sound.setInstrument(
+//                        e.getInstrument());
+//
+//                if(e.isPressed()) {
+//                    sound.play(e.getKey());
+//                }
+//                else {
+//                    sound.stop(e.getKey());
+//                }
+                
+                
+                if(e.getInstrument()
+                        != currentPlaybackInstrument) {
+
+                    sound.setInstrument(
+                            e.getInstrument());
+
+                    currentPlaybackInstrument =
+                            e.getInstrument();
+                }
 
                 if(e.isPressed()) {
+
+                    System.out.println(
+                            "PLAY " + e.getKey());
+
                     sound.play(e.getKey());
-                }
-                else {
+
+                } else {
+
+                    System.out.println(
+                            "STOP " + e.getKey());
+
                     sound.stop(e.getKey());
                 }
+               
+                
+                
+                
 //                playbackSound.setInstrument(
 //                        e.getInstrument());
 //
