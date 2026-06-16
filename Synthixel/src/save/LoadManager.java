@@ -7,11 +7,6 @@ import rec.NoteEvent;
 import rec.Recorder;
 
 public class LoadManager {
-	
-	
-//	LoadManager loader =new LoadManager();
-
-	
 
     public void load(
             File file,
