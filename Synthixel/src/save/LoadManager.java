@@ -41,12 +41,16 @@ public class LoadManager {
             long time =
                     Long.parseLong(
                             split[2]);
+            
+            int instrument =
+                    Integer.parseInt(split[3]);
 
             recorder.getEvents().add(
                     new NoteEvent(
                             key,
                             pressed,
-                            time));
+                            time,
+                            instrument));
         }
 
         scanner.close();

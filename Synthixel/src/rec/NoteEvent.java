@@ -5,14 +5,17 @@ public class NoteEvent {
     private String key;
     private boolean pressed;
     private long time;
+    private int instrument;
 
     public NoteEvent(String key,
                      boolean pressed,
-                     long time) {
+                     long time,
+                     int instrument) {
 
         this.key = key;
         this.pressed = pressed;
         this.time = time;
+        this.instrument = instrument;
     }
 
     public String getKey() {
@@ -25,5 +28,9 @@ public class NoteEvent {
 
     public long getTime() {
         return time;
+    }
+    
+    public int getInstrument() {
+        return instrument;
     }
 }

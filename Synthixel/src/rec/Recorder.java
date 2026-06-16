@@ -15,6 +15,7 @@ public class Recorder {
 
     private boolean recording;
     private boolean playing;
+    
 
     public void startRecording() {
 
@@ -33,7 +34,8 @@ public class Recorder {
 
     public void record(
             String key,
-            boolean pressed) {
+            boolean pressed,
+            int instrument) {
 
         if(!recording)
             return;
@@ -46,13 +48,20 @@ public class Recorder {
                 new NoteEvent(
                         key,
                         pressed,
-                        current));
+                        current,
+                        instrument));
         
+//        System.out.println(
+//                "Recorded: "
+//                + key
+//                + " "
+//                + pressed);
         System.out.println(
-                "Recorded: "
-                + key
+                key
                 + " "
-                + pressed);
+                + pressed
+                + " instrument="
+                + instrument);
     }
 
     public void playback(
@@ -107,6 +116,8 @@ public class Recorder {
     public boolean isPlaying() {
         return playing;
     }
+    
+    
 
     public ArrayList<NoteEvent>
     getEvents() {

@@ -24,7 +24,9 @@ public class SaveManager {
                     + ","
                     + e.isPressed()
                     + ","
-                    + e.getTime());
+                    + e.getTime()
+                    + ","
+                    + e.getInstrument());
         }
 
         out.close();
