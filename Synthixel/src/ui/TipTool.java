@@ -3,15 +3,28 @@ package ui;
 import java.awt.Color;
 import java.awt.FontMetrics;
 import java.awt.Graphics2D;
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
 
 public class TipTool{
 
     private String text = "";
     private PianoButton hoveredButton;
 //    private ButtonLayer buttonLayer;
+    private Image tooltipBg;
     
     private int mouseX;
     private int mouseY;
+    
+    public TipTool() {
+
+        tooltipBg = new ImageIcon(
+                getClass().getResource(
+                        "/sprite/mess.png"))
+                .getImage();
+    }
+    
 
     public void setText(String text) {
         this.text = text;
@@ -73,16 +86,23 @@ public class TipTool{
             tooltipX = mouseX - width - 10;
         }
 
-        g2.setColor(new Color(0,0,0,180));
-        g2.fillRoundRect(
+//        g2.setColor(new Color(0,0,0,180));
+//        g2.fillRoundRect(
+//                tooltipX,
+//                mouseY - 20,
+//                width,
+//                20,
+//                8,
+//                8);
+        g2.drawImage(
+                tooltipBg,
                 tooltipX,
                 mouseY - 20,
                 width,
                 20,
-                8,
-                8);
+                null);
 
-        g2.setColor(Color.WHITE);
+        g2.setColor(new Color(255, 200, 62));
         g2.drawString(
                 text,
                 tooltipX + 8,
