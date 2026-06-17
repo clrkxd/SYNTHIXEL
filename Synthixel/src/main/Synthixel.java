@@ -2,6 +2,10 @@ package main;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.UIManager;
+
+import save.FilePicker;
+import ui.FontManager;
 
 public class Synthixel {
 
@@ -30,6 +34,31 @@ public class Synthixel {
     }
     
     public static void main(String[] args) {
+    	
+//    	try {
+//            UIManager.setLookAndFeel(
+//                "javax.swing.plaf.nimbus.NimbusLookAndFeel"
+//            );
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    	
+//    	FilePicker.applySynthixelTheme();
+//    	
+    	
+    	 try {
+    	        UIManager.setLookAndFeel(
+    	            "javax.swing.plaf.nimbus.NimbusLookAndFeel"
+    	        );
+    	    } catch (Exception e) {
+    	        e.printStackTrace();
+    	    }
+
+    	    // MUST APPLY THEME IMMEDIATELY AFTER LAF
+    	    FilePicker.applySynthixelTheme();
+
+    	    // FORCE FONT BEFORE ANY UI CREATION
+    	    UIManager.put("defaultFont", FontManager.pixel18);
     	new Synthixel();
     	
     	//new main method
