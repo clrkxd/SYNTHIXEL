@@ -7,6 +7,8 @@ import java.awt.Image;
 
 import javax.swing.ImageIcon;
 
+import main.PianoPanel;
+
 public class TipTool{
 
     private String text = "";

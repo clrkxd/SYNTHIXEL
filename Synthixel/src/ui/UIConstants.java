@@ -1,4 +1,4 @@
-package main;
+package ui;
 
 public final class UIConstants {
 

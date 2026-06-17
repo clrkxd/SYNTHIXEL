@@ -1,6 +1,5 @@
 package ui;
 
-import main.UIConstants;
 import javax.swing.*;
 
 import audio.SoundManager;

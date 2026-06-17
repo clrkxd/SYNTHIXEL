@@ -1,4 +1,4 @@
-package ui;
+package main;
 
 import javax.swing.*;
 
@@ -7,6 +7,16 @@ import audio.SoundManager;
 import rec.Recorder;
 import save.LoadManager;
 import save.SaveManager;
+import ui.ButtonLayer;
+import ui.DisplayManager;
+import ui.MonitorDisplay;
+import ui.PianoButton;
+import ui.PianoFrameLayer;
+import ui.PianoKeys;
+import ui.PianoLinesLayer;
+import ui.TipTool;
+import ui.VolumeLayer;
+import ui.FontManager;
 
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -34,6 +44,7 @@ public class PianoPanel extends JPanel {
     private Recorder recorder;
     private SaveManager saveManager;
     private TipTool tiptool;
+    
  
 
     

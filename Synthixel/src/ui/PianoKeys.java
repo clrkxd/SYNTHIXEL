@@ -5,7 +5,6 @@ import javax.swing.*;
 import audio.InstrumentManager;
 import audio.SoundManager;
 import input.PianoInput;
-import main.UIConstants;
 import rec.Recorder;
 
 import java.awt.*;

@@ -1,6 +1,5 @@
 package ui;
 
-import main.UIConstants;
 import rec.Recorder;
 import save.FilePicker;
 import save.LoadManager;
