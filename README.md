@@ -98,6 +98,7 @@ src/
 ````
 res/
 ├── font/
+│    ├── PressStart2P-Regular.ttf
 │    └── VT323-Regular.ttf
 ├── sprite/
 │    ├── white_key.png
