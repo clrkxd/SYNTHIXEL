@@ -12,6 +12,8 @@ Inspired by many virtual piano music software, Synthixel allows users to play pi
 - 💻 Fully customizable open-source project
 - ⌨️ Keyboard mapping support
 - 🔊 Real-time sound playback using WAV files
+- 📁 Export and Import features with files saved in ```.syn``` format
+- 🎼 Fully functional recording and sustain feature
 - 🖼️ Custom piano key sprites made using Aseprite
 - 🖥️ Simple GUI built with Java Swing
 - ⚡ Lightweight and fast (no external libraries)
@@ -71,14 +73,20 @@ src/
 ├── input/
 │    └── PianoInput.java
 ├── main/
+│    ├── PianoPanel.java
 │    └── Synthixel.java
-├── record/
+├── rec/
 │    ├── NoteEvent.java
 │    └── Recorder.java
 ├── save/
+│    ├── FilePicker.java
+│    ├── LoadManager.java
 │    └── SaveManager.java
 └── ui/
-     ├── PianoPanel.java
+     ├── DisplayManager.java
+     ├── FontManager.java
+     ├── MonitorDisplay.java
+     ├── TipTool.java
      ├── PianoKeys.java
      ├── ButtonLayer.java
      ├── PianoButton.java
@@ -98,6 +106,7 @@ res/
 │    ├── darkmode.png
 │    ├── left.png
 │    ├── monitor.png
+│    ├── mess.png
 │    ├── piano-frame.png
 │    ├── piano-lines.png
 │    ├── play.png
@@ -152,8 +161,8 @@ git clone https://github.com/your-username/synthixel.git
 or
 
 ```
-Get a copy of the release of the current alpha version.
-Synthixel_(version)-alpha.jar
+Get a copy of the release of the current version.
+Synthixel_(version).jar
 ```
 
 ---
