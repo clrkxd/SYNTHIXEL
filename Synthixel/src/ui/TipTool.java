@@ -11,7 +11,6 @@ public class TipTool{
 
     private String text = "";
     private PianoButton hoveredButton;
-//    private ButtonLayer buttonLayer;
     private Image tooltipBg;
     
     private int mouseX;
@@ -54,25 +53,6 @@ public class TipTool{
         if(text.isEmpty()) return;
         
         g2.setFont(FontManager.pixel14);
-
-//        FontMetrics fm = g2.getFontMetrics();
-//
-//        int width = fm.stringWidth(text) + 10;
-//
-//        g2.setColor(new Color(0,0,0,180));
-//        g2.fillRoundRect(
-//                mouseX + 10,
-//                mouseY - 20,
-//                width,
-//                20,
-//                8,
-//                8);
-//
-//        g2.setColor(Color.WHITE);
-//        g2.drawString(
-//                text,
-//                mouseX + 15,
-//                mouseY - 5);
         
         FontMetrics fm = g2.getFontMetrics();
 
@@ -86,14 +66,6 @@ public class TipTool{
             tooltipX = mouseX - width - 10;
         }
 
-//        g2.setColor(new Color(0,0,0,180));
-//        g2.fillRoundRect(
-//                tooltipX,
-//                mouseY - 20,
-//                width,
-//                20,
-//                8,
-//                8);
         g2.drawImage(
                 tooltipBg,
                 tooltipX,
