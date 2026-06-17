@@ -510,6 +510,56 @@ public class ButtonLayer {
 //        System.out.println("right" + pressed);
 
     }
+    
+    public String getHoverText(int mouseX, int mouseY) {
+
+        for(PianoButton button : buttons) {
+
+            if(button.contains(mouseX, mouseY)) {
+
+                switch(button.getId()) {
+
+                    case "record":
+                        return "Start Recording";
+
+                    case "play":
+                        return "Play Recording";
+
+                    case "stop":
+                        return "Stop Playback";
+
+                    case "save":
+                        return "Save Recording";
+
+                    case "imprt":
+                        return "Import Recording";
+
+                    case "sust":
+                        return "Toggle Sustain";
+
+                    case "left":
+                        return "Previous Instrument";
+
+                    case "right":
+                        return "Next Instrument";
+                }
+            }
+        }
+
+        return "";
+    }
+    
+    public PianoButton getHoveredButton(int mouseX, int mouseY) {
+
+        for(PianoButton button : buttons) {
+
+            if(button.contains(mouseX, mouseY)) {
+                return button;
+            }
+        }
+
+        return null;
+    }
 
 	
 }

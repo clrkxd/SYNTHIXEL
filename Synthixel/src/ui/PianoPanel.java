@@ -11,6 +11,7 @@ import save.SaveManager;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
 import java.io.File;
 import java.io.IOException;
 
@@ -32,6 +33,7 @@ public class PianoPanel extends JPanel {
     private  LoadManager loadManager;
     private Recorder recorder;
     private SaveManager saveManager;
+    private TipTool tiptool;
  
 
     
@@ -73,6 +75,8 @@ public class PianoPanel extends JPanel {
         
         displayManager.setIns(instrumentManager);
         
+        tiptool = new TipTool();
+        
         
         
         
@@ -101,6 +105,36 @@ public class PianoPanel extends JPanel {
           
                 
             }
+        });
+        
+        
+        addMouseMotionListener(new MouseMotionAdapter() {
+
+            @Override
+            public void mouseMoved(MouseEvent e) {
+
+                String text = buttonLayer.getHoverText(
+                        e.getX(),
+                        e.getY());
+
+                tiptool.setText(text);
+                
+                PianoButton hovered =
+                        buttonLayer.getHoveredButton(
+                                e.getX(),
+                                e.getY());
+                
+                tiptool.setText(text);
+                tiptool.setPosition(
+                        e.getX(),
+                        e.getY());
+
+                tiptool.setHoveredButton(hovered);
+
+                repaint();
+            }
+            
+            
         });
         new Timer(16, e -> repaint()).start();
 
@@ -133,6 +167,9 @@ public class PianoPanel extends JPanel {
         
         // Top Layer
         linesLayer.draw(g2);
+        
+        //hovers
+        tiptool.draw(g2);
 
         g2.dispose();
     }
