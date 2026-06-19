@@ -3,6 +3,9 @@ package ui;
 import java.awt.Color;
 import java.awt.FontMetrics;
 import java.awt.Graphics2D;
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
 
 import main.PianoPanel;
 
@@ -17,6 +20,22 @@ public class MsgNotice {
     private Color border = new Color(255, 200, 62);
     private Color textColor = new Color(255, 255, 255);
     private Color titleColor = new Color(255, 200, 62);
+    
+    private Image ok_press;
+    
+    private int x;
+    private int y;
+    private int width;
+    private int height;
+    
+    private int buttonX, buttonY;	
+    
+    public MsgNotice() {
+
+        ok_press = new ImageIcon(
+                getClass().getResource("/sprite/ok_press.png"))
+                .getImage();
+    }
 
     public void show(String title, String text) {
         this.title = title;
@@ -33,6 +52,10 @@ public class MsgNotice {
     public boolean isVisible() {
         return visible;
     }
+    
+    public void setVisible(boolean visible) {
+        this.visible = visible;
+    }
 
     public void draw(Graphics2D g2) {
 
@@ -43,15 +66,15 @@ public class MsgNotice {
 
         int padding = 20;
 
-        int width = Math.max(
+        width = Math.max(
                 fm.stringWidth(title),
                 fm.stringWidth(text)
         ) + padding * 2;
 
-        int height = 90;
+        height = 90;
 
-        int x = (PianoPanel.FIN_WIDTH - width) / 2;
-        int y = (PianoPanel.FIN_HEIGHT - height) / 2;
+        x = (PianoPanel.FIN_WIDTH - width) / 2;
+        y = (PianoPanel.FIN_HEIGHT - height) / 2;
 
         // background
         g2.setColor(bg);
@@ -70,29 +93,73 @@ public class MsgNotice {
         g2.drawString(text, x + padding, y + 50);
 
         // OK button (fake pixel button)
-        g2.setColor(border);
-        g2.drawRect(x + width / 2 - 25, y + 60, 50, 20);
+//        g2.setColor(border);
+//        g2.drawRect(x + width / 2 - 25, y + 60, 50, 20);
+//
+//        g2.setColor(titleColor);
+//        g2.drawString("OK", x + width / 2 - 8, y + 75);
+        
+        
+        
+//        int buttonX = x + width / 2 - UIConstants.BUTTON_W / 2;
+//        int buttonY = y + 60;
+        
+        buttonX = x + width / 2 - UIConstants.BUTTON_W / 2;
+        buttonY = y + 60;
 
-        g2.setColor(titleColor);
-        g2.drawString("OK", x + width / 2 - 8, y + 75);
+        g2.drawImage(
+                ok_press,
+                buttonX,
+                buttonY,
+                UIConstants.BUTTON_W,
+                UIConstants.BUTTON_H,
+                null);
+        
+        g2.drawString("OK", buttonX + 12, buttonY + 15);
+        
     }
 
     // optional helper
     public void clickOK(int mouseX, int mouseY) {
+//        if (!visible) return;
+
+//        int width = 100;
+//        int height = 90;
+//
+//        int x = (PianoPanel.FIN_WIDTH - width) / 2;
+//        int y = (PianoPanel.FIN_HEIGHT - height) / 2;
+//
+//        int okX = x + width / 2 - 25;
+//        int okY = y + 60;
+//
+//        if (mouseX >= okX && mouseX <= okX + 50 &&
+//            mouseY >= okY && mouseY <= okY + 20) {
+//            clear();
+        
+//        int buttonX = x + width / 2 - UIConstants.BUTTON_W / 2;
+//        int buttonY = y + 60;
+        
+//        if (mouseX >= buttonX &&
+//        	    mouseX <= buttonX + UIConstants.BUTTON_W &&
+//        	    mouseY >= buttonY &&
+//        	    mouseY <= buttonY + UIConstants.BUTTON_H) {
+//
+//        	    clear();
+//        	
+//        }
+        
         if (!visible) return;
 
-        int width = 100;
-        int height = 90;
+        
 
-        int x = (PianoPanel.FIN_WIDTH - width) / 2;
-        int y = (PianoPanel.FIN_HEIGHT - height) / 2;
+        if (mouseX >= buttonX &&
+            mouseX <= buttonX + UIConstants.BUTTON_W &&
+            mouseY >= buttonY &&
+            mouseY <= buttonY + UIConstants.BUTTON_H) {
 
-        int okX = x + width / 2 - 25;
-        int okY = y + 60;
-
-        if (mouseX >= okX && mouseX <= okX + 50 &&
-            mouseY >= okY && mouseY <= okY + 20) {
             clear();
         }
     }
+    
+    
 }

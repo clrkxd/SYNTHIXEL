@@ -10,6 +10,10 @@ public class DisplayManager {
 	private String title = "SYNTHIXEL";
 	public InstrumentManager instrumentManager;
 	
+//	public void setSymbol () {
+//	
+//	}
+	
 	public void setTitle(String title) {
 		this.title = title;
 	}
@@ -17,6 +21,8 @@ public class DisplayManager {
 	public void setIns(InstrumentManager instrumentManager) {
 		this.instrumentManager = instrumentManager;
 	}
+	
+	
 	
 	public void draw(Graphics2D g2) {
 		

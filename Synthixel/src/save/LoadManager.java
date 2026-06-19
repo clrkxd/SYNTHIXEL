@@ -1,76 +1,37 @@
 package save;
 
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
 
 import rec.NoteEvent;
 import rec.Recorder;
-import ui.MsgNotice;
 
 public class LoadManager {
 
-	
-	private MsgNotice msgNotice;
+    public void load(File file, Recorder recorder) throws IOException {
 
-    public LoadManager(MsgNotice msgNotice) {
-        this.msgNotice = msgNotice;
-    }
-
-    public void load(
-            File file,
-            Recorder recorder)
-            throws IOException {
-
-    	try {
         recorder.getEvents().clear();
 
-        Scanner scanner =
-                new Scanner(file);
+        try (Scanner scanner = new Scanner(file)) {
 
-        while(scanner.hasNextLine()) {
+            while (scanner.hasNextLine()) {
 
-            String line =
-                    scanner.nextLine();
+                String[] split = scanner.nextLine().split(",");
 
-            String[] split =
-                    line.split(",");
-
-            String key =
-                    split[0];
-
-            boolean pressed =
-                    Boolean.parseBoolean(
-                            split[1]);
-
-            long time =
-                    Long.parseLong(
-                            split[2]);
-            
-            int instrument =
-                    Integer.parseInt(split[3]);
-
-            recorder.getEvents().add(
+                recorder.getEvents().add(
                     new NoteEvent(
-                            key,
-                            pressed,
-                            time,
-                            instrument));
+                        split[0],
+                        Boolean.parseBoolean(split[1]),
+                        Long.parseLong(split[2]),
+                        Integer.parseInt(split[3])
+                    )
+                );
+            }
         }
-
-        scanner.close();
         
-        if (msgNotice != null) {
-            msgNotice.show("LOAD COMPLETE", "FILE LOADED SUCCESSFULLY.");
-        }
-
-    } catch (Exception e) {
-
-        if (msgNotice != null) {
-            msgNotice.show("LOAD ERROR", "FAILED TO LOAD FILE.");
-        }
-
-        throw e;
+        
     }
-    }
+    
     
 }

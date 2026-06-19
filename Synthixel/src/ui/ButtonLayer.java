@@ -31,13 +31,16 @@ public class ButtonLayer {
     
     private SoundManager playbackSound;
     
+    public MsgNotice msgNotice;
+    
     
 
     public ButtonLayer(SoundManager sound,
     		SoundManager playbackSound,
     		Recorder recorder, 
     		SaveManager saveManager, 
-    		LoadManager loadManager){
+    		LoadManager loadManager,
+    		MsgNotice msgNotice){
     	
  
     	filePicker = new FilePicker();
@@ -47,6 +50,7 @@ public class ButtonLayer {
        
         this.saveManager = saveManager;
         this.loadManager = loadManager;
+        this.msgNotice = msgNotice;
     	
     	left = new ImageIcon(
     	        getClass().getResource("/sprite/left.png"))
@@ -79,6 +83,10 @@ public class ButtonLayer {
     	save = new ImageIcon(
     	        getClass().getResource("/sprite/save.png"))
     	        .getImage();
+    	
+//    	save = new ImageIcon(
+//    	        getClass().getResource("/sprite/ok_press.png"))
+//    	        .getImage();
     	
 
 
@@ -155,6 +163,17 @@ public class ButtonLayer {
             	        UIConstants.BUTTON_H,
                         "save",
                         save));
+        
+        
+//        //only in msgNotice
+//        buttons.add(
+//                new PianoButton(
+//                		UIConstants.SAVE_X,
+//            	        UIConstants.SAVE_Y,
+//            	        UIConstants.BUTTON_W,
+//            	        UIConstants.BUTTON_H,
+//                        "ok_press",
+//                        ok_press));
     }
 
     public void draw(Graphics2D g2) {
@@ -379,9 +398,16 @@ public class ButtonLayer {
                                System.out.println(
                                        "Saved: "
                                        + file.getName());
+                               
+                               msgNotice.show(
+               	                    "SAVE COMPLETE",
+               	                    "FILE SAVED SUCCESSFULLY.");
                            }
 
                        } catch(Exception e) {
+                    	   msgNotice.show(
+               	                "SAVE ERROR",
+               	                "FAILED TO SAVE FILE.");
 
                            e.printStackTrace();
                        }
@@ -390,7 +416,8 @@ public class ButtonLayer {
 
                    if(button.getId().equals("imprt")) {
 
-                	    try {
+                	    
+						try {
 
                 	        File file =
                 	                filePicker.pickOpenFile();
@@ -404,13 +431,28 @@ public class ButtonLayer {
                 	            System.out.println(
                 	                    "Loaded: "
                 	                    + file.getName());
+                	            
+                	            msgNotice.show(
+                	                    "LOAD COMPLETE",
+                	                    "FILE LOADED SUCCESSFULLY.");
                 	        }
 
                 	    } catch(Exception e) {
+                	    	
+                	    	msgNotice.show(
+                	                "LOAD ERROR",
+                	                "FAILED TO LOAD FILE.");
 
                 	        e.printStackTrace();
                 	    }
                 	}
+                   
+
+               	if(button.getId().equals("ok_press")) {
+                       
+                       msgNotice.setVisible(false);
+                     
+                   }
                    
                    if(button.getId().equals("record")) {
 

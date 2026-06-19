@@ -2,6 +2,8 @@ package audio;
 
 import javax.sound.sampled.*;
 
+import ui.MsgNotice;
+
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,8 +29,11 @@ public class SoundManager {
     private boolean sustain = false;
 //    private boolean sustainEnabled = false;
     
+    public MsgNotice msgNotice;
+    
     public SoundManager(InstrumentManager instrumentManager) {
         this.instrumentManager = instrumentManager;
+//        this.msgNotice = msgNotice;
         setVolume(volumeLevel);
         loadCurrentInstrument();
     }
@@ -38,6 +43,7 @@ public class SoundManager {
         sounds.clear();
 
         String folder = instrumentManager.getCurrentInstrument().getFolder();
+//        msgNotice = new MsgNotice();
 
         load("C", folder + "c1.wav");
         load("D", folder + "d1.wav");
@@ -75,18 +81,30 @@ public class SoundManager {
 
                 return;
             }
+            
+            
 
             AudioInputStream ais =
                     AudioSystem.getAudioInputStream(url);
 
             Clip clip = AudioSystem.getClip();
+            
+            
+//            msgNotice.show("LOAD COMPLETE", "FILE LOADED SUCCESSFULLY.");
+//            if (clip != null) {
+////            	msgNotice.isVisible();
+//            	
+//            } else {
+////            	msgNotice.isVisible();
+//            	
+//            }
 
             clip.open(ais);
 
             sounds.put(key, clip);
 
         } catch (Exception e) {
-
+//msgNotice.show("LOAD ERROR", "FAILED TO LOAD FILE.");
             e.printStackTrace();
         }
     }
