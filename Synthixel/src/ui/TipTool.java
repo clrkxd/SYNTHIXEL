@@ -15,6 +15,7 @@ public class TipTool{
     private PianoButton hoveredButton;
     private Image tooltipBg;
     
+   
     private int mouseX;
     private int mouseY;
     

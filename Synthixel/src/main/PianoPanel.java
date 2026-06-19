@@ -10,6 +10,7 @@ import save.SaveManager;
 import ui.ButtonLayer;
 import ui.DisplayManager;
 import ui.MonitorDisplay;
+import ui.MsgNotice;
 import ui.PianoButton;
 import ui.PianoFrameLayer;
 import ui.PianoKeys;
@@ -45,6 +46,8 @@ public class PianoPanel extends JPanel {
     private SaveManager saveManager;
     private TipTool tiptool;
     
+    public MsgNotice msgNotice;
+    
  
 
     
@@ -69,8 +72,8 @@ public class PianoPanel extends JPanel {
 
         frameLayer = new PianoFrameLayer();
         recorder = new Recorder();
-        saveManager = new SaveManager();
-        loadManager = new LoadManager();
+        saveManager = new SaveManager(msgNotice);
+        loadManager = new LoadManager(msgNotice);
 
         buttonLayer = new ButtonLayer(sound, 
         		playbackSound,
@@ -87,6 +90,8 @@ public class PianoPanel extends JPanel {
         displayManager.setIns(instrumentManager);
         
         tiptool = new TipTool();
+        
+        msgNotice = new MsgNotice();
         
         
         
@@ -181,6 +186,9 @@ public class PianoPanel extends JPanel {
         
         //hovers
         tiptool.draw(g2);
+        
+        //message
+        msgNotice.draw(g2);
 
         g2.dispose();
     }

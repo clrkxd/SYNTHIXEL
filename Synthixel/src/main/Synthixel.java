@@ -17,7 +17,7 @@ public class Synthixel {
         windowPiano = new JFrame("Synthixel  --Clark ");
         
         ImageIcon icon = new ImageIcon(
-                Synthixel.class.getResource("/appicon/synthixel-logo_themed.png"));
+                Synthixel.class.getResource("/appicon/synthixel-logo_themed-fixed.png"));
 
         windowPiano.setIconImage(icon.getImage());
 
