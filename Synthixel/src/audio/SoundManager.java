@@ -89,22 +89,11 @@ public class SoundManager {
 
             Clip clip = AudioSystem.getClip();
             
-            
-//            msgNotice.show("LOAD COMPLETE", "FILE LOADED SUCCESSFULLY.");
-//            if (clip != null) {
-////            	msgNotice.isVisible();
-//            	
-//            } else {
-////            	msgNotice.isVisible();
-//            	
-//            }
-
             clip.open(ais);
 
             sounds.put(key, clip);
 
         } catch (Exception e) {
-//msgNotice.show("LOAD ERROR", "FAILED TO LOAD FILE.");
             e.printStackTrace();
         }
     }
