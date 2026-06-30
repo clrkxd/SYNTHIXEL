@@ -83,11 +83,6 @@ public class ButtonLayer {
     	save = new ImageIcon(
     	        getClass().getResource("/sprite/save.png"))
     	        .getImage();
-    	
-//    	save = new ImageIcon(
-//    	        getClass().getResource("/sprite/ok_press.png"))
-//    	        .getImage();
-    	
 
 
         buttons = new ArrayList<>();
@@ -165,15 +160,6 @@ public class ButtonLayer {
                         save));
         
         
-//        //only in msgNotice
-//        buttons.add(
-//                new PianoButton(
-//                		UIConstants.SAVE_X,
-//            	        UIConstants.SAVE_Y,
-//            	        UIConstants.BUTTON_W,
-//            	        UIConstants.BUTTON_H,
-//                        "ok_press",
-//                        ok_press));
     }
 
     public void draw(Graphics2D g2) {
