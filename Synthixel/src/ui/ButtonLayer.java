@@ -233,11 +233,41 @@ public class ButtonLayer {
             }
             
             
-//            if(button.getId().equals("record")) {
-//
-//                recorder.startRecording();
-//
-//                System.out.println("Recording started");
+            if(button.getId().equals("record") && !recorder.isRecording()) {
+                g2.setColor(new Color(0, 0, 0, 120));
+                g2.fillRect(
+                        button.getX(),
+                        button.getY(),
+                        button.getWidth(),
+                        button.getHeight());
+            }
+
+            
+            
+            if(button.getId().equals("stop")){
+            	if(!recorder.isRecording()) {
+                    
+                    g2.setColor(new Color(0, 0, 0, 200));
+                    g2.fillRect(
+                            button.getX(),
+                            button.getY(),
+                            button.getWidth(),
+                            button.getHeight());
+
+                } else if (recorder.isRecording()) {
+                	g2.setColor(null);
+                    g2.fillRect(
+                            button.getX(),
+                            button.getY(),
+                            button.getWidth(),
+                            button.getHeight());
+                    
+                }
+            }
+            
+            
+//            
+//            if(button.getId().equals("stop") && !recorder.isRecording()) {
 //                
 //                g2.setColor(new Color(0, 0, 0, 120));
 //                g2.fillRect(
@@ -245,36 +275,64 @@ public class ButtonLayer {
 //                        button.getY(),
 //                        button.getWidth(),
 //                        button.getHeight());
+//
 //            }
-//
-//            if(button.getId().equals("stop")) {
-//
-//                recorder.stopRecording();
-//                recorder.stopPlayback();
-//                
-//                g2.setColor(new Color(0, 0, 0, 120));
+//            
+//            if(button.getId().equals("stop") && !recorder.isPlaying()) {
+//            	g2.setColor(new Color(0, 0, 0, 120));
 //                g2.fillRect(
 //                        button.getX(),
 //                        button.getY(),
 //                        button.getWidth(),
 //                        button.getHeight());
-//
-//                System.out.println("Stopped");
 //            }
+            
+//            if(button.getId().equals("stop")){
+//            	g2.setColor(new Color(0, 0, 0, 120));
+//            	g2.fillRect(
+//                      button.getX(),
+//                      button.getY(),
+//                      button.getWidth(),
+//                      button.getHeight());
+            	
+//            	if(button.getId().equals("stop") && !recorder.isRecording() || button.getId().equals("stop") && !recorder.isPlaying()) {
+//            		g2.setColor(new Color(0, 0, 0, 120));
+//                	g2.fillRect(
+//                          button.getX(),
+//                          button.getY(),
+//                          button.getWidth(),
+//                          button.getHeight());
+//            	}
+//            	
+//            	if (recorder.isRecording()) {
+//            		g2.setColor(new Color(0, 0, 0, 0));
+//                	g2.fillRect(
+//                          button.getX(),
+//                          button.getY(),
+//                          button.getWidth(),
+//                          button.getHeight());
+//            	}
+//            	
+//            	if (recorder.isPlaying()) {
+//            		g2.setColor(new Color(0, 0, 0, 0));
+//                	g2.fillRect(
+//                          button.getX(),
+//                          button.getY(),
+//                          button.getWidth(),
+//                          button.getHeight());
+//            		
 //
-//            if(button.getId().equals("play")) {
-//
-//                recorder.playback(sound);
-//                
-//                g2.setColor(new Color(0, 0, 0, 120));
-//                g2.fillRect(
-//                        button.getX(),
-//                        button.getY(),
-//                        button.getWidth(),
-//                        button.getHeight());
-//
-//                System.out.println("Playing");
+//            	}
 //            }
+
+            if(button.getId().equals("play") && recorder.isPlaying()) {
+                g2.setColor(new Color(0, 0, 0, 120));
+                g2.fillRect(
+                        button.getX(),
+                        button.getY(),
+                        button.getWidth(),
+                        button.getHeight());
+            }
 //            
 //            if(button.getId().equals("imprt")) {
 //

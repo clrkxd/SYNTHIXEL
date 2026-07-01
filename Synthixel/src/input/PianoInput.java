@@ -133,50 +133,10 @@ public class PianoInput extends KeyAdapter {
         }
         
         if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
-//        	sound.stop(null);
-        	sound.stop("C");
-        	sound.stop("D");
-        	sound.stop("E");
-        	sound.stop("F");
-        	sound.stop("G");
-        	sound.stop("A");
-        	sound.stop("B");
-        	sound.stop("C2");
-        	sound.stop("D2");
-        	sound.stop("E2");
-        	sound.stop("C#");
-        	sound.stop("D#");
-        	sound.stop("F#");
-        	sound.stop("G#");
-        	sound.stop("A#");
-        	sound.stop("C#2");
-        	sound.stop("D#2");
-        	
-        	
             buttonLayer.setRightPressed(false);
         }
         
         if(e.getKeyCode() == KeyEvent.VK_LEFT) {
-//        	sound.stop(null);
-        	sound.stop("C");
-        	sound.stop("D");
-        	sound.stop("E");
-        	sound.stop("F");
-        	sound.stop("G");
-        	sound.stop("A");
-        	sound.stop("B");
-        	sound.stop("C2");
-        	sound.stop("D2");
-        	sound.stop("E2");
-        	sound.stop("C#");
-        	sound.stop("D#");
-        	sound.stop("F#");
-        	sound.stop("G#");
-        	sound.stop("A#");
-        	sound.stop("C#2");
-        	sound.stop("D#2");
-        	
-        	
             buttonLayer.setLeftPressed(false);
         }
 
