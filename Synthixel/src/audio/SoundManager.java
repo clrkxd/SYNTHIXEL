@@ -41,6 +41,7 @@ public class SoundManager {
     public void loadCurrentInstrument() {
 
         sounds.clear();
+       
 
         String folder = instrumentManager.getCurrentInstrument().getFolder();
 //        msgNotice = new MsgNotice();
