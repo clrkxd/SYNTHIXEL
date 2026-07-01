@@ -245,7 +245,7 @@ public class ButtonLayer {
             
             
             if(button.getId().equals("stop")){
-            	if(!recorder.isRecording()) {
+            	if(!recorder.isRecording() && !recorder.isPlaying()) {
                     
                     g2.setColor(new Color(0, 0, 0, 200));
                     g2.fillRect(
@@ -254,76 +254,16 @@ public class ButtonLayer {
                             button.getWidth(),
                             button.getHeight());
 
-                } else if (recorder.isRecording()) {
+                } else if (recorder.isRecording() && recorder.isPlaying()) {
                 	g2.setColor(null);
                     g2.fillRect(
                             button.getX(),
                             button.getY(),
                             button.getWidth(),
                             button.getHeight());
-                    
                 }
             }
-            
-            
-//            
-//            if(button.getId().equals("stop") && !recorder.isRecording()) {
-//                
-//                g2.setColor(new Color(0, 0, 0, 120));
-//                g2.fillRect(
-//                        button.getX(),
-//                        button.getY(),
-//                        button.getWidth(),
-//                        button.getHeight());
-//
-//            }
-//            
-//            if(button.getId().equals("stop") && !recorder.isPlaying()) {
-//            	g2.setColor(new Color(0, 0, 0, 120));
-//                g2.fillRect(
-//                        button.getX(),
-//                        button.getY(),
-//                        button.getWidth(),
-//                        button.getHeight());
-//            }
-            
-//            if(button.getId().equals("stop")){
-//            	g2.setColor(new Color(0, 0, 0, 120));
-//            	g2.fillRect(
-//                      button.getX(),
-//                      button.getY(),
-//                      button.getWidth(),
-//                      button.getHeight());
-            	
-//            	if(button.getId().equals("stop") && !recorder.isRecording() || button.getId().equals("stop") && !recorder.isPlaying()) {
-//            		g2.setColor(new Color(0, 0, 0, 120));
-//                	g2.fillRect(
-//                          button.getX(),
-//                          button.getY(),
-//                          button.getWidth(),
-//                          button.getHeight());
-//            	}
-//            	
-//            	if (recorder.isRecording()) {
-//            		g2.setColor(new Color(0, 0, 0, 0));
-//                	g2.fillRect(
-//                          button.getX(),
-//                          button.getY(),
-//                          button.getWidth(),
-//                          button.getHeight());
-//            	}
-//            	
-//            	if (recorder.isPlaying()) {
-//            		g2.setColor(new Color(0, 0, 0, 0));
-//                	g2.fillRect(
-//                          button.getX(),
-//                          button.getY(),
-//                          button.getWidth(),
-//                          button.getHeight());
-//            		
-//
-//            	}
-//            }
+           
 
             if(button.getId().equals("play") && recorder.isPlaying()) {
                 g2.setColor(new Color(0, 0, 0, 120));
@@ -333,10 +273,10 @@ public class ButtonLayer {
                         button.getWidth(),
                         button.getHeight());
             }
-//            
+            
 //            if(button.getId().equals("imprt")) {
 //
-//                recorder.startRecording();
+////                recorder.startRecording();
 //
 //                System.out.println("importing");
 //                
@@ -361,30 +301,7 @@ public class ButtonLayer {
 ////                        button.getWidth(),
 ////                        button.getHeight());
 ////            }
-////            
-//            if(button.getId().equals("save")) {
-//
-//                try {
-//
-//                    File file =
-//                            filePicker.pickSaveFile();
-//
-//                    if(file != null) {
-//
-//                        saveManager.save(
-//                                file,
-//                                recorder);
-//
-//                        System.out.println(
-//                                "Saved: "
-//                                + file.getName());
-//                    }
-//
-//                } catch(Exception e) {
-//
-//                    e.printStackTrace();
-//                }
-//            }
+
         }
     }
 
