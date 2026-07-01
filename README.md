@@ -67,74 +67,17 @@ Inspired by many virtual piano music software, Synthixel allows users to play pi
 ```
 src/
 ├── audio/
-│    ├── InstrumentManager.java
-│    ├── Instruments.java
-│    └── SoundManager.java
 ├── input/
-│    └── PianoInput.java
 ├── main/
-│    ├── PianoPanel.java
-│    └── Synthixel.java
 ├── rec/
-│    ├── NoteEvent.java
-│    └── Recorder.java
 ├── save/
-│    ├── FilePicker.java
-│    ├── LoadManager.java
-│    └── SaveManager.java
 └── ui/
-     ├── DisplayManager.java
-     ├── FontManager.java
-     ├── MonitorDisplay.java
-     ├── TipTool.java
-     ├── PianoKeys.java
-     ├── ButtonLayer.java
-     ├── PianoButton.java
-     ├── PianoFrameLayer.java
-     ├── PianoLinesLayer.java
-     ├── UIConstants.java
-     └── VolumeLayer.java
 ````
 ````
 res/
 ├── font/
-│    ├── PressStart2P-Regular.ttf
-│    └── VT323-Regular.ttf
 ├── sprite/
-│    ├── white_key.png
-│    ├── black_key.png
-│    ├── synthixel_appicon.png
-│    ├── darkmode.png
-│    ├── left.png
-│    ├── monitor.png
-│    ├── mess.png
-│    ├── piano-frame.png
-│    ├── piano-lines.png
-│    ├── play.png
-│    ├── record.png
-│    ├── right.png
-│    ├── save.png
-│    ├── stop.png
-│    ├── sustain.png
-│    └── vol.png
 ├── piano/
-│    ├── c1.wav
-│    ├── d1.wav
-│    ├── e1.wav
-│    ├── f1.wav
-│    ├── g1.wav
-│    ├── a1.wav
-│    ├── b1.wav
-│    ├── c2.wav
-│    ├── d2.wav
-│    ├── e2.wav
-│    ├── c-sharp1.wav
-│    ├── d-sharp1.wav
-│    ├── f-sharp1.wav
-│    ├── g-sharp1.wav
-│    ├── a-sharp1.wav
-│    ├── c-sharp2.wav
-│    └── d-sharp2.wav
 ├── organ/
 ├── guitar/
 └── strngs/
