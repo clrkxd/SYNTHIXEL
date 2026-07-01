@@ -42,11 +42,11 @@ public class DisplayManager {
 	public void draw(Graphics2D g2) {
 		String title;
 		
-		if (recorder == null) {
-		    System.out.println("Recorder is null");
-		} else {
-		    System.out.println("Recording: " + recorder.isRecording());
-		}
+//		if (recorder == null) {
+//		    System.out.println("Recorder is null");
+//		} else {
+//		    System.out.println("Recording: " + recorder.isRecording());
+//		}
 		
 		if(recorder != null && recorder.isRecording()) {
 			title = "RECORDING...";
