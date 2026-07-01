@@ -9,10 +9,12 @@ public class UIManager {
 	
 	private PianoPanel panel;
 	private int menuIndex = 0;
+	private int pauseIndex = 0;
 
     public enum Screen {
         MAIN_MENU,
         PIANO,
+        PAUSE,
         ABOUT,
         SETTINGS
     }
@@ -41,6 +43,10 @@ public class UIManager {
 
             case PIANO:
                 drawPiano(g2);
+                break;
+                
+            case PAUSE:
+                drawPause(g2);
                 break;
 
             case ABOUT:
@@ -97,6 +103,42 @@ public class UIManager {
         // Draw piano UI
     	panel.drawPiano(g2);
     }
+    
+    private void drawPause(Graphics2D g2) {
+
+        // Draw the piano in the background
+        panel.drawPiano(g2);
+        
+       
+
+        // Dark transparent overlay
+        g2.setColor(new Color(0, 0, 0, 150));
+        g2.fillRect(0, 0, PianoPanel.FIN_WIDTH, PianoPanel.FIN_HEIGHT);
+
+        // Pause text
+        g2.setColor(Color.WHITE);
+        g2.setFont(FontManager.big32);
+        g2.drawString("PAUSED", 170, 120);
+
+        g2.setFont(FontManager.pixel18);
+//        g2.drawString("Resume", 190, 180);
+//        g2.drawString("Main Menu", 190, 220);
+        
+        int x = 200;
+	    int y = 180;
+
+	    g2.drawString("RESUME", x, y);
+	    if (pauseIndex == 0) {
+	        g2.drawString(">", x - 30, y);
+	    }
+
+	    y += 40;
+	    g2.drawString("MAIN MENU", x, y);
+	    if (pauseIndex == 1) {
+	        g2.drawString(">", x - 30, y);
+	    }
+        
+    }
 
     private void drawAbout(Graphics2D g2) {
         // Draw about page
@@ -138,5 +180,33 @@ public class UIManager {
                 System.exit(0);
                 break;
         }
+    }
+    
+    public void pause_up() {
+    	pauseIndex--;
+    	
+    	if (pauseIndex < 0) {
+    		pauseIndex = 1;
+    	}
+    }
+    public void pause_down() {
+    	pauseIndex++;
+    	
+    	if (pauseIndex > 1) {
+    		pauseIndex = 0;
+    	}
+    	
+    }
+    public void pause_select() {
+    	switch (pauseIndex) {
+
+        case 0:
+            setScreen(Screen.PIANO);
+            break;
+
+        case 1:
+            setScreen(Screen.MAIN_MENU);
+            break;
+    }
     }
 }

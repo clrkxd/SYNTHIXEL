@@ -142,9 +142,29 @@ public class PianoInput extends KeyAdapter {
             case KeyEvent.VK_UP:
                 sound.increaseVolume();
                 break;
-            }      
+            }   
+            
+            if(e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+            	uiManager.setScreen(UIManager.Screen.PAUSE);
+            }
 
+        } else if (uiManager.getScreen() == UIManager.Screen.PAUSE) {
+        	switch (key) {
+            case KeyEvent.VK_UP:
+                uiManager.pause_up();
+                break;
+
+            case KeyEvent.VK_DOWN:
+                uiManager.pause_down();
+                break;
+
+            case KeyEvent.VK_ENTER:
+                uiManager.pause_select();
+                break;
+        	}
         }
+        
+        
 
        
     }
