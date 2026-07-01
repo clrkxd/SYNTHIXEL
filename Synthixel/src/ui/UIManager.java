@@ -70,21 +70,23 @@ public class UIManager {
     	
     	
 
-//    	    g2.setColor(new Color(23, 35, 31));
-//    	    g2.fillRect(0, 0, 512, 384);
+//    	    
     	Image mainMenu_scr = new ImageIcon(
-                getClass().getResource("/sprite/mainMenu_scr.png"))
+                getClass().getResource("/sprite/mainScreen.png"))
                 .getImage();
     	g2.drawImage(mainMenu_scr, 0, 0, 512, 384, null);
+    	
+//    	g2.setColor(new Color(23, 35, 31, 120));
+//   	    g2.fillRect(0, 0, 200, 384);
 
-    	    g2.setColor(Color.WHITE);
+    	    g2.setColor(new Color(255, 200, 62));
     	    g2.setFont(FontManager.big32);
 
-    	    g2.drawString("SYNTHIXEL", 120, 142);
+    	    g2.drawString("SYNTHIXEL", 40, 125);
 
-    	    g2.setFont(FontManager.pixel18);
+    	    g2.setFont(FontManager.pixel24);
 
-    	    int x = 200;
+    	    int x = 80;
     	    int y = 180;
 
     	    g2.drawString("PLAY", x, y);
@@ -92,17 +94,21 @@ public class UIManager {
     	        g2.drawString(">", x - 30, y);
     	    }
 
-    	    y += 40;
+    	    y += 30;
     	    g2.drawString("ABOUT", x, y);
     	    if (menuIndex == 1) {
     	        g2.drawString(">", x - 30, y);
     	    }
 
-    	    y += 40;
+    	    y += 30;
     	    g2.drawString("QUIT", x, y);
     	    if (menuIndex == 2) {
     	        g2.drawString(">", x - 30, y);
     	    }
+    	    
+    	    
+    	    g2.drawString("by Clark", 350, 380);
+    	    
     	
     }
 
