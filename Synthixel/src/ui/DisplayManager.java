@@ -4,20 +4,30 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 
 import audio.InstrumentManager;
+import rec.Recorder;
 
 public class DisplayManager {
 
-	private String title = "SYNTHIXEL";
+//	private String title;
 	public InstrumentManager instrumentManager;
+	public Recorder recorder;
 	
 //	public void setSymbol () {
 //	
 //	}
 	
-	public void setTitle(String title) {
-		this.title = title;
+	public void setRec(Recorder recorder) {
+	    this.recorder = recorder;
 	}
 	
+	
+//	public void setTitle(String title) {
+//		this.title = title;
+////		this.recorder = recorder;
+//		
+//		
+//	}
+//	
 	public void setIns(InstrumentManager instrumentManager) {
 		this.instrumentManager = instrumentManager;
 	}
@@ -25,7 +35,19 @@ public class DisplayManager {
 	
 	
 	public void draw(Graphics2D g2) {
+		String title;
 		
+		if (recorder == null) {
+		    System.out.println("Recorder is null");
+		} else {
+		    System.out.println("Recording: " + recorder.isRecording());
+		}
+		
+		if(recorder != null && recorder.isRecording()) {
+			title = "RECORDING...";
+		} else {
+			title = "SYNTHIXEL";
+		}
 
 		g2.setColor(new Color(255, 200, 62));
 		g2.setFont(FontManager.pixel32);

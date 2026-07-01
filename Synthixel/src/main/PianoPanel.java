@@ -91,6 +91,7 @@ public class PianoPanel extends JPanel {
         displayManager = new DisplayManager();
         
         displayManager.setIns(instrumentManager);
+        displayManager.setRec(recorder);
         
         tiptool = new TipTool();
         
