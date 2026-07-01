@@ -11,6 +11,7 @@ public class DisplayManager {
 //	private String title;
 	public InstrumentManager instrumentManager;
 	public Recorder recorder;
+	public Recorder player;
 	
 //	public void setSymbol () {
 //	
@@ -19,6 +20,10 @@ public class DisplayManager {
 	public void setRec(Recorder recorder) {
 	    this.recorder = recorder;
 	}
+	
+//	public void setPlay(Recorder player) {
+//		this.player = player;
+//	}
 	
 	
 //	public void setTitle(String title) {
@@ -45,7 +50,10 @@ public class DisplayManager {
 		
 		if(recorder != null && recorder.isRecording()) {
 			title = "RECORDING...";
-		} else {
+		} else if (recorder != null && recorder.isPlaying()) {
+			title = "PLAYING...";
+		}
+		else {
 			title = "SYNTHIXEL";
 		}
 
