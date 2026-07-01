@@ -7,6 +7,7 @@ import audio.InstrumentManager;
 import audio.SoundManager;
 import rec.Recorder;
 import ui.ButtonLayer;
+import ui.UIManager;
 
 public class PianoInput extends KeyAdapter {
 
@@ -14,111 +15,138 @@ public class PianoInput extends KeyAdapter {
     public boolean[] blackPressed = new boolean[7];
 
     private boolean[] keyHeld = new boolean[256];
+    
+    private UIManager uiManager;
 
     private SoundManager sound;
     private InstrumentManager instrumentManager;
     private ButtonLayer buttonLayer;
     private Recorder recorder;
 
-    public PianoInput(SoundManager sound, InstrumentManager instrumentManager, ButtonLayer buttonLayer, Recorder recorder) {
+    public PianoInput(SoundManager sound, InstrumentManager instrumentManager, ButtonLayer buttonLayer, Recorder recorder, UIManager uiManager) {
         this.sound = sound;
         this.instrumentManager = instrumentManager;
         this.buttonLayer = buttonLayer;
         this.recorder = recorder;
+        this.uiManager = uiManager;
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
         int key = e.getKeyCode();
+        
+        if (uiManager.getScreen() == UIManager.Screen.MAIN_MENU) {
 
-        // BLOCK AUTO REPEAT
-        if (keyHeld[key]) return;
+            // Handle menu navigation
+        	switch (key) {
+            case KeyEvent.VK_UP:
+                uiManager.moveUp();
+                break;
 
-        keyHeld[key] = true;
-        setKey(key, true);
-        
-        //volume
-        int vol = e.getKeyCode();
-        
-        
-        if(e.getKeyCode() == KeyEvent.VK_SPACE) {
-            sound.setSustain(true);
+            case KeyEvent.VK_DOWN:
+                uiManager.moveDown();
+                break;
+
+            case KeyEvent.VK_ENTER:
+                uiManager.select();
+                break;
         }
 
-//        if(vol >= KeyEvent.VK_1 &&
-//        		   vol <= KeyEvent.VK_9) {
-//
-//        		    int level =
-//        		        vol - KeyEvent.VK_0;
-//
-//        		    sound.setVolume(level);
-//        		}
-//        
-//        if(vol == KeyEvent.VK_0) {
-//
-//            sound.setVolume(10);
-//        }
-        
-        if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
-//        	sound.stop(null);            
-        	sound.stop("C");
-        	sound.stop("D");
-        	sound.stop("E");
-        	sound.stop("F");
-        	sound.stop("G");
-        	sound.stop("A");
-        	sound.stop("B");
-        	sound.stop("C2");
-        	sound.stop("D2");
-        	sound.stop("E2");
-        	sound.stop("C#");
-        	sound.stop("D#");
-        	sound.stop("F#");
-        	sound.stop("G#");
-        	sound.stop("A#");
-        	sound.stop("C#2");
-        	sound.stop("D#2");
-        	instrumentManager.nextInstrument();
-            sound.loadCurrentInstrument();
-            buttonLayer.setRightPressed(true);
-        }
+        } else if (uiManager.getScreen() == UIManager.Screen.PIANO) {
 
-        if(e.getKeyCode() == KeyEvent.VK_LEFT) {
-//        	sound.stop(null);
-        	sound.stop("C");
-        	sound.stop("D");
-        	sound.stop("E");
-        	sound.stop("F");
-        	sound.stop("G");
-        	sound.stop("A");
-        	sound.stop("B");
-        	sound.stop("C2");
-        	sound.stop("D2");
-        	sound.stop("E2");
-        	sound.stop("C#");
-        	sound.stop("D#");
-        	sound.stop("F#");
-        	sound.stop("G#");
-        	sound.stop("A#");
-        	sound.stop("C#2");
-        	sound.stop("D#2");
-            instrumentManager.previousInstrument();
-            sound.loadCurrentInstrument();
-            buttonLayer.setLeftPressed(true);
-        }
-        
-        
-        
+            // Handle piano controls
+        	 // BLOCK AUTO REPEAT
+            if (keyHeld[key]) return;
+
+            keyHeld[key] = true;
+            setKey(key, true);
             
-        switch (vol) {    
-        case KeyEvent.VK_DOWN:
-            sound.decreaseVolume();
-            break;
+            //volume
+            int vol = e.getKeyCode();
+            
+            
+            if(e.getKeyCode() == KeyEvent.VK_SPACE) {
+                sound.setSustain(true);
+            }
 
-        case KeyEvent.VK_UP:
-            sound.increaseVolume();
-            break;
-        }      
+//            if(vol >= KeyEvent.VK_1 &&
+//            		   vol <= KeyEvent.VK_9) {
+    //
+//            		    int level =
+//            		        vol - KeyEvent.VK_0;
+    //
+//            		    sound.setVolume(level);
+//            		}
+//            
+//            if(vol == KeyEvent.VK_0) {
+    //
+//                sound.setVolume(10);
+//            }
+            
+            if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
+//            	sound.stop(null);            
+            	sound.stop("C");
+            	sound.stop("D");
+            	sound.stop("E");
+            	sound.stop("F");
+            	sound.stop("G");
+            	sound.stop("A");
+            	sound.stop("B");
+            	sound.stop("C2");
+            	sound.stop("D2");
+            	sound.stop("E2");
+            	sound.stop("C#");
+            	sound.stop("D#");
+            	sound.stop("F#");
+            	sound.stop("G#");
+            	sound.stop("A#");
+            	sound.stop("C#2");
+            	sound.stop("D#2");
+            	instrumentManager.nextInstrument();
+                sound.loadCurrentInstrument();
+                buttonLayer.setRightPressed(true);
+            }
+
+            if(e.getKeyCode() == KeyEvent.VK_LEFT) {
+//            	sound.stop(null);
+            	sound.stop("C");
+            	sound.stop("D");
+            	sound.stop("E");
+            	sound.stop("F");
+            	sound.stop("G");
+            	sound.stop("A");
+            	sound.stop("B");
+            	sound.stop("C2");
+            	sound.stop("D2");
+            	sound.stop("E2");
+            	sound.stop("C#");
+            	sound.stop("D#");
+            	sound.stop("F#");
+            	sound.stop("G#");
+            	sound.stop("A#");
+            	sound.stop("C#2");
+            	sound.stop("D#2");
+                instrumentManager.previousInstrument();
+                sound.loadCurrentInstrument();
+                buttonLayer.setLeftPressed(true);
+            }
+            
+            
+            
+                
+            switch (vol) {    
+            case KeyEvent.VK_DOWN:
+                sound.decreaseVolume();
+                break;
+
+            case KeyEvent.VK_UP:
+                sound.increaseVolume();
+                break;
+            }      
+
+        }
+
+       
     }
 
     @Override

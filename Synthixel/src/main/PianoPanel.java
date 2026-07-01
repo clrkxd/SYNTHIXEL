@@ -18,6 +18,7 @@ import ui.PianoLinesLayer;
 import ui.TipTool;
 import ui.VolumeLayer;
 import ui.FontManager;
+import ui.UIManager;
 
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -31,6 +32,7 @@ public class PianoPanel extends JPanel {
     public static final int FIN_WIDTH = 512;
     public static final int FIN_HEIGHT = 384;
 
+    private UIManager uiManager;
     private PianoFrameLayer frameLayer;
     private PianoKeys keyLayer;
     private PianoLinesLayer linesLayer;
@@ -57,6 +59,7 @@ public class PianoPanel extends JPanel {
         setBackground(new Color(228, 157, 110));
         setLayout(null);
         
+        uiManager = new UIManager(this);
        
 
         msgNotice = new MsgNotice();
@@ -84,7 +87,7 @@ public class PianoPanel extends JPanel {
                 loadManager,
                 msgNotice);
 
-        keyLayer = new PianoKeys(sound, instrumentManager, buttonLayer, recorder);
+        keyLayer = new PianoKeys(sound, instrumentManager, buttonLayer, recorder, uiManager);
         linesLayer = new PianoLinesLayer();
         volumeLayer = new VolumeLayer(sound);
         monitorLayer = new MonitorDisplay();
@@ -169,7 +172,39 @@ public class PianoPanel extends JPanel {
 
         Graphics2D g2 = (Graphics2D) g;
 
-        // Bottom Layer
+        uiManager.draw(g2);
+//        // Bottom Layer
+//        frameLayer.draw(g2);
+//
+//        // Piano Keys
+//        keyLayer.draw(g2);
+//        
+//        // button layer
+//        buttonLayer.draw(g2);
+//        
+//        // volume layer
+//        volumeLayer.draw(g2);
+//        
+//        // monitor layer
+//        monitorLayer.draw(g2);
+//        
+//        // display
+//        displayManager.draw(g2);
+//        
+//        // Top Layer
+//        linesLayer.draw(g2);
+//        
+//        //hovers
+//        tiptool.draw(g2);
+//        
+//        //message
+//        msgNotice.draw(g2);
+
+        g2.dispose();
+    }
+    
+    public void drawPiano(Graphics2D g2) {
+    	// Bottom Layer
         frameLayer.draw(g2);
 
         // Piano Keys
@@ -195,7 +230,6 @@ public class PianoPanel extends JPanel {
         
         //message
         msgNotice.draw(g2);
-
-        g2.dispose();
+    	
     }
 }
