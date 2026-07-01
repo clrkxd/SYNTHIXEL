@@ -11,6 +11,7 @@ import main.PianoPanel;
 public class UIManager {
 	
 	private PianoPanel panel;
+	private AboutPage aboutPage;
 	private int menuIndex = 0;
 	private int pauseIndex = 0;
 
@@ -26,6 +27,7 @@ public class UIManager {
     
     public UIManager(PianoPanel panel) {
         this.panel = panel;
+        this.aboutPage = new AboutPage(this);
     }
 
     public void setScreen(Screen screen) {
@@ -165,6 +167,11 @@ public class UIManager {
 
     private void drawAbout(Graphics2D g2) {
         // Draw about page
+    	
+    	aboutPage.draw(g2);
+    	
+		
+		
     }
 
     private void drawSettings(Graphics2D g2) {
@@ -230,6 +237,10 @@ public class UIManager {
         case 1:
             setScreen(Screen.MAIN_MENU);
             break;
+    	}
     }
+    
+    public void about_ex() {
+    	setScreen(Screen.MAIN_MENU);
     }
 }

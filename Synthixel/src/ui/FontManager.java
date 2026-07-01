@@ -9,7 +9,7 @@ public class FontManager {
     public static Font pixel24;
     public static Font pixel32;
     
-    public static Font big32, big24;
+    public static Font big32, big24, big40;
 
     public static void loadFonts() {
 
@@ -31,6 +31,7 @@ public class FontManager {
                     FontManager.class.getResourceAsStream(
                             "/font/PressStart2P-Regular.ttf"));
             
+            big40 = nameFont.deriveFont(40f);
             big32 = nameFont.deriveFont(32f);
             big24 = nameFont.deriveFont(24f);
 

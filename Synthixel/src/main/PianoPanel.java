@@ -7,6 +7,7 @@ import audio.SoundManager;
 import rec.Recorder;
 import save.LoadManager;
 import save.SaveManager;
+import ui.AboutPage;
 import ui.ButtonLayer;
 import ui.DisplayManager;
 import ui.MonitorDisplay;
@@ -33,6 +34,7 @@ public class PianoPanel extends JPanel {
     public static final int FIN_HEIGHT = 384;
 
     private UIManager uiManager;
+    private AboutPage aboutPage;
     private PianoFrameLayer frameLayer;
     private PianoKeys keyLayer;
     private PianoLinesLayer linesLayer;
@@ -56,10 +58,12 @@ public class PianoPanel extends JPanel {
     public PianoPanel() {
     	
         setPreferredSize(new Dimension(FIN_WIDTH, FIN_HEIGHT));
-        setBackground(new Color(228, 157, 110));
+        setBackground(new Color(23, 35, 31));
         setLayout(null);
         
         uiManager = new UIManager(this);
+        
+        aboutPage = new AboutPage(uiManager);
        
 
         msgNotice = new MsgNotice();
@@ -127,6 +131,10 @@ public class PianoPanel extends JPanel {
                         e.getY());
                 
                 msgNotice.clickOK(e.getX(), e.getY());
+                
+                if (uiManager.getScreen() == UIManager.Screen.ABOUT) {
+                    aboutPage.mouseClicked(e.getX(), e.getY());
+                }
           
                 
             }

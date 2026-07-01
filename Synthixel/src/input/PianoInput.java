@@ -162,6 +162,10 @@ public class PianoInput extends KeyAdapter {
                 uiManager.pause_select();
                 break;
         	}
+        } else if (uiManager.getScreen() == UIManager.Screen.ABOUT) {
+        	if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+        		uiManager.setScreen(UIManager.Screen.MAIN_MENU);
+        	}
         }
         
         
