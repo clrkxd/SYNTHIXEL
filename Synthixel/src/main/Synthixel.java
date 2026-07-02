@@ -14,7 +14,7 @@ public class Synthixel {
 
     public Synthixel() {
 
-        windowPiano = new JFrame("Synthixel  --Clark ");
+        windowPiano = new JFrame("Synthixel v1.0.0");
         
         ImageIcon icon = new ImageIcon(
                 Synthixel.class.getResource("/appicon/synthixel-logo_themed-fixed.png"));
@@ -35,16 +35,6 @@ public class Synthixel {
     
     public static void main(String[] args) {
     	
-//    	try {
-//            UIManager.setLookAndFeel(
-//                "javax.swing.plaf.nimbus.NimbusLookAndFeel"
-//            );
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    	
-//    	FilePicker.applySynthixelTheme();
-//    	
     	
     	 try {
     	        UIManager.setLookAndFeel(
