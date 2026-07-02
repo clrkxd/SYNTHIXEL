@@ -51,7 +51,7 @@ Inspired by many virtual piano music software, Synthixel allows users to play pi
 
 ## 🎮 How to make the buttons function
 
-### Black Keys
+### Piano Screen
 | Control | KeyCode | Function |
 |-----|------|------|
 | ↑ | VK_UP | Volume Up |
@@ -59,6 +59,13 @@ Inspired by many virtual piano music software, Synthixel allows users to play pi
 | S | VK_SPACE | Sustain |
 | ← | VK_LEFT | Instrument Switch |
 | → | VK_RIGHT | Instrument Switch |
+
+### Main Menu and Pause
+| Control | KeyCode | Function |
+|-----|------|------|
+| ↑ | VK_UP | Navigate Up |
+| ↓ | VK_DOWN | Navigate Down |
+| esc | VK_ESCAPE | PAUSE |
 
 ---
 
@@ -75,6 +82,7 @@ src/
 ````
 ````
 res/
+├── appicon/
 ├── font/
 ├── sprite/
 ├── piano/
@@ -123,13 +131,6 @@ Synthixel_(version).jar
 * Sound files must be inside `/res/(name of instrument)/`
 * Sprite images must be inside `/res/sprite/`
 * Uses Java Swing (no external libraries)
-* Alpha releases are still going on
-
-<br>
-
-> THIS PROJECT IS STILL UNDER DEVELOPMENT. <br>
-> SUGGESTIONS ARE HIGHLY RECOMMENDED. <br>
-> PLEASE SUPPORT MY PROJECT AND GIVE IT A TRY.
 
 ---
 
