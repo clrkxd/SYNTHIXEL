@@ -72,6 +72,7 @@ Inspired by many virtual piano music software, Synthixel allows users to play pi
 | ↑ | VK_UP | Navigate Up |
 | ↓ | VK_DOWN | Navigate Down |
 | esc | VK_ESCAPE | PAUSE |
+| Enter | VK_ENTER | SELECT |
 
 ---
 
