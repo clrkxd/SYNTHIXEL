@@ -1,4 +1,4 @@
-# 🎹 Synthixel 
+# 🎹 Synthixel --Open Source--
 - Synthixel is a simple Java-based piano application built using Swing. <br>
 - Inspired by many virtual piano music software, Synthixel allows users to play piano notes using their keyboard with real-time visual feedback and sound playback.
 
