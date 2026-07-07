@@ -143,7 +143,7 @@ Synthixel_(version).jar
 
 ## 👨‍💻 Author
 
-Made by John Clark Melitar <br>
+Made by John Clark Melitar [clrkxd] <br>
 Project: Synthixel 🎹
 
 ---
