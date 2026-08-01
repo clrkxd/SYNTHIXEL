@@ -23,13 +23,9 @@ public class AboutPage {
 	public AboutPage(UIManager uiManager) {
 		this.uiManager = uiManager;
 		
-		abtScr = new ImageIcon(
-                getClass().getResource("/sprite/abt.png"))
-                .getImage();
+		abtScr = new ImageIcon(getClass().getResource("/sprite/abt.png")).getImage();
 		
-		ghub = new ImageIcon(
-                getClass().getResource("/sprite/github_logo.png"))
-                .getImage();
+		ghub = new ImageIcon(getClass().getResource("/sprite/github_logo.png")).getImage();
 	}
 	
 	public void draw(Graphics2D g2) {
@@ -83,14 +79,11 @@ public class AboutPage {
 	
 	public void mouseClicked(int mouseX, int mouseY) {
 
-	    if (mouseX >= githubX &&
-	        mouseX <= githubX + githubWidth &&
-	        mouseY >= githubY &&
-	        mouseY <= githubY + githubHeight) {
+	    if (mouseX >= githubX && mouseX <= githubX + githubWidth &&
+	        mouseY >= githubY && mouseY <= githubY + githubHeight) {
 
 	        try {
-	            Desktop.getDesktop().browse(
-	                new URI("https://github.com/clrkxd/synthixel"));
+	            Desktop.getDesktop().browse(new URI("https://github.com/clrkxd/synthixel"));
 	        } catch (Exception e) {
 	            e.printStackTrace();
 	        }

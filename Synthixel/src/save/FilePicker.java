@@ -25,7 +25,7 @@ public class FilePicker {
 	    }
 	}
 
-    // MUST BE CALLED ONCE AT APP START (VERY IMPORTANT)
+    // call once in main class
     public static void applySynthixelTheme() {
 
         Color text = new Color(255, 200, 62);
@@ -82,22 +82,17 @@ public class FilePicker {
         
 //        chooser.setFont(FontManager.pixel18);
         
-     // FORCE ROOT FONT
+     // root
         chooser.setFont(FontManager.pixel14);
 
-        // FORCE ALL CHILD COMPONENT FONTS
+        // children
         setFontRecursively(chooser, FontManager.pixel14);
         
         chooser.setDialogTitle("Open Synthixel Recording");
 
        
 
-        chooser.setFileFilter(
-            new FileNameExtensionFilter(
-                "Synthixel Files (*.syn)",
-                "syn"
-            )
-        );
+        chooser.setFileFilter(new FileNameExtensionFilter("Synthixel Files (*.syn)", "syn"));
 
         int result = chooser.showOpenDialog(null);
 
@@ -128,12 +123,8 @@ public class FilePicker {
 
         
 
-        chooser.setFileFilter(
-            new FileNameExtensionFilter(
-                "Synthixel Files (*.syn)",
-                "syn"
-            )
-        );
+        chooser.setFileFilter(new FileNameExtensionFilter("Synthixel Files (*.syn)", "syn"));
+      
 
         int result = chooser.showSaveDialog(null);
 

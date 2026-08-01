@@ -21,10 +21,7 @@ public class TipTool{
     
     public TipTool() {
 
-        tooltipBg = new ImageIcon(
-                getClass().getResource(
-                        "/sprite/mess.png"))
-                .getImage();
+        tooltipBg = new ImageIcon(getClass().getResource("/sprite/mess.png")).getImage();
     }
     
 
@@ -69,19 +66,11 @@ public class TipTool{
             tooltipX = mouseX - width - 10;
         }
 
-        g2.drawImage(
-                tooltipBg,
-                tooltipX,
-                mouseY - 20,
-                width,
-                20,
-                null);
+        g2.drawImage(tooltipBg, tooltipX, mouseY - 20, width, 20, null);
+
 
         g2.setColor(new Color(255, 200, 62));
-        g2.drawString(
-                text,
-                tooltipX + 8,
-                mouseY - 5);
+        g2.drawString(text, tooltipX + 8, mouseY - 5);
     }
         
         

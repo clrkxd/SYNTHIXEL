@@ -8,9 +8,7 @@ public class PianoFrameLayer {
     private Image frame;
 
     public PianoFrameLayer() {
-        frame = new ImageIcon(
-                getClass().getResource("/sprite/piano-frame.png"))
-                .getImage();
+        frame = new ImageIcon(getClass().getResource("/sprite/piano-frame.png")).getImage();
     }
 
     public void draw(Graphics2D g2) {

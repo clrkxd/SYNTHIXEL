@@ -31,9 +31,7 @@ public class MsgNotice {
     
     public MsgNotice() {
 
-        ok_press = new ImageIcon(
-                getClass().getResource("/sprite/ok_press.png"))
-                .getImage();
+        ok_press = new ImageIcon(getClass().getResource("/sprite/ok_press.png")).getImage();
     }
 
     public void show(String title, String text) {
@@ -65,10 +63,7 @@ public class MsgNotice {
 
         int padding = 20;
 
-        width = Math.max(
-                fm.stringWidth(title),
-                fm.stringWidth(text)
-        ) + padding * 2;
+        width = Math.max(fm.stringWidth(title), fm.stringWidth(text)) + padding * 2;
 
         height = 90;
 
@@ -95,13 +90,7 @@ public class MsgNotice {
         buttonX = x + width / 2 - UIConstants.BUTTON_W / 2;
         buttonY = y + 60;
 
-        g2.drawImage(
-                ok_press,
-                buttonX,
-                buttonY,
-                UIConstants.BUTTON_W,
-                UIConstants.BUTTON_H,
-                null);
+        g2.drawImage(ok_press, buttonX, buttonY, UIConstants.BUTTON_W, UIConstants.BUTTON_H, null);
         
         g2.drawString("OK", buttonX + 12, buttonY + 15);
         
@@ -112,10 +101,8 @@ public class MsgNotice {
         
         if (!visible) return;
         
-        if (mouseX >= buttonX &&
-            mouseX <= buttonX + UIConstants.BUTTON_W &&
-            mouseY >= buttonY &&
-            mouseY <= buttonY + UIConstants.BUTTON_H) {
+        if (mouseX >= buttonX && mouseX <= buttonX + UIConstants.BUTTON_W &&
+            mouseY >= buttonY && mouseY <= buttonY + UIConstants.BUTTON_H) {
 
             clear();
         }

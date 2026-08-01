@@ -9,14 +9,12 @@ import audio.InstrumentManager;
 
 public class MonitorDisplay {
 
-	private InstrumentManager instrumentManager;
+//	private InstrumentManager instrumentManager;
 	private Image mntr;
 	
 	
 	public MonitorDisplay() {
-		mntr = new ImageIcon(
-                getClass().getResource("/sprite/monitor.png"))
-                .getImage();
+		mntr = new ImageIcon(getClass().getResource("/sprite/monitor.png")).getImage();
 	}
 	
 	public void draw(Graphics2D g2) {

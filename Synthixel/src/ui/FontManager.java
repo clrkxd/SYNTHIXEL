@@ -15,10 +15,7 @@ public class FontManager {
 
         try {
 
-            Font baseFont = Font.createFont(
-                    Font.TRUETYPE_FONT,
-                    FontManager.class.getResourceAsStream(
-                            "/font/VT323-Regular.ttf"));
+            Font baseFont = Font.createFont(Font.TRUETYPE_FONT, FontManager.class.getResourceAsStream("/font/VT323-Regular.ttf"));
 
             pixel14 = baseFont.deriveFont(14f);
             pixel18 = baseFont.deriveFont(18f);
@@ -26,10 +23,7 @@ public class FontManager {
             pixel32 = baseFont.deriveFont(32f);
             
             
-            Font nameFont = Font.createFont(
-                    Font.TRUETYPE_FONT,
-                    FontManager.class.getResourceAsStream(
-                            "/font/PressStart2P-Regular.ttf"));
+            Font nameFont = Font.createFont(Font.TRUETYPE_FONT, FontManager.class.getResourceAsStream( "/font/PressStart2P-Regular.ttf"));
             
             big40 = nameFont.deriveFont(40f);
             big32 = nameFont.deriveFont(32f);

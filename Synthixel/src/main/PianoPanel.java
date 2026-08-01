@@ -70,12 +70,9 @@ public class PianoPanel extends JPanel {
         instrumentManager = new InstrumentManager();
         sound = new SoundManager(instrumentManager);
 
-        InstrumentManager playbackInstrumentManager =
-                new InstrumentManager();
+        InstrumentManager playbackInstrumentManager = new InstrumentManager();
 
-        playbackSound =
-                new SoundManager(
-                        playbackInstrumentManager);
+        playbackSound = new SoundManager(playbackInstrumentManager);
         
         
 
@@ -84,12 +81,7 @@ public class PianoPanel extends JPanel {
         saveManager = new SaveManager();
         loadManager = new LoadManager();
 
-        buttonLayer = new ButtonLayer(sound, 
-        		playbackSound,
-        		recorder,
-                saveManager,
-                loadManager,
-                msgNotice);
+        buttonLayer = new ButtonLayer(sound, playbackSound, recorder, saveManager, loadManager, msgNotice);
 
         keyLayer = new PianoKeys(sound, instrumentManager, buttonLayer, recorder, uiManager);
         linesLayer = new PianoLinesLayer();
@@ -101,11 +93,6 @@ public class PianoPanel extends JPanel {
         displayManager.setRec(recorder);
         
         tiptool = new TipTool();
-        
-        
-        
-        
-        
         
         FontManager.loadFonts();
         

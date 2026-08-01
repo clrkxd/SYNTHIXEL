@@ -16,9 +16,7 @@ public class VolumeLayer {
     	
     	this.sound = sound;
     	
-        volumeSprite = new ImageIcon(
-                getClass().getResource("/sprite/vol.png"))
-                .getImage();
+        volumeSprite = new ImageIcon(getClass().getResource("/sprite/vol.png")).getImage();
     }
 
     public void increaseVolume() {
@@ -38,27 +36,11 @@ public class VolumeLayer {
 
         for (int i = 0; i < bars; i++) {
 
-            int x =
-                    UIConstants.VOLUME_X +
-                    i * (UIConstants.VOLUME_BAR_W +
-                         UIConstants.VOLUME_GAP);
+            int x = UIConstants.VOLUME_X + i * (UIConstants.VOLUME_BAR_W + UIConstants.VOLUME_GAP);
             
             g2.setColor(Color.RED);
 
-//            g2.fillRect(
-//                    x,
-//                    UIConstants.VOLUME_Y,
-//                    UIConstants.VOLUME_BAR_W,
-//                    UIConstants.VOLUME_BAR_H);
-
-            g2.drawImage(
-                    volumeSprite,
-                    x,
-                    UIConstants.VOLUME_Y,
-                    UIConstants.VOLUME_BAR_W,
-                    UIConstants.VOLUME_BAR_H,
-                    null);
-            
+            g2.drawImage(volumeSprite, x, UIConstants.VOLUME_Y, UIConstants.VOLUME_BAR_W, UIConstants.VOLUME_BAR_H, null);            
             
         }
     }

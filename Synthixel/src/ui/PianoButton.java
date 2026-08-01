@@ -9,19 +9,9 @@ public class PianoButton {
     private String id;
 	private Image image;
 
-    public PianoButton(
-            int x,
-            int y,
-            int width,
-            int height,
-            String id,
-            Image image) {
+    public PianoButton(int x, int y, int width, int height, String id, Image image) {
 
-        this.bounds = new Rectangle(
-                x,
-                y,
-                width,
-                height);
+        this.bounds = new Rectangle(x, y, width, height);
 
         this.id = id;
         this.image = image;
@@ -29,13 +19,7 @@ public class PianoButton {
 
     public void draw(Graphics2D g2) {
 
-        g2.drawImage(
-                image,
-                bounds.x,
-                bounds.y,
-                bounds.width,
-                bounds.height,
-                null);
+        g2.drawImage(image, bounds.x, bounds.y, bounds.width, bounds.height, null);
     }
 
     public boolean contains(int mouseX, int mouseY) {

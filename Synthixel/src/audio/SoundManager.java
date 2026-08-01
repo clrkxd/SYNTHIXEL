@@ -85,8 +85,7 @@ public class SoundManager {
             
             
 
-            AudioInputStream ais =
-                    AudioSystem.getAudioInputStream(url);
+            AudioInputStream ais = AudioSystem.getAudioInputStream(url);
 
             Clip clip = AudioSystem.getClip();
             
@@ -109,9 +108,7 @@ public class SoundManager {
 
         try {
 
-            FloatControl gain =
-                    (FloatControl) clip.getControl(
-                            FloatControl.Type.MASTER_GAIN);
+            FloatControl gain = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
 
             gain.setValue(volumeDb);
 
@@ -211,7 +208,7 @@ public class SoundManager {
     public void toggleSustain() {
 
         sustain = !sustain;
-        System.out.println("Sustain = " + sustain);
+//        System.out.println("Sustain = " + sustain);
     }
     
     public void setInstrument(int index) {

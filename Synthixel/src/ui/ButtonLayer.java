@@ -35,14 +35,8 @@ public class ButtonLayer {
     
     
 
-    public ButtonLayer(SoundManager sound,
-    		SoundManager playbackSound,
-    		Recorder recorder, 
-    		SaveManager saveManager, 
-    		LoadManager loadManager,
-    		MsgNotice msgNotice){
-    	
- 
+    public ButtonLayer(SoundManager sound, SoundManager playbackSound, Recorder recorder, SaveManager saveManager, LoadManager loadManager, MsgNotice msgNotice){
+
     	filePicker = new FilePicker();
         this.sound = sound;
         this.playbackSound = playbackSound;
@@ -52,119 +46,45 @@ public class ButtonLayer {
         this.loadManager = loadManager;
         this.msgNotice = msgNotice;
     	
-    	left = new ImageIcon(
-    	        getClass().getResource("/sprite/left.png"))
-    	        .getImage();
+    	left = new ImageIcon(getClass().getResource("/sprite/left.png")).getImage();
 
-    	right = new ImageIcon(
-    	        getClass().getResource("/sprite/right.png"))
-    	        .getImage();
+    	right = new ImageIcon(getClass().getResource("/sprite/right.png")).getImage();
 
-    	sust = new ImageIcon(
-    	        getClass().getResource("/sprite/sustain.png"))
-    	        .getImage();
+    	sust = new ImageIcon(getClass().getResource("/sprite/sustain.png")).getImage();
     	
-    	play = new ImageIcon(
-    	        getClass().getResource("/sprite/play.png"))
-    	        .getImage();
+    	play = new ImageIcon(getClass().getResource("/sprite/play.png")).getImage();
 
-    	stop = new ImageIcon(
-    	        getClass().getResource("/sprite/stop.png"))
-    	        .getImage();
+    	stop = new ImageIcon(getClass().getResource("/sprite/stop.png")).getImage();
 
-    	imprt = new ImageIcon(
-    	        getClass().getResource("/sprite/import.png"))
-    	        .getImage();
+    	imprt = new ImageIcon(getClass().getResource("/sprite/import.png")).getImage();
     	
-    	record = new ImageIcon(
-    	        getClass().getResource("/sprite/record.png"))
-    	        .getImage();
+    	record = new ImageIcon(getClass().getResource("/sprite/record.png")).getImage();
 
-    	save = new ImageIcon(
-    	        getClass().getResource("/sprite/save.png"))
-    	        .getImage();
+    	save = new ImageIcon(getClass().getResource("/sprite/save.png")).getImage();
 
 
         buttons = new ArrayList<>();
 
-        buttons.add(
-                new PianoButton(
-                		UIConstants.LEFT_X,
-            	        UIConstants.LEFT_Y,
-            	        UIConstants.BUTTON_W,
-            	        UIConstants.BUTTON_H,
-                        "left",
-                        left));
+        buttons.add(new PianoButton(UIConstants.LEFT_X,UIConstants.LEFT_Y, UIConstants.BUTTON_W,UIConstants.BUTTON_H, "left", left));
 
-        buttons.add(
-                new PianoButton(
-                		UIConstants.RIGHT_X,
-            	        UIConstants.RIGHT_Y,
-            	        UIConstants.BUTTON_W,
-            	        UIConstants.BUTTON_H,
-                        "right",
-                        right));
+        buttons.add(new PianoButton(UIConstants.RIGHT_X, UIConstants.RIGHT_Y, UIConstants.BUTTON_W, UIConstants.BUTTON_H, "right", right));
 
-        buttons.add(
-                new PianoButton(
-                		UIConstants.SUST_X,
-            	        UIConstants.SUST_Y,
-            	        UIConstants.BUTTON_W,
-            	        UIConstants.BUTTON_H,
-                        "sust",
-                        sust));
+        buttons.add(new PianoButton(UIConstants.SUST_X, UIConstants.SUST_Y, UIConstants.BUTTON_W, UIConstants.BUTTON_H, "sust", sust));
         
-        buttons.add(
-                new PianoButton(
-                		UIConstants.PLAY_X,
-            	        UIConstants.PLAY_Y,
-            	        UIConstants.BUTTON_W,
-            	        UIConstants.BUTTON_H,
-                        "play",
-                        play));
+        buttons.add(new PianoButton(UIConstants.PLAY_X, UIConstants.PLAY_Y, UIConstants.BUTTON_W, UIConstants.BUTTON_H, "play", play));
 
-        buttons.add(
-                new PianoButton(
-                		UIConstants.STOP_X,
-            	        UIConstants.STOP_Y,
-            	        UIConstants.BUTTON_W,
-            	        UIConstants.BUTTON_H,
-                        "stop",
-                        stop));
+        buttons.add(new PianoButton(UIConstants.STOP_X, UIConstants.STOP_Y, UIConstants.BUTTON_W, UIConstants.BUTTON_H, "stop", stop));
 
-        buttons.add(
-                new PianoButton(
-                		UIConstants.REC_X,
-            	        UIConstants.REC_Y,
-            	        UIConstants.BUTTON_W,
-            	        UIConstants.BUTTON_H,
-                        "record",
-                        record));
+        buttons.add(new PianoButton(UIConstants.REC_X, UIConstants.REC_Y,UIConstants.BUTTON_W, UIConstants.BUTTON_H, "record", record));
         
-        buttons.add(
-                new PianoButton(
-                		UIConstants.IMP_X,
-            	        UIConstants.IMP_Y,
-            	        UIConstants.BUTTON_W,
-            	        UIConstants.BUTTON_H,
-                        "imprt",
-                        imprt));
+        buttons.add(new PianoButton(UIConstants.IMP_X, UIConstants.IMP_Y, UIConstants.BUTTON_W, UIConstants.BUTTON_H, "imprt", imprt));
         
-        buttons.add(
-                new PianoButton(
-                		UIConstants.SAVE_X,
-            	        UIConstants.SAVE_Y,
-            	        UIConstants.BUTTON_W,
-            	        UIConstants.BUTTON_H,
-                        "save",
-                        save));
+        buttons.add(new PianoButton(UIConstants.SAVE_X, UIConstants.SAVE_Y, UIConstants.BUTTON_W, UIConstants.BUTTON_H, "save", save));
         
-        
+
     }
 
     public void draw(Graphics2D g2) {
-
-
     	for (PianoButton button : buttons) {
 
             button.draw(g2);
@@ -173,73 +93,25 @@ public class ButtonLayer {
 
                 g2.setColor(new Color(0, 0, 0, 100));
 
-                g2.fillRect(
-                        button.getX(),
-                        button.getY(),
-                        button.getWidth(),
-                        button.getHeight());
+                g2.fillRect(button.getX(), button.getY(), button.getWidth(), button.getHeight());
             }
             
-//            if(button.getId().equals("left") && leftP) {
-//
-//                g2.setColor(new Color(0,0,0,120));
-//                g2.fillRect(
-//                        button.getX(),
-//                        button.getY(),
-//                        button.getWidth(),
-//                        button.getHeight());
-//                
-//                System.out.println("left");
-//                
-//                
-//                
-//            }
-//
-//            if(button.getId().equals("right") && rightP) {
-//
-//                g2.setColor(new Color(0,0,0,120));
-//                g2.fillRect(
-//                        button.getX(),
-//                        button.getY(),
-//                        button.getWidth(),
-//                        button.getHeight());
-//                
-//                System.out.println("right");
-//                
-//    
-//
-//            }
-            
-            if (button.getId().equals("left")
-                    && System.currentTimeMillis() - leftPressedTime < 75) {
+            if (button.getId().equals("left")&& System.currentTimeMillis() - leftPressedTime < 75) {
 
                 g2.setColor(new Color(0, 0, 0, 120));
-                g2.fillRect(
-                        button.getX(),
-                        button.getY(),
-                        button.getWidth(),
-                        button.getHeight());
+                g2.fillRect(button.getX(), button.getY(), button.getWidth(), button.getHeight());
             }
             
-            if (button.getId().equals("right")
-                    && System.currentTimeMillis() - rightPressedTime < 75) {
+            if (button.getId().equals("right") && System.currentTimeMillis() - rightPressedTime < 75) {
 
                 g2.setColor(new Color(0, 0, 0, 120));
-                g2.fillRect(
-                        button.getX(),
-                        button.getY(),
-                        button.getWidth(),
-                        button.getHeight());
+                g2.fillRect(button.getX(), button.getY(), button.getWidth(), button.getHeight());
             }
             
             
             if(button.getId().equals("record") && !recorder.isRecording()) {
                 g2.setColor(new Color(0, 0, 0, 120));
-                g2.fillRect(
-                        button.getX(),
-                        button.getY(),
-                        button.getWidth(),
-                        button.getHeight());
+                g2.fillRect(button.getX(), button.getY(), button.getWidth(), button.getHeight());
             }
 
             
@@ -248,60 +120,20 @@ public class ButtonLayer {
             	if(!recorder.isRecording() && !recorder.isPlaying()) {
                     
                     g2.setColor(new Color(0, 0, 0, 200));
-                    g2.fillRect(
-                            button.getX(),
-                            button.getY(),
-                            button.getWidth(),
-                            button.getHeight());
+                    g2.fillRect(button.getX(), button.getY(), button.getWidth(), button.getHeight());
 
                 } else if (recorder.isRecording() && recorder.isPlaying()) {
                 	g2.setColor(null);
-                    g2.fillRect(
-                            button.getX(),
-                            button.getY(),
-                            button.getWidth(),
-                            button.getHeight());
+                    g2.fillRect(button.getX(), button.getY(), button.getWidth(), button.getHeight());
                 }
             }
            
 
             if(button.getId().equals("play") && recorder.isPlaying()) {
                 g2.setColor(new Color(0, 0, 0, 120));
-                g2.fillRect(
-                        button.getX(),
-                        button.getY(),
-                        button.getWidth(),
-                        button.getHeight());
+                g2.fillRect(button.getX(), button.getY(), button.getWidth(), button.getHeight());
             }
             
-//            if(button.getId().equals("imprt")) {
-//
-////                recorder.startRecording();
-//
-//                System.out.println("importing");
-//                
-//                g2.setColor(new Color(0, 0, 0, 120));
-//                g2.fillRect(
-//                        button.getX(),
-//                        button.getY(),
-//                        button.getWidth(),
-//                        button.getHeight());
-//            }
-////            
-////            if(button.getId().equals("save")) {
-////
-////                recorder.startRecording();
-////
-////                System.out.println("save started");
-////                
-////                g2.setColor(new Color(0, 0, 0, 120));
-////                g2.fillRect(
-////                        button.getX(),
-////                        button.getY(),
-////                        button.getWidth(),
-////                        button.getHeight());
-////            }
-
         }
     }
 
@@ -313,62 +145,35 @@ public class ButtonLayer {
 
         for (PianoButton button : buttons) {
 
-            if (button.contains(
-                    mouseX,
-                    mouseY)) {
+            if (button.contains(mouseX, mouseY)) {
             	
             	if(button.getId().equals("sust")) {
 //                    sustainEnabled = !sustainEnabled;
                     
                     sound.toggleSustain();
                     
-                    System.out.println(
-                            "Sustain: " + sound.isSustainEnabled());
+//                    System.out.println("Sustain: " + sound.isSustainEnabled());
                 }
             	
             	   if(button.getId().equals("save")) {
 
                        try {
-
-//                           File file =
-//                                   filePicker.pickSaveFile();
-//
-//                           if(file != null) {
-//
-//                               saveManager.save(
-//                                       file,
-//                                       recorder);
-//
-//                               System.out.println(
-//                                       "Saved: "
-//                                       + file.getName());
                     	   
-                    	   System.out.println(
-                                   "Events: "
-                                   + recorder.getEvents().size());
+//                    	   System.out.println("Events: " + recorder.getEvents().size());
 
-                           File file =
-                                   filePicker.pickSaveFile();
+                           File file = filePicker.pickSaveFile();
 
                            if(file != null) {
 
-                               saveManager.save(
-                                       file,
-                                       recorder);
+                               saveManager.save(file, recorder);
 
-                               System.out.println(
-                                       "Saved: "
-                                       + file.getName());
+//                               System.out.println("Saved: " + file.getName());
                                
-                               msgNotice.show(
-               	                    "SAVE COMPLETE",
-               	                    "FILE SAVED SUCCESSFULLY.");
+                               msgNotice.show( "SAVE COMPLETE", "FILE SAVED SUCCESSFULLY.");
                            }
 
                        } catch(Exception e) {
-                    	   msgNotice.show(
-               	                "SAVE ERROR",
-               	                "FAILED TO SAVE FILE.");
+                    	   msgNotice.show("SAVE ERROR", "FAILED TO SAVE FILE.");
 
                            e.printStackTrace();
                        }
@@ -380,29 +185,20 @@ public class ButtonLayer {
                 	    
 						try {
 
-                	        File file =
-                	                filePicker.pickOpenFile();
+                	        File file = filePicker.pickOpenFile();
 
                 	        if(file != null) {
 
-                	            loadManager.load(
-                	                    file,
-                	                    recorder);
+                	            loadManager.load(file, recorder);
 
-                	            System.out.println(
-                	                    "Loaded: "
-                	                    + file.getName());
+//                	            System.out.println("Loaded: " + file.getName());
                 	            
-                	            msgNotice.show(
-                	                    "LOAD COMPLETE",
-                	                    "FILE LOADED SUCCESSFULLY.");
+                	            msgNotice.show("LOAD COMPLETE", "FILE LOADED SUCCESSFULLY.");
                 	        }
 
                 	    } catch(Exception e) {
                 	    	
-                	    	msgNotice.show(
-                	                "LOAD ERROR",
-                	                "FAILED TO LOAD FILE.");
+                	    	msgNotice.show("LOAD ERROR", "FAILED TO LOAD FILE.");
 
                 	        e.printStackTrace();
                 	    }
@@ -421,13 +217,13 @@ public class ButtonLayer {
 
                 	        recorder.startRecording();
 
-                	        System.out.println("Recording");
+//                	        System.out.println("Recording");
 
                 	    } else {
 
                 	        recorder.stopRecording();
 
-                	        System.out.println("Recording stopped");
+//                	        System.out.println("Recording stopped");
                 	    }
                 	}
                    
@@ -436,7 +232,7 @@ public class ButtonLayer {
 //                	    recorder.playback(sound);
                 	   recorder.playback(playbackSound);
 
-                	    System.out.println("Playing");
+//                	    System.out.println("Playing");
                 	}
                    
                    if(button.getId().equals("stop")) {
@@ -444,51 +240,15 @@ public class ButtonLayer {
                 	    recorder.stopRecording();
                 	    recorder.stopPlayback();
 
-                	    System.out.println("Stopped");
+//                	    System.out.println("Stopped");
                 	}
 
-                System.out.println(
-                        "Clicked: "
-                        + button.getId());
-            }
-//           if(button.getId().equals("save")) {
-//
-//            try {
-//
-//                saveManager.save(
-//                        new File("song.syn"),
-//                        recorder);
-//
-//                System.out.println("Saved");
-//
-//            } catch(Exception e) {
-//
-//                e.printStackTrace();
-//            }
-//        }
-            
+                System.out.println("Clicked: " + button.getId());
+            }            
          
-           
-//           if(button.getId().equals("imprt")) {
-//
-//        	    try {
-//
-//        	        loadManager.load(
-//        	                new File("song.syn"),
-//        	                recorder);
-//
-//        	        System.out.println("Loaded");
-//
-//        	    } catch(Exception e) {
-//
-//        	        e.printStackTrace();
-//        	    }
-//        	}
-           
 
         }
-        
-                
+               
     }
     
     public void setLeftPressed(boolean pressed) {

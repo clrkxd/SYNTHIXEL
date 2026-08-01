@@ -41,13 +41,9 @@ public class PianoKeys {
     	this.recorder = recorder;
     	this.uiManager = uiManager;
     	
-        whiteKey = new ImageIcon(
-                getClass().getResource("/sprite/white_key.png"))
-                .getImage();
+        whiteKey = new ImageIcon(getClass().getResource("/sprite/white_key.png")).getImage();
 
-        blackKey = new ImageIcon(
-                getClass().getResource("/sprite/black_key.png"))
-                .getImage();
+        blackKey = new ImageIcon(getClass().getResource("/sprite/black_key.png")).getImage();
 
 //        sound = new SoundManager();
         input = new PianoInput(sound, instrumentManager, buttonLayer, recorder, uiManager);
@@ -209,9 +205,7 @@ public class PianoKeys {
 
         int whiteCount = 10;
 
-        // =========================
         // WHITE KEYS
-        // =========================
 //        g.setFont(new Font("Arial", Font.BOLD, 18));
         g.setFont(FontManager.pixel18);
 
@@ -219,43 +213,28 @@ public class PianoKeys {
 
             int x = startX + i * WHITE_W;
 
-            g.drawImage(
-                    whiteKey,
-                    x,
-                    y,
-                    WHITE_W,
-                    WHITE_H,
-                    null);
+            g.drawImage(whiteKey, x, y, WHITE_W, WHITE_H, null);
 
             if (input.whitePressed[i]) {
 
                 g.setColor(new Color(0, 0, 0, 80));
-                g.fillRect(
-                        x,
-                        y,
-                        WHITE_W,
-                        WHITE_H);
+                g.fillRect(x, y, WHITE_W, WHITE_H);
+
             }
 
             g.setColor(Color.BLACK);
 
             FontMetrics whiteFm = g.getFontMetrics();
 
-            int textX =
-                    x +
-                    (WHITE_W - whiteFm.stringWidth(whiteLabels[i])) / 2;
+            int textX = x + (WHITE_W - whiteFm.stringWidth(whiteLabels[i])) / 2;
 
             int textY = y + WHITE_H - 15;
 
-            g.drawString(
-                    whiteLabels[i],
-                    textX,
-                    textY);
+            g.drawString(whiteLabels[i], textX, textY);
         }
 
-        // =========================
+
         // BLACK KEYS
-        // =========================
 //        g.setFont(new Font("Arial", Font.BOLD, 14));
         g.setFont(FontManager.pixel14);
 
@@ -263,43 +242,26 @@ public class PianoKeys {
 
         for (int i = 0; i < blackIndex.length; i++) {
 
-            int x =
-                    startX +
-                    (blackIndex[i] * WHITE_W) +
-                    (WHITE_W - BLACK_W / 2);
+            int x = startX + (blackIndex[i] * WHITE_W) + (WHITE_W - BLACK_W / 2);
 
-            g.drawImage(
-                    blackKey,
-                    x,
-                    y,
-                    BLACK_W,
-                    BLACK_H,
-                    null);
+            g.drawImage(blackKey, x, y, BLACK_W, BLACK_H, null);
+
 
             if (input.blackPressed[i]) {
 
                 g.setColor(new Color(255, 255, 255, 80));
-                g.fillRect(
-                        x,
-                        y,
-                        BLACK_W,
-                        BLACK_H);
+                g.fillRect(x, y, BLACK_W, BLACK_H);
             }
 
             g.setColor(Color.WHITE);
 
             FontMetrics blackFm = g.getFontMetrics();
 
-            int textX =
-                    x +
-                    (BLACK_W - blackFm.stringWidth(blackLabels[i])) / 2;
+            int textX = x + (BLACK_W - blackFm.stringWidth(blackLabels[i])) / 2;
 
             int textY = y + BLACK_H - 10;
 
-            g.drawString(
-                    blackLabels[i],
-                    textX,
-                    textY);
+            g.drawString(blackLabels[i], textX, textY);
         }
     }
 }

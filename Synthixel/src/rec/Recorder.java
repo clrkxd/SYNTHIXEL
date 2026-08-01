@@ -80,35 +80,29 @@ public class Recorder {
 
                 try {
 
-                    Thread.sleep(
-                            e.getTime() - last);
+                    Thread.sleep(e.getTime() - last);
 
                 } catch(Exception ex) {
 
                     ex.printStackTrace();
                 }
                 
-                if(e.getInstrument()
-                        != currentPlaybackInstrument) {
+                if(e.getInstrument() != currentPlaybackInstrument) {
 
-                    sound.setInstrument(
-                            e.getInstrument());
+                    sound.setInstrument(e.getInstrument());
 
-                    currentPlaybackInstrument =
-                            e.getInstrument();
+                    currentPlaybackInstrument =  e.getInstrument();
                 }
 
                 if(e.isPressed()) {
 
-                    System.out.println(
-                            "PLAY " + e.getKey());
+//                    System.out.println("PLAY " + e.getKey());
 
                     sound.play(e.getKey());
 
                 } else {
 
-                    System.out.println(
-                            "STOP " + e.getKey());
+//                    System.out.println("STOP " + e.getKey());
 
                     sound.stop(e.getKey());
                 }

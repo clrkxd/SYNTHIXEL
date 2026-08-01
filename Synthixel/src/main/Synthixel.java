@@ -35,7 +35,7 @@ public class Synthixel {
     
     public static void main(String[] args) {
     	
-    	
+    	// does this look okay tho
     	 try {
     	        UIManager.setLookAndFeel(
     	            "javax.swing.plaf.nimbus.NimbusLookAndFeel"
@@ -44,10 +44,10 @@ public class Synthixel {
     	        e.printStackTrace();
     	    }
 
-    	    // MUST APPLY THEME IMMEDIATELY AFTER LAF
+    	    // js experimenting
     	    FilePicker.applySynthixelTheme();
 
-    	    // FORCE FONT BEFORE ANY UI CREATION
+    	    //force font before ui
     	    UIManager.put("defaultFont", FontManager.pixel18);
     	new Synthixel();
     	
