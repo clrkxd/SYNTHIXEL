@@ -15,7 +15,7 @@
 ## ✨ Features
 
 - 🎹 Full playable piano (white + black keys)
-- 🎵 Different Instruments (Piano, Organ, Strings, Guitar)
+- 🎵 Different Instruments (Piano, Organ, Strings, Guitar, Bright)
 - 💻 Fully customizable open-source project
 - ⌨️ Keyboard mapping support
 - 🔊 Real-time sound playback using WAV files
@@ -96,6 +96,7 @@ res/
 ├── piano/
 ├── organ/
 ├── guitar/
+├── bright/
 └── strngs/
 ````
 
