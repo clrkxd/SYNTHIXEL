@@ -14,9 +14,9 @@ public class InstrumentManager {
         instruments.add(new Instruments("Piano", "/piano/"));
         instruments.add(new Instruments("Organ", "/organ/"));
         instruments.add(new Instruments("Strings", "/strngs/"));
-        instruments.add(new Instruments("Guitar", "/guitar/"));
         instruments.add(new Instruments("Bright", "/bright/"));
-
+        instruments.add(new Instruments("SteelPan", "/steelpan/"));
+        instruments.add(new Instruments("Guitar", "/guitar/"));
 
         currentIndex = 0;
 
