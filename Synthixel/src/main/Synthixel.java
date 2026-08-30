@@ -16,8 +16,7 @@ public class Synthixel {
 
         windowPiano = new JFrame("Synthixel v1.0.0");
         
-        ImageIcon icon = new ImageIcon(
-                Synthixel.class.getResource("/appicon/synthixel-logo_themed-fixed.png"));
+        ImageIcon icon = new ImageIcon(Synthixel.class.getResource("/appicon/synthixel-logo_themed-fixed.png"));
 
         windowPiano.setIconImage(icon.getImage());
 
@@ -36,10 +35,7 @@ public class Synthixel {
     public static void main(String[] args) {
     	
     	// does this look okay tho
-    	 try {
-    	        UIManager.setLookAndFeel(
-    	            "javax.swing.plaf.nimbus.NimbusLookAndFeel"
-    	        );
+    	 try {UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
     	    } catch (Exception e) {
     	        e.printStackTrace();
     	    }
@@ -49,7 +45,7 @@ public class Synthixel {
 
     	    //force font before ui
     	    UIManager.put("defaultFont", FontManager.pixel18);
-    	new Synthixel();
+    	    new Synthixel();
     	
     	//new main method
     	
