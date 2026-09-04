@@ -79,13 +79,9 @@ public class Recorder {
 
                 if(e.isPressed()) {
 
-//                    System.out.println("PLAY " + e.getKey());
-
                     sound.play(e.getKey());
 
                 } else {
-
-//                    System.out.println("STOP " + e.getKey());
 
                     sound.stop(e.getKey());
                 }
