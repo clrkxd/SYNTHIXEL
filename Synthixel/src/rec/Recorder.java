@@ -21,8 +21,7 @@ public class Recorder {
 
         events.clear();
 
-        startTime =
-                System.currentTimeMillis();
+        startTime = System.currentTimeMillis();
 
         recording = true;
     }
@@ -32,35 +31,19 @@ public class Recorder {
         recording = false;
     }
 
-    public void record(
-            String key,
-            boolean pressed,
-            int instrument) {
+    public void record(String key, boolean pressed, int instrument) {
 
         if(!recording)
             return;
 
-        long current =
-                System.currentTimeMillis()
-                - startTime;
+        long current = System.currentTimeMillis() - startTime;
 
-        events.add(
-                new NoteEvent(
-                        key,
-                        pressed,
-                        current,
-                        instrument));
+        events.add(new NoteEvent(key, pressed,current, instrument));
         
-        System.out.println(
-                key
-                + " "
-                + pressed
-                + " instrument="
-                + instrument);
+        System.out.println(key + " " + pressed + " instrument=" + instrument);
     }
 
-    public void playback(
-            SoundManager sound) {
+    public void playback(SoundManager sound) {
 
         if(events.isEmpty())
             return;
@@ -127,8 +110,7 @@ public class Recorder {
     }
 
 
-    public ArrayList<NoteEvent>
-    getEvents() {
+    public ArrayList<NoteEvent>getEvents() {
 
         return events;
     }

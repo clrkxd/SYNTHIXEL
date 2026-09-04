@@ -7,10 +7,7 @@ public class NoteEvent {
     private long time;
     private int instrument;
 
-    public NoteEvent(String key,
-                     boolean pressed,
-                     long time,
-                     int instrument) {
+    public NoteEvent(String key, boolean pressed, long time, int instrument) {
 
         this.key = key;
         this.pressed = pressed;
