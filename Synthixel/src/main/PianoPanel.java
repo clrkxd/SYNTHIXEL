@@ -52,9 +52,6 @@ public class PianoPanel extends JPanel {
     
     public MsgNotice msgNotice;
     
- 
-
-    
     public PianoPanel() {
     	
         setPreferredSize(new Dimension(FIN_WIDTH, FIN_HEIGHT));
@@ -73,8 +70,6 @@ public class PianoPanel extends JPanel {
         InstrumentManager playbackInstrumentManager = new InstrumentManager();
 
         playbackSound = new SoundManager(playbackInstrumentManager);
-        
-        
 
         frameLayer = new PianoFrameLayer();
         recorder = new Recorder();
