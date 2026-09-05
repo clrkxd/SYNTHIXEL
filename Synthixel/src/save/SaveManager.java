@@ -13,7 +13,7 @@ public class SaveManager {
 
             for (NoteEvent e : recorder.getEvents()) {
 
-                System.out.println(e.getKey() + "," + e.isPressed() + "," + e.getTime() + "," + e.getInstrument());
+//                System.out.println(e.getKey() + "," + e.isPressed() + "," + e.getTime() + "," + e.getInstrument());
             }
         }
     }

@@ -19,14 +19,7 @@ public class LoadManager {
 
                 String[] split = scanner.nextLine().split(",");
 
-                recorder.getEvents().add(
-                    new NoteEvent(
-                        split[0],
-                        Boolean.parseBoolean(split[1]),
-                        Long.parseLong(split[2]),
-                        Integer.parseInt(split[3])
-                    )
-                );
+                recorder.getEvents().add(new NoteEvent(split[0], Boolean.parseBoolean(split[1]), Long.parseLong(split[2]), Integer.parseInt(split[3])));
             }
         }
         
