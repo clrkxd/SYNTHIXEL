@@ -192,9 +192,9 @@ public class SoundManager {
 
                 Clip clip = sounds.get(key);
 
-                if (clip != null) {
-                    clip.stop();
-                }
+//                if (clip != null) {
+//                    clip.stop();
+//                }
             }
 
             sustainedNotes.clear();
