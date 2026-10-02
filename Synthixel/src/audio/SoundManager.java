@@ -33,7 +33,6 @@ public class SoundManager {
     
     public SoundManager(InstrumentManager instrumentManager) {
         this.instrumentManager = instrumentManager;
-//        this.msgNotice = msgNotice;
         setVolume(volumeLevel);
         loadCurrentInstrument();
     }
@@ -44,7 +43,6 @@ public class SoundManager {
        
 
         String folder = instrumentManager.getCurrentInstrument().getFolder();
-//        msgNotice = new MsgNotice();
 
         load("C", folder + "c1.wav");
         load("D", folder + "d1.wav");
@@ -83,8 +81,6 @@ public class SoundManager {
                 return;
             }
             
-            
-
             AudioInputStream ais = AudioSystem.getAudioInputStream(url);
 
             Clip clip = AudioSystem.getClip();
