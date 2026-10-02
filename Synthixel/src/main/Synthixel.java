@@ -33,7 +33,7 @@ public class Synthixel {
     }
     
     public static void main(String[] args) {
-    	
+ 
     	// does this look okay tho
     	 try {UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
     	    } catch (Exception e) {
@@ -47,7 +47,7 @@ public class Synthixel {
     	    UIManager.put("defaultFont", FontManager.pixel18);
     	    new Synthixel();
     	
-    	//new main method
+    	
     	
     }
 }
