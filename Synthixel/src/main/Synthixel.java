@@ -35,7 +35,8 @@ public class Synthixel {
     public static void main(String[] args) {
  
     	// does this look okay tho
-    	 try {UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+    	 try {
+    		 UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
     	    } catch (Exception e) {
     	        e.printStackTrace();
     	    }
